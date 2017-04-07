@@ -1,9 +1,11 @@
 <html>
 <body>
-
+<head>
 WaitLess <br>
 Amy Liu (amy.liu), Emily Hedlund (ehedlund), Julie Novick-Lederer (julieen), Maya Phillips (mayap) <br> <br>
-
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+ <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+ </head>
 Project Leader: Julie Novick-Lederer <br>
 Project Manager: Ghassen Jerfel <br> <br>
 
@@ -39,4 +41,15 @@ Reading Period: May 8-12 (demo days) <br>
 - Finishing touches <br>
 Dean's Date: May 14 (final submission) <br> 
 </body>
+
+ <div id="mapid"></div>
+ #mapid { height: 180px; }
+ <script>
+ var mymap = L.map('mapid').setView([40.345790,-74.656471], 16);
+ L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj0y6ky2j00fy2rqrxtaawv0m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 19,
+    minZoom: 15,
+}).addTo(mymap);
+ </script>
 </html>
