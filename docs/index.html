@@ -1,4 +1,272 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>boxedLove</title>
+
+  	<!-- Bootstrap Styling and JS: -->
+  	<link rel="stylesheet" href="./css/boxedLove-bootstrap.css"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script src="https://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
+
+    <!-- Custom style: -->
+    <link rel="stylesheet" href="./css/boxedLove-css.css">
+
+    <!-- Favicon: -->
+    <link rel="icon" 
+      type="image/png" 
+      href="./img/favicon.png">
+
+    <script type="text/javascript">
+      var opacityRate = 100;
+      $(document).ready(function() {
+        if ($(this).scrollTop() < opacityRate) {
+          $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
+            "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+        }
+      });
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 350);
+              return false;
+            }
+          }
+        });
+      });
+      $(document).scroll(function() {
+        if ($(this).scrollTop() < opacityRate) {
+          $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
+            "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+        } else {
+          $(".navbar").css({"background-color": "rgba(251,251,251,1)",
+            "border-color": "rgba(231,231,231,1)"});
+        }
+      });
+    </script>
+  </head>
+
+  <body id="splash">
+  	<!-- Navbar
+        ================================================ -->
+  	<div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#splash" class="navbar-brand">boxed<span style="font-size: 1.08em;">L</span>ove</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#whoweare">Who We Are</a>
+              </li>
+
+              <li>
+                <a href="#meettheteam">Meet the Team</a>
+              </li>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <a name="splash"></a> 
+      <div class="container-fluid col-centered block">
+  	    <div class="container fill" style="text-align: center;">
+  	    	<h1 style="font-size: 5em;">Signed. Sealed. Delivered.</h1>
+  	      <img src="img/boxedLove_logo.png" style="height: 450px;"/>
+      </div> 
+
+      <a name="whoweare"></a> 
+      <div class="container-fluid col-centered block whiteBG">
+        <div class="container fill">
+
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-8">
+              <h1>Who We Are</h1>
+              <p><span class="name">boxed<span style="font-size: 1.08em;">L</span>ove</span> is an online subscription site that ships a personalized box to your doorstep every three months filled with goodies and activities for you and your loved one to have fun with that season.</p> 
+              <h2>Just For You</h2>
+              <p>The kick? These boxes are personalized to your taste, sexual orientation, age, and relationship history to give you the ultimate personalized experience. Subscription boxes have boomed in popularity over the last five years for beauty products, shaving kits, food baskets, and more, so why not give your love life the same treatment? <span class="name">boxed<span style="font-size: 1.08em;">L</span>ove</span> is the perfect affordable love box that not only cares about your relationship, but also cares about YOU.</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-8">
+              <center><img style="width: 100%; margin-top: 150px;" src="./img/envelope.png"/></center>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <p>We'll ask you to choose from one of the following categories, based on what type of products and activities you're comfortable with. We'll go from there to craft personalized boxes just for you!</p>
+            </div>
+          </div>
+
+          <div style="padding-top: 35px; margin-left: 20px; margin-right: 20px;" class="row">
+            <a href="javascript:void(0);" id="child"><div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="" style="text-align: center;">
+                <img id="childImg" src="./img/child.png"/><br/>
+                <h1 style="color: black;">Child</h1>
+              </div>
+            </div></a>
+
+            <a href="javascript:void(0);" id="mild"><div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="" style="text-align: center;">
+                <img id="mildImg" src="./img/mild.png"/><br/>
+                <h1 style="color: black;">Mild</h1>
+              </div>
+            </div></a>
+
+            <a href="javascript:void(0);" id="wild"><div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="" style="text-align: center;">
+                <img id="wildImg" src="./img/wild.png"/><br/>
+                <h1 style="color: black;">Wild</h1>
+              </div>
+            </div></a>
+          </div>
+
+          <div id="childDesc" class="row" style="display: none;">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <center>
+                <h2>Child</h2>
+                <p>By the books and proper. For a date night, you would prefer a dinner for two or tickets to a show over something more adventurous.</p>
+              </center>
+            </div>
+          </div>
+
+          <div id="mildDesc" class="row" style="display: none;">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <center>
+                <h2>Mild</h2>
+                <p>Daring but not excessively so. You would be open, for example, to romantic baths with exotic scents for date night, but nothing crazier.</p>
+              </center>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+          </div>
+
+          <div id="wildDesc" class="row" style="display: none;">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <center>
+                <h2>Wild</h2>
+                <p>Excited and eager to spice things up. You would be open to experimenting with yourself and your partner in a variety of ways.</p>
+              </center>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+          </div>
+
+          <script>
+            $("#child").hover(function() { 
+              $("#childImg").attr("src", "./img/childAlt.png"); 
+            }, function() { 
+              $("#childImg").attr("src", "./img/child.png"); 
+            });
+            $("#mild").hover(function() { 
+              $("#mildImg").attr("src", "./img/mildAlt.png"); 
+            }, function() { 
+              $("#mildImg").attr("src", "./img/mild.png"); 
+            });
+            $("#wild").hover(function() { 
+              $("#wildImg").attr("src", "./img/wildAlt.png"); 
+            }, function() { 
+              $("#wildImg").attr("src", "./img/wild.png");  
+            });
+            $("#child").click(function() { 
+              $("#childDesc").slideDown();
+              $("#mildDesc").slideUp();
+              $("#wildDesc").slideUp();
+            });
+            $("#mild").click(function() { 
+              $("#mildDesc").slideDown();
+              $("#childDesc").slideUp();
+              $("#wildDesc").slideUp();
+            });
+            $("#wild").click(function() { 
+              $("#wildDesc").slideDown();
+              $("#childDesc").slideUp();
+              $("#mildDesc").slideUp();
+            });
+          </script>
+        </div>
+      </div>
+
+      <a name="meettheteam"></a> 
+      <div class="container-fluid col-centered block tanBG">
+        <div class="container fill">
+          <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+              <h1>Meet the Team</h1>
+              <!-- TODO -->
+              <p><span class="name">boxed<span style="font-size: 1.08em;">L</span>ove</span> was created by four Princeton University undergraduates in 2016. Learn more about our backgrounds and contact info below!</p>
+            </div>
+          </div>
+
+          <div style="padding-top: 35px; margin-left: 20px; margin-right: 20px; margin-bottom: 20px;" class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div style="text-align: center;">
+                <img src="./img/us/kevin.png" style="max-width:100%;"/><br/>
+                <h2>Kevin</h2>
+                <p class="desc">Kevin hails from Basking Ridge, NJ and is an Operations Research and Financial Engineering major in his second year at Princeton. In his spare time you might find him watching Scandal or listening to Drake’s Views. You can reach him at <a href="#">kevin@boxedLove.com</a>.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div style="text-align: center;">
+                <img src="./img/us/julie.png" style="max-width:100%;"/><br/>
+                <h2>Julie</h2>
+                <p class="desc">Julie is a native New Yorker and a sophomore computer science major at Princeton. She can name all the countries of the world in under fifteen minutes. You can reach her at <a href="#">julie@boxedLove.com</a>.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-left: 20px; margin-right: 20px;" class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div style="text-align: center;">
+                <img src="./img/us/amanda.png"  style="max-width:100%;"/><br/>
+                <h2>Amanda</h2>
+                <p class="desc">Amanda is a Princeton sophomore from sunny Los Angeles majoring in economics with a certificate in computer science. She has an identical twin sister who is also an economics major with a certificate in computer science. You can reach her at <a href="#">amanda@boxedLove.com</a>.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div style="text-align: center;">
+                <img src="./img/us/aqeel.png"  style="max-width:100%;"/><br/>
+                <h2>Aqeel</h2>
+                <p class="desc">Aqeel is a junior at Princeton who majors in computer science and is originally from Philadelphia, PA. <a href="#">soundcloud.com/qubicity</a> is all you need to know. You can reach him at <a href="#">aqeel@boxedLove.com</a>. </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a name="contact"></a> 
+      <div class="container-fluid col-centered block tanBG">
+        <div class="container fill">
+          <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+              <h1>Contact</h1>
+              <p>For comments, questions or concerns, you can reach us at <a href="#">team@waitlessprinceton.com</a>.</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        © <span class="name">boxed<span style="font-size: 1.08em;">L</span>ove</span>
+      </footer>
+
+  </body>
 <body>
 <head>
 WaitLess <br>
