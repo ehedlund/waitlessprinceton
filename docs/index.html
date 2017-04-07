@@ -1,4 +1,8 @@
 <html>
+<head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+</head>
 <body>
 
 WaitLess <br>
@@ -38,5 +42,14 @@ Week 12: May 1-5 (beta test 5/5) <br>
 Reading Period: May 8-12 (demo days) <br>
 - Finishing touches <br>
 Dean's Date: May 14 (final submission) <br> 
+
+<div id="mapid"></div>
+<mapid height="180px">
+<script>
+var mymap = L.map('mapid').setView([40.344, -74.651], 13);
+L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj0y6ky2j00fy2rqrxtaawv0m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
+  maxZoom: 18
+}).addTo(mymap);
+</script>
 </body>
 </html>
