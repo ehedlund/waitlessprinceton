@@ -13,38 +13,14 @@
   <center>
     <script>
       var mymap = L.map('mapid').setView([40.3463,-74.6593], 16.8);
+      var buildingData = {"type":"FeatureCollection","features":[{"type":"Feature","id":"01","properties":{"name":"Frist","density":94.65},"geometry":{"type":"Polygon","coordinates":[[[40.347191, -74.654951],[40.346823, -74.655758],[40.346643, -74.654569],[40.346325, -74.655391]]]}}]};
+      
       L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj0y6ky2j00fy2rqrxtaawv0m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 19,
         minZoom: 15,
       }).addTo(mymap);
-      
-      var buildingData = {"type":"FeatureCollection","features":[{"type":"Feature","id":"01","properties":{"name":"Frist","density":94.65},"geometry":{"type":"Polygon","coordinates":[[[40.347191, -74.654951],[40.346823, -74.655758],[40.346643, -74.654569],[40.346325, -74.655391]]]}}]};
-     
-      function getColor(d) {
-        return d > 1000 ? '#800026' :
-        d > 500  ? '#BD0026' :
-        d > 200  ? '#E31A1C' :
-        d > 100  ? '#FC4E2A' :
-        d > 50   ? '#FD8D3C' :
-        d > 20   ? '#FEB24C' :
-        d > 10   ? '#FED976' :
-        '#FFEDA0';
-      }
-      
-      function style(feature) {
-        return {
-          fillColor: getColor(feature.properties.density),
-          weight: 2,
-          opacity: 1,
-          color: 'white',
-          dashArray: '3',
-          fillOpacity: 0.7
-        };
-      }
-
-      L.geoJson(buildingData, {style: style}).addTo(mymap);
-      
+      L.geoJson(buildingData).addTo(mymap);
     </script>
   </center>
 </html>
