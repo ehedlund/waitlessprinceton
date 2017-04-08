@@ -2,56 +2,83 @@
 	<head>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-		<meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>waitLess</title>
-
-	    <!-- Bootstrap Styling and JS: -->
-	    <link rel="stylesheet" href="./css/waitless-bootstrap.css"/>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-	    <script src="https://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
-
-	    <!-- Custom style: -->
-	    <link rel="stylesheet" href="./css/waitless-css.css">
-
-	    <!-- Favicon: -->
-	    <link rel="icon" 
-	      type="image/png" 
-	      href="./img/orange.png">
-
-	    <script type="text/javascript">
-	      var opacityRate = 150;
-	      $(document).ready(function() {
-		if ($(this).scrollTop() < opacityRate) {
-		  $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
-		    "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+	    <style media="screen" type="text/css">	
+		.info {
+		    padding: 6px 8px;
+		    font: 14px/16px Arial, Helvetica, sans-serif;
+		    background: white;
+		    background: rgba(255,255,255,0.8);
+		    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+		    border-radius: 5px;
 		}
-	      });
-	      $(function() {
-		$('a[href*="#"]:not([href="#"])').click(function() {
-		  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-		    var target = $(this.hash);
-		    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-		    if (target.length) {
-		      $('html, body').animate({
-			scrollTop: target.offset().top
-		      }, 350);
-		      return false;
+		.info h4 {
+		    margin: 0 0 5px;		
+		    color: #777;
+		}
+		    
+		.legend {
+		    line-height: 18px;
+		    color: #555;
 		    }
-		  }
-		});
-	      });
-	      $(document).scroll(function() {
-		if ($(this).scrollTop() < opacityRate) {
-		  $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
-		    "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
-		} else {
-		  $(".navbar").css({"background-color": "rgba(251,251,251,1)",
-		    "border-color": "rgba(231,231,231,1)"});
+		.legend i {
+		    width: 18px;
+		    height: 18px;
+		    float: left;
+		    margin-right: 8px;
+		    opacity: 0.7;
 		}
-	      });
-	    </script>
+		    
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>waitLess</title>
+
+    <!-- Bootstrap Styling and JS: -->
+    <link rel="stylesheet" href="./css/waitless-bootstrap.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script src="https://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
+
+    <!-- Custom style: -->
+    <link rel="stylesheet" href="./css/waitless-css.css">
+
+    <!-- Favicon: -->
+    <link rel="icon" 
+      type="image/png" 
+      href="./img/orange.png">
+
+    <script type="text/javascript">
+      var opacityRate = 150;
+      $(document).ready(function() {
+        if ($(this).scrollTop() < opacityRate) {
+          $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
+            "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+        }
+      });
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 350);
+              return false;
+            }
+          }
+        });
+      });
+      $(document).scroll(function() {
+        if ($(this).scrollTop() < opacityRate) {
+          $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
+            "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+        } else {
+          $(".navbar").css({"background-color": "rgba(251,251,251,1)",
+            "border-color": "rgba(231,231,231,1)"});
+        }
+      });
+            </script>
+ 	    </style>
 	</head>
 	<body id="splash">
     	<!-- Navbar
@@ -123,7 +150,6 @@
 					fillOpacity: 0.7
 				};
 			}
-			
 			L.geoJson(buildingData, {style: style}).addTo(mymap);
       
 			
@@ -143,11 +169,25 @@
 		layer.bringToFront();
 	    }
 	}
-		function resetHighlight(e) {
-	   	 geojson.resetStyle(e.target);
+		L.geoJson(buildingData, {style: style}).addTo(mymap);
+	    	var geojson;		
+	   	 function highlightFeature(e) {
+	    		var layer = e.target;
+			layer.setStyle({
+			weight: 4,
+			color: '#666',
+			dashArray: '',
+			fillOpacity: 0.7
+	    		});
+	   		 if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+				layer.bringToFront();
+	  		  }
+			info.update(layer.feature.properties);
 		}
-			
-		geojson = L.geojson(buildingData);
+		function resetHighlight(e) {
+	   	 	geojson.resetStyle(e.target);
+			info.update();
+		}
 				    
 		function onEachFeature(feature, layer) {
     layer.on({
@@ -163,6 +203,54 @@ geojson = L.geoJson(buildingData, {
 }).addTo(mymap);
      
       var marker = L.marker([40.346911, -74.655236]).addTo(mymap);
+    			layer.on({
+       			 mouseover: highlightFeature,
+        		mouseout: resetHighlight,
+        		click: zoomToFeature
+  		  	});
+		}
+		function zoomToFeature(e) {
+    			map.fitBounds(e.target.getBounds());
+		}
+
+		geojson = L.geoJson(buildingData, {
+   		 style: style,
+    		onEachFeature: onEachFeature
+		}).addTo(mymap);
+	
+		var info = L.control();
+
+		info.onAdd = function (map) {
+		    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+		    this.update();
+		    return this._div;
+		};
+
+		// method that we will use to update the control based on feature properties passed
+		info.update = function (props) {
+		    this._div.innerHTML = '<h4>Campus Building Traffic</h4>' +  (props ?
+			'<b>' + props.name + '</b><br />' + props.density + ' people'
+			: 'Hover over a state');
+		};
+
+		info.addTo(mymap);
+			
+		var legend = L.control({position: 'bottomright'});
+
+		legend.onAdd = function (map) {
+			var div = L.DomUtil.create('div', 'info legend'),
+			grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+			labels = [];
+
+	    	// loop through our density intervals and generate a label with a colored square for each interval
+	    		for (var i = 0; i < grades.length; i++) {
+				div.innerHTML +=
+		 		   '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+			    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+	  		  }
+   		 	return div;
+		};
+		legend.addTo(mymap);
 
 			// var popup = L.popup().setLatLng(latlng).setContent("popup here").openOn(map);
 
