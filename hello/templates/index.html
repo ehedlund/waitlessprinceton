@@ -77,6 +77,56 @@
 		    margin-right: 8px;
 		    opacity: 0.7;
 		}
+		    
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>waitLess</title>
+
+    <!-- Bootstrap Styling and JS: -->
+    <link rel="stylesheet" href="./css/waitless-bootstrap.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script src="https://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
+
+    <!-- Custom style: -->
+    <link rel="stylesheet" href="./css/waitless-css.css">
+
+    <!-- Favicon: -->
+    <link rel="icon" 
+      type="image/png" 
+      href="./img/orange.png">
+
+    <script type="text/javascript">
+      var opacityRate = 150;
+      $(document).ready(function() {
+        if ($(this).scrollTop() < opacityRate) {
+          $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
+            "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+        }
+      });
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 350);
+              return false;
+            }
+          }
+        });
+      });
+      $(document).scroll(function() {
+        if ($(this).scrollTop() < opacityRate) {
+          $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
+            "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+        } else {
+          $(".navbar").css({"background-color": "rgba(251,251,251,1)",
+            "border-color": "rgba(231,231,231,1)"});
+        }
+      });
  	    </style>
 	</head>
 	<body id="splash">
