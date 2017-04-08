@@ -428,6 +428,16 @@ function style(feature) {
 }
 
 L.geoJson(statesData, {style: style}).addTo(map);
+
+var popup = L.popup()
+    .setLatLng([40.346911, -74.655236])
+    .setContent("I am a standalone popup.")
+    .openOn(mymap);
+
+// can access popup._container or popup.contentNode
+$(popup._closeButton).one('click', function(e){
+    //do something
+});
  </script>
 </center>
 <<<<<<< HEAD
