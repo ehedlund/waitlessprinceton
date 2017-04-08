@@ -1,58 +1,133 @@
-{% extends "base.html" %}
-{% load staticfiles %}
+<!DOCTYPE html>
 
-{% block content %}
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="{% static 'lang-logo.png'%}">
-    </a>
-    <h1>Getting Started with Python on Heroku</h1>
-    <p>This is a sample Python application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-python"><span class="glyphicon glyphicon-flash"></span> Getting Started with Python</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/python-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-python" class="alert-link">Getting Started with Python on Heroku</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/python-getting-started">Heroku Button</a> on the repository.</li>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>boxedLove</title>
 
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/python-getting-started/blob/master/requirements.txt">requirements.txt file</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-python">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/python-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd python-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-python#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-python">Getting Started with Python on Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/django-app-configuration">Configuring Django Apps for Heroku</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
-</div>
-{% endblock %}
+    <!-- Bootstrap Styling and JS: -->
+    <link rel="stylesheet" href="./css/waitless-bootstrap.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script src="https://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
+
+    <!-- Custom style: -->
+    <link rel="stylesheet" href="./css/waitless-css.css">
+
+    <!-- Favicon: -->
+    <link rel="icon" 
+      type="image/png" 
+      href="./img/orange.png">
+
+    <script type="text/javascript">
+      var opacityRate = 100;
+      $(document).ready(function() {
+        if ($(this).scrollTop() < opacityRate) {
+          $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
+            "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+        }
+      });
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 350);
+              return false;
+            }
+          }
+        });
+      });
+      $(document).scroll(function() {
+        if ($(this).scrollTop() < opacityRate) {
+          $(".navbar").css({"background-color": "rgba(251,251,251,"+$(this).scrollTop() / opacityRate+")", 
+            "border-color": "rgba(231,231,231,"+$(this).scrollTop() / opacityRate+")"});
+        } else {
+          $(".navbar").css({"background-color": "rgba(251,251,251,1)",
+            "border-color": "rgba(231,231,231,1)"});
+        }
+      });
+    </script>
+  </head>
+  <body id="splash">
+    <!-- Navbar
+        ================================================ -->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#splash" class="navbar-brand">boxed<span style="font-size: 1.08em;">L</span>ove</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#whoweare">Who We Are</a>
+              </li>
+
+              <li>
+                <a href="#meettheteam">Meet the Team</a>
+              </li>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+  </body>
+  
+  <div id="mapid"></div>
+  <style>
+    #mapid { 
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+    }
+  </style>
+  <center>
+    <script>
+      var mymap = L.map('mapid').setView([40.3463,-74.6593], 16.8);
+      var buildingData = {"type":"FeatureCollection","features":[{"type":"Feature","id":"01","properties":{"name":"Frist","density":94.65},"geometry":{"type":"Polygon","coordinates":[[[-74.654951,40.347191],[-74.655758,40.346823],[-74.655391,40.346325],[-74.654569,40.346643,]]]}}]};
+      L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj0y6ky2j00fy2rqrxtaawv0m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 19,
+        minZoom: 15,
+      }).addTo(mymap);
+      
+      function getColor(d) {
+        return d > 1000 ? '#800026' :
+        d > 500  ? '#BD0026' :
+        d > 200  ? '#E31A1C' :
+        d > 100  ? '#FC4E2A' :
+        d > 50   ? '#FD8D3C' :
+        d > 20   ? '#FEB24C' :
+        d > 10   ? '#FED976' :
+        '#FFEDA0';
+      }
+      
+      function style(feature) {
+        return {
+          fillColor: getColor(feature.properties.density),
+          weight: 2,
+          opacity: 1,
+          color: 'white',
+          dashArray: '3',
+          fillOpacity: 0.7
+        };
+      }
+      
+      L.geoJson(buildingData, {style: style}).addTo(mymap);
+    </script>
+  </center>
+</html>
