@@ -1,48 +1,82 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-  </head>
-  <div id="mapid"></div>
-  <style>
-    #mapid { 
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-    }
-  </style>
-  <center>
-    <script>
-      var mymap = L.map('mapid').setView([40.3463,-74.6593], 16.8);
-      var buildingData = {"type":"FeatureCollection","features":[{"type":"Feature","id":"01","properties":{"name":"Frist","density":94.65},"geometry":{"type":"Polygon","coordinates":[[[-74.654951,40.347191],[-74.655758,40.346823],[-74.655391,40.346325],[-74.654569,40.346643,]]]}}]};
-      L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj0y6ky2j00fy2rqrxtaawv0m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        maxZoom: 19,
-        minZoom: 15,
-      }).addTo(mymap);
-      
-      function getColor(d) {
-        return d > 1000 ? '#800026' :
-        d > 500  ? '#BD0026' :
-        d > 200  ? '#E31A1C' :
-        d > 100  ? '#FC4E2A' :
-        d > 50   ? '#FD8D3C' :
-        d > 20   ? '#FEB24C' :
-        d > 10   ? '#FED976' :
-        '#FFEDA0';
-      }
-      
-      function style(feature) {
-        return {
-          fillColor: getColor(feature.properties.density),
-          weight: 2,
-          opacity: 1,
-          color: 'white',
-          dashArray: '3',
-          fillOpacity: 0.7
-        };
-      }
-      
-      L.geoJson(buildingData, {style: style}).addTo(mymap);
-    </script>
-  </center>
+	<head>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	</head>
+	<div id="mapid"></div>
+	<style>
+		#mapid { 
+			position: absolute;
+			top: 0; right: 0; bottom: 0; left: 0;
+		}
+	</style>
+	<center>
+		<script>
+			var mymap = L.map('mapid').setView([40.3463,-74.6593], 16.8);
+			var buildingData = {"type":"FeatureCollection","features":[{"type":"Feature","id":"01","properties":{"name":"Frist","density":94.65},"geometry":{"type":"Polygon","coordinates":[[[-74.654951,40.347191],[-74.655758,40.346823],[-74.655391,40.346325],[-74.654569,40.346643,]]]}}]};
+			L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj0y6ky2j00fy2rqrxtaawv0m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
+				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+				maxZoom: 19,
+				minZoom: 15,
+			}).addTo(mymap);
+			
+			function getColor(d) {
+				return d > 1000 ? '#800026' :
+				d > 500  ? '#BD0026' :
+				d > 200  ? '#E31A1C' :
+				d > 100  ? '#FC4E2A' :
+				d > 50   ? '#FD8D3C' :
+				d > 20   ? '#FEB24C' :
+				d > 10   ? '#FED976' :
+				'#FFEDA0';
+			}
+			
+			function style(feature) {
+				return {
+					fillColor: getColor(feature.properties.density),
+					weight: 2,
+					opacity: 1,
+					color: 'white',
+					dashArray: '3',
+					fillOpacity: 0.7
+				};
+			}
+			
+			L.geoJson(buildingData, {style: style}).addTo(mymap);
+
+		  var popup = L.popup({offset   : new L.Point(0,-24), 
+		  										className: 'some-class'})
+													.setLatLng(latlng)
+												 .setContent(content)
+												 .openOn(map);
+
+			// can access popup._container or popup.contentNode
+			$(popup._closeButton).one('click', function(e){
+					//do something
+			});
+			
+			
+			//popup code from maya
+			var polygon = L.polygon([
+					[-74.654951,40.347191],
+					[-74.655758,40.346823],
+					[-74.655391,40.346325],
+					[-74.654569,40.346643]
+			]).addTo(mymap);
+
+			polygon.bindPopup("Frist Campus Center");
+
+			var marker = L.marker([40.346911, -74.655236]).addTo(mymap);
+			marker.bindPopup("Marker popup");
+			// var popup = L.popup()
+			//     .setLatLng([40.346911, -74.655236])
+			//     .setContent("I am a standalone popup.")
+			//     .openOn(mymap);
+
+			// can access popup._container or popup.contentNode
+			// $(popup._closeButton).one('click', function(e){
+			//     //do something
+			// });
+		</script>
+	</center>
 </html>
