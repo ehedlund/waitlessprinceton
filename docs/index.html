@@ -127,6 +127,151 @@
                 <h1 style="color: black;">Mild</h1>
               </div>
             </div></a>
+<<<<<<< Updated upstream
+=======
+
+            <a href="javascript:void(0);" id="wild"><div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="" style="text-align: center;">
+                <img id="wildImg" src="./img/wild.png"/><br/>
+                <h1 style="color: black;">Wild</h1>
+              </div>
+            </div></a>
+          </div>
+
+          <div id="childDesc" class="row" style="display: none;">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <center>
+                <h2>Child</h2>
+                <p>By the books and proper. For a date night, you would prefer a dinner for two or tickets to a show over something more adventurous.</p>
+              </center>
+            </div>
+          </div>
+
+          <div id="mildDesc" class="row" style="display: none;">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <center>
+                <h2>Mild</h2>
+                <p>Daring but not excessively so. You would be open, for example, to romantic baths with exotic scents for date night, but nothing crazier.</p>
+              </center>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+          </div>
+
+          <div id="wildDesc" class="row" style="display: none;">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <center>
+                <h2>Wild</h2>
+                <p>Excited and eager to spice things up. You would be open to experimenting with yourself and your partner in a variety of ways.</p>
+              </center>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+          </div>
+
+          <script>
+            $("#child").hover(function() { 
+              $("#childImg").attr("src", "./img/childAlt.png"); 
+            }, function() { 
+              $("#childImg").attr("src", "./img/child.png"); 
+            });
+            $("#mild").hover(function() { 
+              $("#mildImg").attr("src", "./img/mildAlt.png"); 
+            }, function() { 
+              $("#mildImg").attr("src", "./img/mild.png"); 
+            });
+            $("#wild").hover(function() { 
+              $("#wildImg").attr("src", "./img/wildAlt.png"); 
+            }, function() { 
+              $("#wildImg").attr("src", "./img/wild.png");  
+            });
+            $("#child").click(function() { 
+              $("#childDesc").slideDown();
+              $("#mildDesc").slideUp();
+              $("#wildDesc").slideUp();
+            });
+            $("#mild").click(function() { 
+              $("#mildDesc").slideDown();
+              $("#childDesc").slideUp();
+              $("#wildDesc").slideUp();
+            });
+            $("#wild").click(function() { 
+              $("#wildDesc").slideDown();
+              $("#childDesc").slideUp();
+              $("#mildDesc").slideUp();
+            });
+          </script>
+        </div>
+      </div>
+
+      <a name="meettheteam"></a> 
+      <div class="container-fluid col-centered block tanBG">
+        <div class="container fill">
+          <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+              <h1>Meet the Team</h1>
+              <!-- TODO -->
+              <p><span class="name">boxed<span style="font-size: 1.08em;">L</span>ove</span> was created by four Princeton University undergraduates in 2016. Learn more about our backgrounds and contact info below!</p>
+            </div>
+          </div>
+
+          <div style="padding-top: 35px; margin-left: 20px; margin-right: 20px; margin-bottom: 20px;" class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div style="text-align: center;">
+                <img src="./img/us/kevin.png" style="max-width:100%;"/><br/>
+                <h2>Kevin</h2>
+                <p class="desc">Kevin hails from Basking Ridge, NJ and is an Operations Research and Financial Engineering major in his second year at Princeton. In his spare time you might find him watching Scandal or listening to Drake’s Views. You can reach him at <a href="#">kevin@boxedLove.com</a>.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div style="text-align: center;">
+                <img src="./img/us/julie.png" style="max-width:100%;"/><br/>
+                <h2>Julie</h2>
+                <p class="desc">Julie is a native New Yorker and a sophomore computer science major at Princeton. She can name all the countries of the world in under fifteen minutes. You can reach her at <a href="#">julie@boxedLove.com</a>.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-left: 20px; margin-right: 20px;" class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div style="text-align: center;">
+                <img src="./img/us/amanda.png"  style="max-width:100%;"/><br/>
+                <h2>Amanda</h2>
+                <p class="desc">Amanda is a Princeton sophomore from sunny Los Angeles majoring in economics with a certificate in computer science. She has an identical twin sister who is also an economics major with a certificate in computer science. You can reach her at <a href="#">amanda@boxedLove.com</a>.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div style="text-align: center;">
+                <img src="./img/us/aqeel.png"  style="max-width:100%;"/><br/>
+                <h2>Aqeel</h2>
+                <p class="desc">Aqeel is a junior at Princeton who majors in computer science and is originally from Philadelphia, PA. <a href="#">soundcloud.com/qubicity</a> is all you need to know. You can reach him at <a href="#">aqeel@boxedLove.com</a>. </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a name="contact"></a> 
+      <div class="container-fluid col-centered block tanBG">
+        <div class="container fill">
+          <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+              <h1>Contact</h1>
+              <p>For comments, questions or concerns, you can reach us at <a href="#">team@waitlessprinceton.com</a>.</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        © <span class="name">boxed<span style="font-size: 1.08em;">L</span>ove</span>
+      </footer>
+
+  </body>
+
+<body>
+>>>>>>> Stashed changes
 
             <a href="javascript:void(0);" id="wild"><div class="col-lg-4 col-md-4 col-sm-4">
               <div class="" style="text-align: center;">
