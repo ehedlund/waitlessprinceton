@@ -123,7 +123,42 @@
 					fillOpacity: 0.7
 				};
 			}
-			
+			// var marker = L.marker([40.346911, -74.655236]).addTo(mymap);
+			// marker.bindPopup("Marker popup");
+			// marker.on('mouseover', function(e){
+			// 	this.openPopup();
+			// });
+			// marker.on('mouseout', function(e){
+			// 	this.closePopup();
+			// });
+			// var polygon = L.polygon([
+			// 		[-74.654951,40.347191],
+			// 		[-74.655758,40.346823],
+			// 		[-74.655391,40.346325],
+			// 		[-74.654569,40.346643]
+			// ]).addTo(mymap);
+			// polygon.bindPopup("Frist Campus Center");
+			// polygon.on('mouseover', function(e){
+			// 	this.openPopup();
+			// });
+			// polygon.on('mouseout', function(e){
+			// 	this.closePopup();
+			// });
+
+			var circle = L.circle([40.346911, -74.655236], {
+	    color: 'none',
+	    fillColor: rgba(200, 54, 54, 0.5),
+	    fillOpacity: 0.5,
+	    radius: 50
+			}).addTo(mymap);
+
+			circle.bindPopup("circle popup");
+			circle.on('mouseover', function(e){
+				this.openPopup();
+			});
+			circle.on('mouseout', function(e){
+				this.closePopup();
+			});
 			L.geoJson(buildingData, {style: style}).addTo(mymap);
       
 			
@@ -172,13 +207,7 @@ geojson = L.geoJson(buildingData, {
 			// });
 			
 			
-			// //popup code from maya
-			// var polygon = L.polygon([
-			// 		[-74.654951,40.347191],
-			// 		[-74.655758,40.346823],
-			// 		[-74.655391,40.346325],
-			// 		[-74.654569,40.346643]
-			// ]).addTo(mymap);
+		
 
 			// polygon.bindPopup("Frist Campus Center");
 
