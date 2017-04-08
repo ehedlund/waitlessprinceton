@@ -235,17 +235,6 @@
 		marker4.bindPopup("<b>Whitman</b><br>Dining Hall").openPopup();
 		marker5.bindPopup("<b>Dillon</b><br>Gym").openPopup();
 		marker6.bindPopup("<b>Forbes</b><br>Dining Hall").openPopup();
-			
-		var popup = L.popup();
-
-		function onMapClick(e) {
-		    popup
-			.setLatLng(e.latlng)
-			.setContent("You clicked the map at " + e.latlng.toString())
-			.openOn(mymap);
-		}
-
-		mymap.on('click', onMapClick);
 
 			
 		  var popup = L.popup({offset   : new L.Point(0,-24), 
