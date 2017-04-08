@@ -222,7 +222,32 @@
    		 	return div;
 		};
 		legend.addTo(mymap);
+			
+	        var marker1 = L.marker([40.34957, -74.65733]).addTo(mymap);
+		var marker2 = L.marker([40.34824, -74.66180]).addTo(mymap);
+		var marker3 = L.marker([40.3448, -74.65603]).addTo(mymap);
+		var marker4 = L.marker([40.34373, -74.65838]).addTo(mymap);
+		var marker5 = L.marker([40.34570, -74.65882]).addTo(mymap);
+		var marker6 = L.marker([40.34201, -74.66117]).addTo(mymap);
+		marker1.bindPopup("<b>Firestone</b><br>Library").openPopup();
+		marker2.bindPopup("<b>RoMa</b><br>Dining Hall").openPopup();
+		marker3.bindPopup("<b>WuCox</b><br>Dining Hall").openPopup();
+		marker4.bindPopup("<b>Whitman</b><br>Dining Hall").openPopup();
+		marker5.bindPopup("<b>Dillon</b><br>Gym").openPopup();
+		marker6.bindPopup("<b>Forbes</b><br>Dining Hall").openPopup();
+			
+		var popup = L.popup();
 
+		function onMapClick(e) {
+		    popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+			.openOn(mymap);
+		}
+
+		mymap.on('click', onMapClick);
+
+			
 		  var popup = L.popup({offset   : new L.Point(0,-24), 
 		  										className: 'some-class'})
 													.setLatLng(latlng)
