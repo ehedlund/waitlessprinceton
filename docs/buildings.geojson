@@ -10,7 +10,7 @@
       "properties": {
         "@id": "way/141230075",
         "building": "university",
-        "name": "Chancellor Green",
+        "name": "Chancellor Green Library",
         "density":5
       },
       "geometry": {
@@ -573,7 +573,7 @@
       "properties": {
         "@id": "way/27365000",
         "building": "university",
-        "name": "McCormick Hall",
+        "name": "Marquand Art Library",
         "density":75
       },
       "geometry": {
@@ -678,7 +678,7 @@
       "properties": {
         "@id": "way/40717868",
         "building": "university",
-        "name": "Wallace Social Science Center",
+        "name": "Stokes Library",
         "operator": "Princeton University",
         "density":500
       },
@@ -804,7 +804,7 @@
       "properties": {
         "@id": "way/40718191",
         "building": "university",
-        "name": "Architecture School",
+        "name": "Architecture Library",
         "density":50
       },
       "geometry": {
@@ -873,7 +873,7 @@
       "properties": {
         "@id": "way/40717843",
         "building": "university",
-        "name": "Friend Center",
+        "name": "Engineering Library",
         "density":350
       },
       "geometry": {
@@ -934,7 +934,7 @@
       "properties": {
         "@id": "way/141450295",
         "building": "dormitory",
-        "name": "Wu Hall",
+        "name": "Wu Dining Hall",
         "density": 90
       },
       "geometry": {
@@ -1047,7 +1047,7 @@
       "properties": {
         "@id": "way/141450294",
         "building": "dormitory",
-        "name": "Wilcox Hall",
+        "name": "Wilcox Dining Hall",
         "density":350
       },
       "geometry": {
@@ -1132,7 +1132,7 @@
       "properties": {
         "@id": "way/141297740",
         "building": "dormitory",
-        "name": "Madison Hall",
+        "name": "RoMa Dining Hall",
         "density":425
       },
       "geometry": {
@@ -1337,7 +1337,7 @@
       "properties": {
         "@id": "way/302942852",
         "building": "dormitory",
-        "name": "Forbes College",
+        "name": "Forbes Dining Hall",
         "density":50
       },
       "geometry": {
@@ -1598,6 +1598,7 @@
       "properties": {
         "@id": "way/210145781",
         "building": "dormitory",
+        "name": "Whitman Dining Hall",
         "density":50
       },
       "geometry": {
@@ -1790,7 +1791,7 @@
       "properties": {
         "@id": "way/148099033",
         "building": "university",
-        "name": "Center for Jewish Life",
+        "name": "Center for Jewish Life Dining Hall",
         "operator": "Princeton University",
         "density":390
       },
@@ -1905,7 +1906,7 @@
         "@id": "way/27341417",
         "building": "yes",
         "leisure": "sports_centre",
-        "name": "Dillon Gymnasium",
+        "name": "Dillon Gym",
         "density":350
       },
       "geometry": {
