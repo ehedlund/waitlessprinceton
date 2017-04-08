@@ -18,6 +18,9 @@
         maxZoom: 19,
         minZoom: 15,
       }).addTo(mymap);
+      
+      var marker = L.marker([40.347, -74.655]).addTo(mymap);
+      marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
     </script>
   </center>
 </html>
