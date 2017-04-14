@@ -234,13 +234,13 @@
 			// generate popup with chart
 			function showHistory(e) {
 				var options = {
-					maxWidth: 600
+					maxWidth: 500
 				};
 
 				var prop = e.target.feature.properties;
 				var popup = L.popup(options)
 					.setLatLng([prop.lat,prop.long])
-    				.setContent('<div id="curve_chart" style="width: 600px; height: 300px"></div>')
+    				.setContent('<div id="curve_chart" style="width: 500px; height: 300px"></div>')
     				.openOn(mymap);
     			drawChart(prop.name);
 			}
@@ -308,6 +308,7 @@
 	        		colors:['#E31A1C'],
 	          		curveType: 'function',
 	          		legend: {position: 'none'},
+	          		chartArea: {width: '85%', height: '80%'},
 	          		vAxis: {
 	          			viewWindowMode: 'explicit',
 	          			viewWindow: {
