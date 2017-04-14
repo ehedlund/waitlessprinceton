@@ -233,11 +233,10 @@
 
 			// generate popup with chart
 			function showHistory(e) {
-				
+				layer.closePopup();
 				var options = {
 					maxWidth: 500
 				};
-				.openOn(mymap);
 				var prop = e.target.feature.properties;
 				var popup = L.popup(options)
 					.setLatLng([prop.lat,prop.long])
