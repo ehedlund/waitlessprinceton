@@ -57,12 +57,7 @@
       <li>
         <a href="https://waitlessprinceton.herokuapp.com/statussite/"><span class="glyphicon glyphicon-bookmark"></span> Status Site </a>
       </li>
-    </ul> 
-    <ul class="nav navbar-nav navbar-right">
-      <li class="navbar-right">
-        <a href="https://devcenter.heroku.com"><span></span>Logout</a>
-      </li>
-    </ul>
+    </ul>   
   </div>
 </nav>
 
@@ -238,6 +233,7 @@
 
 			// generate popup with chart
 			function showHistory(e) {
+				
 				var options = {
 					maxWidth: 500
 				};
@@ -248,6 +244,8 @@
     				.setContent('<div id="curve_chart" style="width: 500px; height: 300px"></div>')
     				.openOn(mymap);
     			drawChart(prop.name);
+				.update();
+				.bindPopup(popup);
 			}
 
 			// draw chart
