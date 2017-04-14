@@ -233,18 +233,17 @@
 
 			// generate popup with chart
 			function showHistory(e) {
-				
+				layer.closePopup();
 				var options = {
 					maxWidth: 500
 				};
-
+				.openOn(mymap);
 				var prop = e.target.feature.properties;
 				var popup = L.popup(options)
 					.setLatLng([prop.lat,prop.long])
-    				.setContent('<div id="curve_chart" style="width: 500px; height: 300px"></div>')
-    				.openOn(mymap);
-    			drawChart(prop.name);
-				//.update();
+    					.setContent('<div id="curve_chart" style="width: 500px; height: 300px"></div>')
+    					.openOn(mymap);
+    				drawChart(prop.name);
 			}
 
 			// draw chart
