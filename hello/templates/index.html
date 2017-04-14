@@ -152,7 +152,7 @@
 			}).addTo(mymap);
 
 			// load hover box in top right
-			var info = L.control({position: 'bottomleft'});
+			var info = L.control({position: 'topright'});
 			info.onAdd = function(map) {
 				this._div = L.DomUtil.create('div', 'info');
 				this.update();
