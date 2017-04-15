@@ -8,6 +8,11 @@ def index(request):
     # return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
 
+def about(request):
+    return render(request, 'about.html')
+
+def casCGI(request):
+    return render(request, 'casCGI.html')
 
 def db(request):
 
