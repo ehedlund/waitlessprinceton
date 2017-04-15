@@ -1,7 +1,7 @@
 <html>
 	<!-- NAVBAR -->
 	<head>
-<title>waitLess</title>
+<title>waitLess </title>
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -119,9 +119,10 @@
 		</style>
 
 		<script>
-			// popup control
+			// popup variables
 			var popupId = 1;
-
+ 			var chartId = "curve_chart" + popupId;
+			
 			// load map
 			var mymap = L.map('mapid').setView([40.3463,-74.6593], 16.4);     
 			L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj19oscmj00582tqnyb4sabtq/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
@@ -239,17 +240,14 @@
 				var options = {
 					maxWidth: 500
 				};
-<<<<<<< HEAD
 
-=======
->>>>>>> b94611178ff919ab8c879a8e8e20737889f161b6
 				var prop = e.target.feature.properties;
 				var chartId = "curve_chart" + popupId;
 				var popup = L.popup(options)
 					.setLatLng([prop.lat,prop.long])
-    				.setContent('<div id="curve_chart" style="width: 500px; height: 300px"></div>')
+    				.setContent('<div id="' + chartId + '" style="width: 500px; height: 300px"></div>')
     				.openOn(mymap);
-    			popupId++;
+			popupId++;
     			drawChart(chartId, prop.name);
 			}
 
