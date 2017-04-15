@@ -4,7 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import hello.views
-import docs.views
+import docs
 
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
