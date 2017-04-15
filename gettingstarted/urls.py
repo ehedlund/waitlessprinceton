@@ -13,6 +13,6 @@ urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^about', hello.views.about),
-    url(r'^casCGI', hello.views.casCGI)
+    url(r'^casCGI', hello.views.casCGI),
     url(r'^admin/', include(admin.site.urls)),
 ]
