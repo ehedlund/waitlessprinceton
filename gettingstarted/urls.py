@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^db', hello.views.db, name='db'),
     url(r'^meettheteam', hello.views.about),
     url(r'^casCGI', hello.views.casCGI),
+    url(r'statussite', docs.statussite),
     url(r'^admin/', include(admin.site.urls)),
 ]
