@@ -5,13 +5,16 @@ admin.autodiscover()
 
 import hello.views
 #import docs
+import django_cas_ng.views
 
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
-    url(r'^$', hello.views.index, name='index'),
+    url(r'accounts/login/$', django_cas_ng.views.login),
+    url(r'accounts/logout/$', django_cas_ng.views.logout),
+    url(r'^$', login_required(hello.views.index), name='index'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^meettheteam', hello.views.about),
     url(r'^casCGI', hello.views.casCGI),
