@@ -16,8 +16,10 @@ urlpatterns = [
     url(r'accounts/logout/$', django_cas_ng.views.logout),
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
-    url(r'^meettheteam', hello.views.about),
-    url(r'^casCGI', hello.views.casCGI),
+    url(r'^about/$', hello.views.about,name='about'),
+    url(r'^casCGI/$', hello.views.casCGI,name='casCGI')
+    #url(r'^meet', hello.views.about),
+    #url(r'^casCGI', hello.views.casCGI),
     #url(r'statussite', docs.views.statussite),
     url(r'^admin/', include(admin.site.urls)),
 ]
