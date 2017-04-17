@@ -22,8 +22,14 @@ admin.autodiscover()
 #     url(r'^admin/', include(admin.site.urls)),
 # )
 
+#urlpatterns = [
+ #   url(r'^$', views.index),
+  #  url(r'^about', views.about),
+   # url(r'^casCGI', views.casCGI)
+#]
+
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^about', views.about),
-    url(r'^casCGI', views.casCGI)
+    url(r'^$', views.index, name='index'),
+    url(r'^about/$', views.about,name='about'),
+    url(r'^contact/$', views.contact,name='contact'),
 ]
