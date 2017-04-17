@@ -14,6 +14,9 @@ def index(request):
 def about(request):
     return render(request, 'about.html')
 
+def meet(request):
+    return render(request, 'meet.html')
+
 def casCGI(request):
     return render(request, 'casCGI.html')
 
