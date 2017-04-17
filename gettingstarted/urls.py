@@ -22,5 +22,5 @@ urlpatterns = [
     #url(r'^meet', hello.views.about),
     #url(r'^casCGI', hello.views.casCGI),
     #url(r'statussite', docs.views.statussite),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/$', include(admin.site.urls)),
 ]
