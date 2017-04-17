@@ -20,6 +20,9 @@ def meet(request):
 def casCGI(request):
     return render(request, 'casCGI.html')
 
+def status(request):
+    return render(request, 'status.html')
+
 def db(request):
 
     greeting = Greeting()
