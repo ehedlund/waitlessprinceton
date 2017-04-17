@@ -19,6 +19,6 @@ urlpatterns = [
     url(r'^about$', hello.views.about,name='about'),
     url(r'^meet$', hello.views.meet,name='meet'),
     url(r'^casCGI$', hello.views.casCGI,name='casCGI')
-    url(r'^status$', hello.views.status, name='status'),
+    #url(r'^status$', docs.views.status, name='status'),
     url(r'^admin/$', include(admin.site.urls)),
 ]
