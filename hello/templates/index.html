@@ -165,12 +165,26 @@
 				onEachFeature: onEachFeature
 			}).addTo(mymap);
 			
-			var wu = L.marker([-74.65605, 40.34477]).addTo(mymap),
-			    //wilcox    = L.marker([39.74, -104.99]).addTo(mymap),
-			    roma    = L.marker([-74.66184, 40.34821]).addTo(mymap),
-			    forbes    = L.marker([-74.66117, 40.34204]).addTo(mymap);
+			var wu = L.marker([-74.656507, 40.344702]).addTo(mymap),
+			    wilcox = L.marker([40.344808, -74.656113]).addTo(mymap),
+			    roma = L.marker([-74.66184, 40.34821]).addTo(mymap),
+			    forbes = L.marker([-74.66117, 40.34204]).addTo(mymap),
+			    whitman = L.marker([-74.657646, 40.344184]).addTo(mymap),
+			    cjl = L.marker([-74.653625, 40.346706]).addTo(mymap);
+			var dhalls = L.layerGroup([wu, wilcox, roma, forbes, whitman, cjl]);
 			
-			var dhalls = L.layerGroup([wu,roma,forbes]);
+			var dillon = L.marker([-74.658797, 40.345611]).addTo(mymap);
+			var gyms = L.layerGroup([dillon]);
+			
+			var green = L.marker([-74.658600, 40.349052]).addTo(mymap),
+			    firestone = L.marker([-74.657430, 40.349450]).addTo(mymap),
+			    lewis = L.marker([-74.652578, 40.346213]).addTo(mymap),
+			    marquand = L.marker([-74.658109, 40.347478]).addTo(mymap),
+			    stokes = L.marker([-74.653661, 40.349264]).addTo(mymap),
+			    arch = L.marker([-74.656081, 40.347865]).addTo(mymap),
+			    eng = L.marker([-74.652750, 40.350312]).addTo(mymap),
+			    frist = L.marker([-74.655142, 40.346740]).addTo(mymap);
+			var libraries = L.layerGroup([green, firestone, lewis, marquand, stokes, arch, eng, frist]);
 			
 			//var libraries2 = [
 			//	{"type":"Feature","id":"way/141230075","properties":{"@id":"way/141230075","building":"university","name":"Chancellor Green Library","density":d1,"lat":40.349052,"long":-74.658600,"max":1000},"geometry":{"type":"Polygon","coordinates":[[[-74.6584514,40.3490694],[-74.6584572,40.3490803],[-74.6583997,40.3490979],[-74.6583864,40.3490728],[-74.658353,40.349061],[-74.6583169,40.3490712],[-74.6582984,40.3490979],[-74.6583378,40.3491824],[-74.6583717,40.349197],[-74.6584143,40.3491859],[-74.6584259,40.3491591],[-74.6584177,40.3491384],[-74.6584771,40.3491247],[-74.658484,40.349142],[-74.6585745,40.3491782],[-74.6586773,40.3491535],[-74.6587308,40.3490774],[-74.6587859,40.3490635],[-74.6588184,40.3490815],[-74.6588666,40.3490695],[-74.6588723,40.3490401],[-74.6588393,40.3489624],[-74.6588031,40.3489438],[-74.6587638,40.3489551],[-74.6587488,40.3489821],[-74.6587551,40.3489961],[-74.658689,40.3490133],[-74.6586844,40.349003],[-74.6586,40.3489711],[-74.658509,40.3489932],[-74.6584514,40.3490694]]]}},
@@ -209,8 +223,8 @@
 			//var dhalls = L.featureGroup([dhalls2]);
 			
 			var overlayMaps = {
-			    //"Libraries": libraries,
-			    //"Gyms": gyms,
+			    "Libraries": libraries,
+			    "Gyms": gyms,
 			    "Dhalls": dhalls,
 			};
 			
