@@ -13,7 +13,8 @@
         "name": "Chancellor Green Library",
         "density":0,
         "lat":40.349052,
-        "long":-74.658600
+        "long":-74.658600,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -161,7 +162,8 @@
         "wheelchair": "yes",
         "density":0,
         "lat":40.349450,
-        "long":-74.657430
+        "long":-74.657430,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -427,7 +429,8 @@
         "wheelchair": "yes",
         "density":0,
         "lat":40.346213,
-        "long":-74.652578
+        "long":-74.652578,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -582,7 +585,8 @@
         "name": "Marquand Art Library",
         "density":0,
         "lat":40.347478,
-        "long":-74.658109
+        "long":-74.658109,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -690,7 +694,8 @@
         "operator": "Princeton University",
         "density":0,
         "lat":40.349264,
-        "long":-74.653661
+        "long":-74.653661,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -817,7 +822,8 @@
         "name": "Architecture Library",
         "density":0,
         "lat":40.347685,
-        "long":-74.656081
+        "long":-74.656081,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -888,7 +894,8 @@
         "name": "Engineering Library",
         "density":0,
         "lat":40.350312,
-        "long":-74.652750
+        "long":-74.652750,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -951,7 +958,8 @@
         "name": "Wu Dining Hall",
         "density":0,
         "lat":40.344702,
-        "long":-74.656507
+        "long":-74.656507,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -1066,7 +1074,8 @@
         "name": "Wilcox Dining Hall",
         "density":0,
         "lat":40.344808,
-        "long":-74.656113
+        "long":-74.656113,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -1153,7 +1162,8 @@
         "name": "RoMa Dining Hall",
         "density":0,
         "lat":40.348595,
-        "long":-74.662204
+        "long":-74.662204,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -1360,7 +1370,8 @@
         "name": "Forbes Dining Hall",
         "density":0,
         "lat":40.341876,
-        "long":-74.660979
+        "long":-74.660979,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -1623,7 +1634,8 @@
         "name": "Whitman Dining Hall",
         "density":0,
         "lat":40.344184,
-        "long":-74.657646
+        "long":-74.657646,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -1819,7 +1831,8 @@
         "operator": "Princeton University",
         "density":0,
         "lat":40.346706,
-        "long":-74.653625
+        "long":-74.653625,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -1935,7 +1948,8 @@
         "name": "Dillon Gym",
         "density":0,
         "lat":40.345611,
-        "long":-74.658797
+        "long":-74.658797,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
@@ -2116,7 +2130,8 @@
         "wheelchair": "yes",
         "density":0,
         "lat":40.346740,
-        "long":-74.655142
+        "long":-74.655142,
+        "max":1000
       },
       "geometry": {
         "type": "Polygon",
