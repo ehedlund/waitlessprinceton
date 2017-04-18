@@ -132,14 +132,14 @@
 			//	}).addTo(mymap);
 				
 			//var mymap = L.map('mapid', {layers: [basemap, libraries, gyms, dhalls]}).setView([40.346196, -74.656426], 16.4);     
-			var basemap = L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj19oscmj00582tqnyb4sabtq/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
-					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-					maxZoom: 18,
-					minZoom: 16
-				}).addTo(mymap);
-			var baseMaps = {
-			    "Basemap": basemap
-			};
+			//var basemap = L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj19oscmj00582tqnyb4sabtq/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
+			//		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			//		maxZoom: 18,
+			//		minZoom: 16
+			//	}).addTo(mymap);
+			//var baseMaps = {
+			  //  "Basemap": basemap
+			//};
 
 				
 			// generate random densities - can replace variable values with real data
@@ -165,25 +165,25 @@
 				onEachFeature: onEachFeature
 			}).addTo(mymap);
 			
-			var wu = L.marker([-74.656507, 40.344702]).addTo(mymap);
-			var wilcox = L.marker([-74.656113, 40.344808]).addTo(mymap);
-			var roma = L.marker([-74.66184, 40.34821]).addTo(mymap);
-			var forbes = L.marker([-74.66117, 40.34204]).addTo(mymap);
-			var whitman = L.marker([-74.657646, 40.344184]).addTo(mymap);
-			var cjl = L.marker([-74.653625, 40.346706]).addTo(mymap);
+			var wu = L.marker([-74.656507, 40.344702]).addTo(mymap),
+			    wilcox = L.marker([-74.656113, 40.344808]).addTo(mymap),
+			    roma = L.marker([-74.66184, 40.34821]).addTo(mymap),
+			    forbes = L.marker([-74.66117, 40.34204]).addTo(mymap),
+			    whitman = L.marker([-74.657646, 40.344184]).addTo(mymap),
+			    cjl = L.marker([-74.653625, 40.346706]).addTo(mymap),
 			var dhalls = L.layerGroup([wu, wilcox, roma, forbes, whitman, cjl]);
 			
 			var dillon = L.marker([-74.658797, 40.345611]).addTo(mymap);
 			var gyms = L.layerGroup([dillon]);
 			
-			var green = L.marker([-74.658600, 40.349052]).addTo(mymap);
-			var firestone = L.marker([-74.657430, 40.349450]).addTo(mymap);
-			var lewis = L.marker([-74.652578, 40.346213]).addTo(mymap);
-			var marquand = L.marker([-74.658109, 40.347478]).addTo(mymap);
-			var stokes = L.marker([-74.653661, 40.349264]).addTo(mymap);
-			var arch = L.marker([-74.656081, 40.347865]).addTo(mymap);
-			var eng = L.marker([-74.652750, 40.350312]).addTo(mymap);
-			var frist = L.marker([-74.655142, 40.346740]).addTo(mymap);
+			var green = L.marker([-74.658600, 40.349052]).addTo(mymap),
+			    firestone = L.marker([-74.657430, 40.349450]).addTo(mymap),
+			    lewis = L.marker([-74.652578, 40.346213]).addTo(mymap),
+			    marquand = L.marker([-74.658109, 40.347478]).addTo(mymap),
+			    stokes = L.marker([-74.653661, 40.349264]).addTo(mymap),
+			    arch = L.marker([-74.656081, 40.347865]).addTo(mymap),
+			    eng = L.marker([-74.652750, 40.350312]).addTo(mymap),
+			    frist = L.marker([-74.655142, 40.346740]).addTo(mymap);
 			var libraries = L.layerGroup([green, firestone, lewis, marquand, stokes, arch, eng, frist]);
 			
 			//var libraries2 = [
@@ -228,7 +228,7 @@
 			    "Dhalls": dhalls,
 			};
 			
-			L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+			L.control.layers(null, overlayMaps).addTo(mymap);
 			
 			// load hover box in top right
 			var info = L.control({position: 'topright'});
