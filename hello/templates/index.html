@@ -166,6 +166,12 @@
 			}).addTo(mymap);
 			
 			// get icons
+			//Request access token (see https://www.mapbox.com/api-documentation/?language=CLI#access-tokens)
+			var accessToken = prompt("Please enter your Mapbox API access token");
+			if (!accessToken) {
+			    alert("Valid Mapbox API access token is required");
+			}
+			L.MakiMarkers.accessToken = accessToken;
 			//L.MakiMarkers.accessToken = "<pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA>";
 			var icon1 = L.MakiMarkers.icon({icon: "fast-food", color: "#b0b", size: "m"});
 			L.marker([40.344325, -74.6535555], {icon: icon1}).addTo(mymap);
