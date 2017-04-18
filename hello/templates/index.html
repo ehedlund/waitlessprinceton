@@ -127,8 +127,8 @@
 			var mymap = L.map('mapid').setView([40.3463,-74.6593], 16.4);     
 			L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj19oscmj00582tqnyb4sabtq/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
 					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-					maxZoom: 19,
-					minZoom: 15,
+					maxZoom: 18,
+					minZoom: 16,
 				}).addTo(mymap);
 			// generate random densities - can replace variable values with real data
 			var d1 = Math.round(Math.random() * 1000);
@@ -295,7 +295,7 @@
 				]);
 	        	var options = {
 	        		title: 'Daily Traffic - ' + name,
-	        		colors:['#E31A1C'],
+	        		colors:['#E50000'],
 	          		curveType: 'function',
 	          		legend: {position: 'none'},
 	          		chartArea: {width: '85%', height: '80%'},
