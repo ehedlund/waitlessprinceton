@@ -229,7 +229,7 @@
 			L.control.layers(baseMaps, overlayMaps, {position:'topleft'}).addTo(mymap);
 			
 			// load hover box in top right
-			var info = L.control({position: 'topleft'});
+			var info = L.control({position: 'topright'});
 			info.onAdd = function(map) {
 				this._div = L.DomUtil.create('div', 'info');
 				this.update();
@@ -240,7 +240,7 @@
 			};
 			info.addTo(mymap);
 			// load legend in bottom right
-			var legend = L.control({position: 'topright'});
+			var legend = L.control({position: 'bottomright'});
 			legend.onAdd = function(map) {
 				var div = L.DomUtil.create('div', 'info legend'),
 				grades = [0, 20, 40, 60, 80, 100],
