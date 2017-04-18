@@ -164,25 +164,24 @@
 				onEachFeature: onEachFeature
 			}).addTo(mymap);
 			
-			var wu = L.marker([40.344702, -74.656507]).addTo(mymap),
-			    wilcox = L.marker([40.344808, -74.656113]).addTo(mymap),
-			    roma = L.marker([40.34821, -74.66184]).addTo(mymap),
-			    forbes = L.marker([40.34204, -74.66117]).addTo(mymap),
-			    whitman = L.marker([40.344184, -74.657646]).addTo(mymap),
-			    cjl = L.marker([40.346706, -74.653625]).addTo(mymap);
-			var dhalls = L.layerGroup([wu, wilcox, roma, forbes, whitman, cjl]);
+			var wilcox = L.marker([40.344808, -74.656113]),
+			    roma = L.marker([40.34821, -74.66184]),
+			    forbes = L.marker([40.34204, -74.66117]),
+			    whitman = L.marker([40.344184, -74.657646]),
+			    cjl = L.marker([40.346706, -74.653625]);
+			var dhalls = L.layerGroup([wilcox, roma, forbes, whitman, cjl]);
 			
-			var dillon = L.marker([40.345611, -74.658797]).addTo(mymap);
+			var dillon = L.marker([40.345611, -74.658797]);
 			var gyms = L.layerGroup([dillon]);
 			
-			var green = L.marker([40.349052, -74.658600]).addTo(mymap),
-			    firestone = L.marker([40.349450, -74.657430]).addTo(mymap),
-			    lewis = L.marker([40.346213, -74.652578]).addTo(mymap),
-			    marquand = L.marker([40.347478, -74.658109]).addTo(mymap),
-			    stokes = L.marker([40.349264, -74.653661]).addTo(mymap),
-			    arch = L.marker([40.347865, -74.656081]).addTo(mymap),
-			    eng = L.marker([40.350312, -74.652750]).addTo(mymap),
-			    frist = L.marker([40.346740, -74.655142]).addTo(mymap);
+			var green = L.marker([40.349052, -74.658600]),
+			    firestone = L.marker([40.349450, -74.657430]),
+			    lewis = L.marker([40.346213, -74.652578]),
+			    marquand = L.marker([40.347478, -74.658109]),
+			    stokes = L.marker([40.349264, -74.653661]),
+			    arch = L.marker([40.347865, -74.656081]),
+			    eng = L.marker([40.350312, -74.652750]),
+			    frist = L.marker([40.346740, -74.655142]);
 			var libraries = L.layerGroup([green, firestone, lewis, marquand, stokes, arch, eng, frist]);
 			
 			//var libraries2 = [
