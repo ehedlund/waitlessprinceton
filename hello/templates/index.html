@@ -190,9 +190,9 @@
 				{"type":"Feature","id":"way/148099033","properties":{"@id":"way/148099033","building":"university","name":"Center for Jewish Life Dining Hall","operator":"Princeton University","density":d13,"lat":40.346706,"long":-74.653625,"max":1000},"geometry":{"type":"Polygon","coordinates":[[[-74.6538162,40.3466198],[-74.6538616,40.3465647],[-74.6538484,40.3465156],[-74.6537921,40.3464931],[-74.6537304,40.3465074],[-74.6536875,40.3465565],[-74.6535281,40.3466183],[-74.65354,40.3466362],[-74.6534541,40.3466403],[-74.6533884,40.3466064],[-74.65334,40.346661],[-74.6533871,40.3466853],[-74.6533949,40.346714],[-74.6535135,40.3468753],[-74.6536473,40.3468181],[-74.6536363,40.3467814],[-74.6537414,40.3467371],[-74.6537543,40.3467549],[-74.6538195,40.3467662],[-74.6538321,40.3467242],[-74.6538149,40.3467007],[-74.6538612,40.3466811],[-74.6538312,40.34664],[-74.6538162,40.3466198]]]}}
 			];
 			
-			var geojson1 = L.geoJson(libraries2);
-			var geojson2 = L.geoJson(gyms2);
-			var geojson3 = L.geoJson(dhalls2);
+			var geojson1 = L.geoJson(libraries2).addTo(mymap);
+			var geojson2 = L.geoJson(gyms2).addTo(mymap);
+			var geojson3 = L.geoJson(dhalls2).addTo(mymap);
 			
 			var libraries = L.featureGroup([libraries2]);
 			var gyms = L.featureGroup([gyms2]);
