@@ -114,7 +114,6 @@
 				position: absolute;
 				top: 50; right: 0; bottom: 0; left: 0;
 			}
-			
 		</style>
 
 		<script>
@@ -167,23 +166,20 @@
             	layers: [campusMap]
             });
 
-            // layer controls
-            var baseMaps = {
-            	"Campus": campusMap
-            };
+            // set up layers
             var overlayMaps = {
             	"Frist": gjFrist,
             	"Dillon": gjDillon,
                 "Dining Halls": gjDin,
                 "Libraries": gjLib
             };
-            L.control.layers(baseMaps, overlayMaps, {position:'bottomleft'}).addTo(mymap);
+            L.control.layers(null, overlayMaps, {position:'bottomleft'}).addTo(mymap);
             gjDin.addTo(mymap);
             gjLib.addTo(mymap);
             gjFrist.addTo(mymap);
             gjDillon.addTo(mymap);
             
-			// load hover box in top right
+			// load hover box
 			var info = L.control({position: 'topright'});
 			info.onAdd = function(map) {
 				this._div = L.DomUtil.create('div', 'info');
@@ -195,7 +191,7 @@
 			};
 			info.addTo(mymap);
 
-			// load legend in bottom right
+			// load legend
 			var legend = L.control({position: 'bottomright'});
 			legend.onAdd = function(map) {
 				var div = L.DomUtil.create('div', 'info legend'),
