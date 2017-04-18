@@ -226,7 +226,7 @@
 			    "Dhalls": dhalls,
 			};
 			
-			L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+			L.control.layers(baseMaps, overlayMaps, {position:'topleft'}).addTo(mymap);
 			
 			// load hover box in top right
 			var info = L.control({position: 'topleft'});
@@ -240,7 +240,7 @@
 			};
 			info.addTo(mymap);
 			// load legend in bottom right
-			var legend = L.control({position: 'bottomright'});
+			var legend = L.control({position: 'topright'});
 			legend.onAdd = function(map) {
 				var div = L.DomUtil.create('div', 'info legend'),
 				grades = [0, 20, 40, 60, 80, 100],
