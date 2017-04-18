@@ -70,6 +70,7 @@
 		<!-- leaflet includes -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+		<script src="Leaflet.MakiMarkers.js"></script>
 
 		<!-- chart generation script -->
 	    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -164,11 +165,15 @@
 				onEachFeature: onEachFeature
 			}).addTo(mymap);
 			
-			var wilcox = L.marker([40.344808, -74.656113]),
-			    roma = L.marker([40.34821, -74.66184]),
-			    forbes = L.marker([40.34204, -74.66117]),
-			    whitman = L.marker([40.344184, -74.657646]),
-			    cjl = L.marker([40.346706, -74.653625]);
+			// get icons
+			L.MakiMarkers.accessToken = "<pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA>";
+			var icon1 = L.MakiMarkers.icon({icon: "fast-food", color: null, size: "m"});
+			
+			var wilcox = L.marker([40.344808, -74.656113], {icon: icon1}),
+			    roma = L.marker([40.34821, -74.66184], {icon: icon1}),
+			    forbes = L.marker([40.34204, -74.66117], {icon: icon1}),
+			    whitman = L.marker([40.344184, -74.657646], {icon: icon1}),
+			    cjl = L.marker([40.346706, -74.653625], {icon: icon1});
 			var dhalls = L.layerGroup([wilcox, roma, forbes, whitman, cjl]);
 			
 			var dillon = L.marker([40.345611, -74.658797]);
