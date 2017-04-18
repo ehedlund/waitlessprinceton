@@ -169,6 +169,14 @@
 			//L.MakiMarkers.accessToken = "<pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA>";
 			//var icon1 = L.MakiMarkers.icon({icon: "fast-food", color: "#b0b", size: "m"});
 			//L.marker([40.344325, -74.6535555], {icon: icon1}).addTo(mymap);
+			var icon = L.icon({
+			    iconUrl: 'fast-food-11.svg',
+
+			    iconSize:     [38, 95], // size of the icon
+			    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+			    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+			});
+			L.marker([40.344808, -74.656113], {icon: icon}).addTo(mymap);
 			
 			var wilcox = L.marker([40.344808, -74.656113]),
 			    roma = L.marker([40.34821, -74.66184]),
