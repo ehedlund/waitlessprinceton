@@ -132,14 +132,14 @@
 			//	}).addTo(mymap);
 				
 			//var mymap = L.map('mapid', {layers: [basemap, libraries, gyms, dhalls]}).setView([40.346196, -74.656426], 16.4);     
-			//var basemap = L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj19oscmj00582tqnyb4sabtq/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
-			//		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			//		maxZoom: 18,
-			//		minZoom: 16
-			//	}).addTo(mymap);
-			//var baseMaps = {
-			  //  "Basemap": basemap
-			//};
+			var campusMap = L.tileLayer('https://api.mapbox.com/styles/v1/waitlessprinceton/cj19oscmj00582tqnyb4sabtq/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA', {
+					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+					maxZoom: 18,
+					minZoom: 16
+				}).addTo(mymap);
+			var baseMaps = {
+			    "Basemap": campusMap
+			};
 
 				
 			// generate random densities - can replace variable values with real data
@@ -228,7 +228,7 @@
 			    "Dhalls": dhalls,
 			};
 			
-			L.control.layers(null, overlayMaps).addTo(mymap);
+			L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 			
 			// load hover box in top right
 			var info = L.control({position: 'topright'});
