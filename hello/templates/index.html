@@ -168,12 +168,13 @@
 			// get icons
 			L.MakiMarkers.accessToken = "<pk.eyJ1Ijoid2FpdGxlc3NwcmluY2V0b24iLCJhIjoiY2oweTF2ZG5rMDFqZjMzbzJnbWJ1MGxmcCJ9.M-_AnWBdd7urxxR2Ks-iUA>";
 			var icon1 = L.MakiMarkers.icon({icon: "fast-food", color: "#b0b", size: "m"});
+			L.marker([40.344325, -74.6535555], {icon: icon1}).addTo(mymap);
 			
-			var wilcox = L.marker([40.344808, -74.656113], {icon: icon1}).addTo(mymap),
-			    roma = L.marker([40.34821, -74.66184], {icon: icon1}).addTo(mymap),
-			    forbes = L.marker([40.34204, -74.66117], {icon: icon1}).addTo(mymap),
-			    whitman = L.marker([40.344184, -74.657646], {icon: icon1}).addTo(mymap),
-			    cjl = L.marker([40.346706, -74.653625], {icon: icon1}).addTo(mymap);
+			var wilcox = L.marker([40.344808, -74.656113]),
+			    roma = L.marker([40.34821, -74.66184]),
+			    forbes = L.marker([40.34204, -74.66117]),
+			    whitman = L.marker([40.344184, -74.657646]),
+			    cjl = L.marker([40.346706, -74.653625]);
 			var dhalls = L.layerGroup([wilcox, roma, forbes, whitman, cjl]);
 			
 			var dillon = L.marker([40.345611, -74.658797]);
