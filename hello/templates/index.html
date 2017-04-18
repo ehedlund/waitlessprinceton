@@ -164,14 +164,8 @@
 				style: style,
 				onEachFeature: onEachFeature
 			}).addTo(mymap);
-			
-			// get icons
-			var icon = L.icon({
-				iconUrl:'fast-food-11.svg',
-				iconSize: [20, 20]
-				});
 
-			var wilcox = L.marker([40.344808, -74.656113], {icon:icon}),
+			var wilcox = L.marker([40.344808, -74.656113]),
 			    roma = L.marker([40.34821, -74.66184]),
 			    forbes = L.marker([40.34204, -74.66117]),
 			    whitman = L.marker([40.344184, -74.657646]),
