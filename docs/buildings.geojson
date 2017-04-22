@@ -14,7 +14,7 @@
         "density":0,
         "lat":40.349052,
         "long":-74.658600,
-        "max":1000
+        "max":115
       },
       "geometry": {
         "type": "Polygon",
@@ -163,7 +163,7 @@
         "density":0,
         "lat":40.349450,
         "long":-74.657430,
-        "max":1000
+        "max":3592
       },
       "geometry": {
         "type": "Polygon",
@@ -430,7 +430,7 @@
         "density":0,
         "lat":40.346213,
         "long":-74.652578,
-        "max":1000
+        "max":1335
       },
       "geometry": {
         "type": "Polygon",
@@ -586,7 +586,7 @@
         "density":0,
         "lat":40.347478,
         "long":-74.658109,
-        "max":1000
+        "max":140
       },
       "geometry": {
         "type": "Polygon",
@@ -695,7 +695,7 @@
         "density":0,
         "lat":40.349264,
         "long":-74.653661,
-        "max":1000
+        "max":149
       },
       "geometry": {
         "type": "Polygon",
@@ -823,7 +823,7 @@
         "density":0,
         "lat":40.347685,
         "long":-74.656081,
-        "max":1000
+        "max":40
       },
       "geometry": {
         "type": "Polygon",
@@ -895,7 +895,7 @@
         "density":0,
         "lat":40.350312,
         "long":-74.652750,
-        "max":1000
+        "max":284
       },
       "geometry": {
         "type": "Polygon",
@@ -959,7 +959,7 @@
         "density":0,
         "lat":40.344702,
         "long":-74.656507,
-        "max":1000
+        "max":285
       },
       "geometry": {
         "type": "Polygon",
@@ -1163,7 +1163,7 @@
         "density":0,
         "lat":40.348595,
         "long":-74.662204,
-        "max":1000
+        "max":474
       },
       "geometry": {
         "type": "Polygon",
@@ -1371,7 +1371,7 @@
         "density":0,
         "lat":40.341876,
         "long":-74.660979,
-        "max":1000
+        "max":277
       },
       "geometry": {
         "type": "Polygon",
@@ -1635,7 +1635,7 @@
         "density":0,
         "lat":40.344184,
         "long":-74.657646,
-        "max":1000
+        "max":355
       },
       "geometry": {
         "type": "Polygon",
@@ -1832,7 +1832,7 @@
         "density":0,
         "lat":40.346706,
         "long":-74.653625,
-        "max":1000
+        "max":91
       },
       "geometry": {
         "type": "Polygon",
@@ -1949,7 +1949,7 @@
         "density":0,
         "lat":40.345611,
         "long":-74.658797,
-        "max":1000
+        "max":3665
       },
       "geometry": {
         "type": "Polygon",
@@ -2131,7 +2131,7 @@
         "density":0,
         "lat":40.346740,
         "long":-74.655142,
-        "max":1000
+        "max":4836
       },
       "geometry": {
         "type": "Polygon",
