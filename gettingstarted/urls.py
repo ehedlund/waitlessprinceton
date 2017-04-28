@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^db$', hello.views.db, name='db'),
     url(r'^about$', hello.views.about,name='about'),
     url(r'^status$', hello.views.status, name='status'),
-    url(r'^admin/$', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 ]
