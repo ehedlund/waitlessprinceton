@@ -9,7 +9,7 @@ class Building(models.Model):
     Model representing a building (but not the history of the building).
     """
     name = models.CharField(max_length=50) # building name
-    current = models.IntegerField(min_value=0) # current traffic
+    current = models.IntegerField() # current traffic
     
     def __str__(self):
         """
@@ -25,7 +25,7 @@ class BuildingInstance(models.Model):
     """
     building = models.ForeignKey('Building', on_delete=models.SET_NULL, null=True) # associated building
     datetime = models.DateTimeField(auto_now=False, auto_now_add=False) # datetime of the measurement
-    traffic = models.IntegerField(min_value=0) # traffic at datetime
+    traffic = models.IntegerField() # traffic at datetime
 
     class Meta:
         ordering = ["-datetime"] # sort on measurement date
