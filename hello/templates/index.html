@@ -125,14 +125,12 @@
 		<!-- map positioning -->
 		<style>
 		#mapid {
-			width: 100vw;
-       			height: 100vh;
+			position: absolute;
+			top: 50; right: 50; bottom: 50; left: 50;
 		}
 		</style>
 
 		<script>
-			//position: absolute;
-			//top: 50; right: 50; bottom: 50; left: 50;
 			
 		// popup variables
 		var popupId = 1;
@@ -370,12 +368,12 @@
 			style: function(data){
 				return {
 				stroke: false,
-				color: getColor(feature.properties.density/feature.properties.max * 100),
+				//color: getColor(feature.properties.density/feature.properties.max * 100),
 				fillOpacity: 1
 				}
 			},
 			onEachFeature: function(feature, layer) {
-				layer.bingTooltip(feature.properties.name);
+				layer.bindTooltip(feature.properties.name);
 			},
 			waitToUpdateMap: true
 			});
