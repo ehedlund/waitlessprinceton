@@ -71,6 +71,7 @@
 		<!-- leaflet includes -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+		<script src="../lib/leaflet.timeline.js"></script>
 
 		<!-- chart generation script -->
 	    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -103,6 +104,15 @@
 				float: left;
 				margin-right: 8px;
 				opacity: 0.7;
+			}
+			.leaflet-bottom.leaflet-left{
+			width: 98%;
+		      }
+		      .leaflet-control-container .leaflet-timeline-controls{
+			box-sizing: border-box;
+			width: 100%;
+
+			margin-bottom: 15px;
 			}
 		</style>
 	</head>
@@ -351,8 +361,7 @@
 	      	}
 			
 		// SLIDER
-		function onLoadData(data){
-			var timeline = L.timeline(data, {
+		var timeline = L.timeline(data, {
 			style: function(data){
 				return {
 				stroke: false,
@@ -368,14 +377,13 @@
 			
 			var timelineControl = L.timelineSliderControl({
 				formatOutput: function(date){
-					return moment(date).format("MM-DD");
+					return moment(date).format("MM-DD HH:MM");
 				},
 				enableKeyBoardControls: true
 			});
 			timeline.addTo(mymap);
 			timelineControl.addTo(mymap);
 			timelineControl.addTimelines(timeline);
-		}
 		</script>
 	</body>
 </html>
