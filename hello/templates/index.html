@@ -66,11 +66,11 @@
 </body>
 
 	{% block content %}{% endblock %}
-	
 	<head>
 		<!-- leaflet includes -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+		
+		<script src="leaflet-src.js"></script>
 		<script src="leaflet.timeline.js"></script>
 		
 		<link href="leaflet.css" rel="stylesheet">
@@ -131,7 +131,7 @@
 		</style>
 
 		<script>
-			
+			//<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 		// popup variables
 		var popupId = 1;
  		var chartId = "curve_chart" + popupId;
