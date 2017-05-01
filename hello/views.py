@@ -9,12 +9,18 @@ import views
 from .models import Greeting
 
 from django.contrib.auth.decorators import login_required
+from __main__ import *
 
 # Create your views here.
 @login_required
 def index(request):
     # return HttpResponse('Hello from Python!')
-    return render(request, 'index.html')
+    return render(
+      request, 
+      'index.html',
+      #context={'json_data':json_data},
+      context={'data':data},
+    )
 
 def about(request):
     return render(request, 'about.html')
@@ -44,8 +50,7 @@ def status(request):
 #@view_config(route_name='home', renderer='templates/load_data.py')
 #@exception_view_config(ValidationFailure, route_name='home')
 #@view_config(renderer='json')
-def load_json(request):
-    return render(request, 'index.html', json_data)
+#    return render(request, 'index.html', json_data)
 
 def db(request):
 
@@ -55,4 +60,3 @@ def db(request):
     greetings = Greeting.objects.all()
 
     return render(request, 'db.html', {'greetings': greetings})
-
