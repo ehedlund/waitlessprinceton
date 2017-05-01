@@ -41,7 +41,7 @@ def casCGI(request):
 def status(request):
     return render(request, 'status.html')
 
-@view_config(route_name='home', renderer='templates/load_data.py')
+#@view_config(route_name='home', renderer='templates/load_data.py')
 #@exception_view_config(ValidationFailure, route_name='home')
 #@view_config(renderer='json')
 def load_json(request):
