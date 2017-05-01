@@ -27,11 +27,8 @@ def status(request):
     return render(request, 'status.html')
 
 @view_config(renderer='json')
-def (request):
+def load_json(request):
     return json_data
-
-def load(request):
-    return JsonResponse
 
 def db(request):
 
