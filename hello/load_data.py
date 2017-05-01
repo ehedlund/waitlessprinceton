@@ -5,6 +5,7 @@ import views
 # sys.path.append(your_djangoproject_home)
 # os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
+global data
 data = {}
 dillonOcc = 0
 fristOcc = 0
@@ -18,6 +19,4 @@ with open('current_stats') as f:
 			fristOcc += int(split[2])
 	data['Dillon-Gym'] = dillonOcc
 	data['Frist-Campus'] = fristOcc
-	json_data = json.dumps(data)
-
-print json_data
+	#json_data = json.dumps(data)
