@@ -28,7 +28,7 @@ def status(request):
 
 @view_config(renderer='json')
 def load_json(request):
-    return json_data
+    return render(request, json_data)
 
 def db(request):
 
