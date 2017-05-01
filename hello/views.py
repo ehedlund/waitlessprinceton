@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from pyramid.view import view_config
+
 from .models import Greeting
 
 from django.contrib.auth.decorators import login_required
@@ -22,6 +24,10 @@ def casCGI(request):
 
 def status(request):
     return render(request, 'status.html')
+
+@view_config(renderer='json')
+def (request):
+    return json_data
 
 def db(request):
 
