@@ -4,7 +4,7 @@ from django.http import JsonResponse
 
 import json
 import views
-#from pyramid.view import view_config
+from pyramid.view import view_config
 
 from .models import Greeting
 
