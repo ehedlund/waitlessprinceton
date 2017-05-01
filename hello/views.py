@@ -41,6 +41,7 @@ def casCGI(request):
 def status(request):
     return render(request, 'status.html')
 
+@view_config(route_name='home', renderer='templates/load_data.py')
 #@view_config(renderer='json')
 def load_json(request):
     return render(request, 'index.html', json_data)
