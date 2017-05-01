@@ -5,8 +5,8 @@ import json
 # os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
 data = {}
-dillonOcc = 0
-fristOcc = 0
+dillonOccupancy = 0
+fristOccupancy = 0
 
 with open('current_stats') as f:
 	for line in f:
@@ -15,8 +15,8 @@ with open('current_stats') as f:
 			dillonOcc += int(split[2])
 		if split[0] == "Frist-Campus-Center":
 			fristOcc += int(split[2])
-	data['Dillon-Gym'] = dillonOcc
-	data['Frist-Campus'] = fristOcc
+	data['Dillon-Gym'] = dillonOccupancy
+	data['Frist-Campus'] = fristOccupancy
 	json_data = json.dumps(data)
 
 print 'JSON: ', json_data
