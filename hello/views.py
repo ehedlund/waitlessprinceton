@@ -15,7 +15,7 @@ from __main__ import *
 # Create your views here.
 @login_required
 def index(request):
-    occs = {}
+    #occs = {}
     dillonOcc = 0
     fristOcc = 0
 
@@ -30,14 +30,14 @@ def index(request):
           dillonOcc += int(split[2])
         if split[0] == "Frist-Campus-Center":
           fristOcc += int(split[2])
-      occs['Dillon-Gym'] = dillonOcc
-      occs['Frist-Campus'] = fristOcc
+      #occs['Dillon-Gym'] = dillonOcc
+      #occs['Frist-Campus'] = fristOcc
 
     return render(
       request, 
       'index.html',
       #context={'json_data':json_data},
-      context={'occs':occs},
+      context={'dillonOcc':dillonOcc, 'fristOcc':fristOcc},
     )
 
 def about(request):
