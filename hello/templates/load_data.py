@@ -18,5 +18,3 @@ with open('current_stats') as f:
 	data['Dillon-Gym'] = dillonOcc
 	data['Frist-Campus'] = fristOcc
 	json_data = json.dumps(data)
-
-print 'JSON: ', json_data
