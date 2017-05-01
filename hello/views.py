@@ -4,7 +4,7 @@ from django.http import JsonResponse
 
 import json
 import views
-from pyramid.view import view_config
+#from pyramid.view import view_config
 
 from .models import Greeting
 
@@ -42,7 +42,7 @@ def status(request):
     return render(request, 'status.html')
 
 @view_config(route_name='home', renderer='templates/load_data.py')
-@exception_view_config(ValidationFailure, route_name='home')
+#@exception_view_config(ValidationFailure, route_name='home')
 #@view_config(renderer='json')
 def load_json(request):
     return render(request, 'index.html', json_data)
