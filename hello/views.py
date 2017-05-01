@@ -14,12 +14,26 @@ from __main__ import *
 # Create your views here.
 @login_required
 def index(request):
+    occs = {}
+    dillonOcc = 0
+    fristOcc = 0
+
+    with open('current_stats') as f:
+      for line in f:
+        split = line.split()
+        if split[0] == "Dillon-Gym":
+          dillonOcc += int(split[2])
+        if split[0] == "Frist-Campus-Center":
+          fristOcc += int(split[2])
+      occs['Dillon-Gym'] = dillonOcc
+      occs['Frist-Campus'] = fristOcc
+
     # return HttpResponse('Hello from Python!')
     return render(
       request, 
       'index.html',
       #context={'json_data':json_data},
-      context={'data':data},
+      context={'occs':occs},
     )
 
 def about(request):
