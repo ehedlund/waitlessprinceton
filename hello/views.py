@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
 
 from pyramid.view import view_config
 
@@ -28,6 +29,9 @@ def status(request):
 @view_config(renderer='json')
 def (request):
     return json_data
+
+def load(request):
+    return JsonResponse
 
 def db(request):
 
