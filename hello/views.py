@@ -4,6 +4,7 @@ from django.http import JsonResponse
 
 import json
 import views
+import os
 #from pyramid.view import view_config
 
 from .models import Greeting
@@ -18,7 +19,11 @@ def index(request):
     dillonOcc = 0
     fristOcc = 0
 
-    with open('/static/hello/current_stats') as f:
+    script_dir = os.path.dirname(__file__)
+    rel_path = "static/hello/current_stats"
+    abs_file_path = os.path.join(script_dir, rel_path)
+
+    with open(abs_file_path) as f:
       for line in f:
         split = line.split()
         if split[0] == "Dillon-Gym":
@@ -28,9 +33,6 @@ def index(request):
       occs['Dillon-Gym'] = dillonOcc
       occs['Frist-Campus'] = fristOcc
 
-      print occs
-
-    # return HttpResponse('Hello from Python!')
     return render(
       request, 
       'index.html',
