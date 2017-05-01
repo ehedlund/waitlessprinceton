@@ -24,17 +24,17 @@ def casCGI(request):
     return render(request, 'casCGI.html')
 
 #logout for CAS???
-def logout(request, next_page=None):
-    """Redirects to CAS logout page"""
+#def logout(request, next_page=None):
+ #   """Redirects to CAS logout page"""
 
-    from django.contrib.auth import logout
-    logout(request)
-    if not next_page:
-        next_page = _redirect_url(request)
-    if settings.CAS_LOGOUT_COMPLETELY:
-        return HttpResponseRedirect(_logout_url(request, next_page))
-    else:
-        return HttpResponseRedirect(next_page)
+  #  from django.contrib.auth import logout
+   # logout(request)
+   # if not next_page:
+   #     next_page = _redirect_url(request)
+   # if settings.CAS_LOGOUT_COMPLETELY:
+    #    return HttpResponseRedirect(_logout_url(request, next_page))
+   # else:
+    #    return HttpResponseRedirect(next_page)
 
 def status(request):
     return render(request, 'status.html')
