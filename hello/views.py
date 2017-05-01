@@ -18,7 +18,7 @@ def index(request):
     dillonOcc = 0
     fristOcc = 0
 
-    with open('current_stats') as f:
+    with open('static/hello/current_stats') as f:
       for line in f:
         split = line.split()
         if split[0] == "Dillon-Gym":
