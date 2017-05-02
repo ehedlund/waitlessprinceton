@@ -268,80 +268,6 @@
 				info.update();
 			}
 
-			// draw chart
-			function drawChart(elem, name) {
-				// generate random traffic levels - can replace variable values with real data
-				var t1 = Math.round(Math.random() * 1000);
-				var t2 = Math.round(Math.random() * 1000);
-				var t3 = Math.round(Math.random() * 1000);
-				var t4 = Math.round(Math.random() * 1000);
-				var t5 = Math.round(Math.random() * 1000);
-				var t6 = Math.round(Math.random() * 1000);
-				var t7 = Math.round(Math.random() * 1000);
-				var t8 = Math.round(Math.random() * 1000);
-				var t9 = Math.round(Math.random() * 1000);
-				var t10 = Math.round(Math.random() * 1000);
-				var t11 = Math.round(Math.random() * 1000);
-				var t12 = Math.round(Math.random() * 1000);
-				var t13 = Math.round(Math.random() * 1000);
-				var t14 = Math.round(Math.random() * 1000);
-				var t15 = Math.round(Math.random() * 1000);
-				var t16 = Math.round(Math.random() * 1000);
-				var t17 = Math.round(Math.random() * 1000);
-				var t18 = Math.round(Math.random() * 1000);
-				var t19 = Math.round(Math.random() * 1000);
-				var t20 = Math.round(Math.random() * 1000);
-				var t21 = Math.round(Math.random() * 1000);
-				var t22 = Math.round(Math.random() * 1000);
-				var t23 = Math.round(Math.random() * 1000);
-				var t24 = Math.round(Math.random() * 1000);
-				var t25 = Math.round(Math.random() * 1000);
-				var data = google.visualization.arrayToDataTable([
-					['Time', 'Traffic'],
-					['8:00',  t1],
-					['8:30',  t2],
-					['9:00',  t3],
-					['9:30',  t4],
-					['10:00',  t5],
-					['10:30',  t6],
-					['11:00',  t7],
-					['11:30',  t8],
-					['12:00',  t9],
-					['12:30',  t10],
-					['1:00',  t11],
-					['1:30', t12],
-					['2:00', t13],
-					['2:30', t14],
-					['3:00', t15],
-					['3:30', t16],
-					['4:00', t17],
-					['4:30', t18],
-					['5:00', t19],
-					['5:30', t20],
-					['6:00', t21],
-					['6:30', t22],
-					['7:00', t23],
-					['7:30', t24],
-					['8:00', t25]
-				]);
-	        	var options = {
-	        		title: 'Daily Traffic - ' + name,
-	        		colors:['#E50000'],
-	          		curveType: 'function',
-	          		legend: {position: 'none'},
-	          		chartArea: {width: '85%', height: '80%'},
-	          		vAxis: {
-	          			viewWindowMode: 'explicit',
-	          			viewWindow: {
-	          				min: 0
-	          			}
-	          		}
-	        	};
-	        	var container = document.getElementById(elem);
-	        	var chart = new google.visualization.LineChart(container);
-	        	chart.draw(data, options);
-	      	}
-
 			// generate popup with chart
 			function showHistory(e) {
 				var options = {
@@ -358,5 +284,80 @@
 			}
 		</script>
 	</body>
-	
+
+	<script>
+		// draw chart
+		function drawChart(elem, name) {
+			// generate random traffic levels - can replace variable values with real data
+			var t1 = Math.round(Math.random() * 1000);
+			var t2 = Math.round(Math.random() * 1000);
+			var t3 = Math.round(Math.random() * 1000);
+			var t4 = Math.round(Math.random() * 1000);
+			var t5 = Math.round(Math.random() * 1000);
+			var t6 = Math.round(Math.random() * 1000);
+			var t7 = Math.round(Math.random() * 1000);
+			var t8 = Math.round(Math.random() * 1000);
+			var t9 = Math.round(Math.random() * 1000);
+			var t10 = Math.round(Math.random() * 1000);
+			var t11 = Math.round(Math.random() * 1000);
+			var t12 = Math.round(Math.random() * 1000);
+			var t13 = Math.round(Math.random() * 1000);
+			var t14 = Math.round(Math.random() * 1000);
+			var t15 = Math.round(Math.random() * 1000);
+			var t16 = Math.round(Math.random() * 1000);
+			var t17 = Math.round(Math.random() * 1000);
+			var t18 = Math.round(Math.random() * 1000);
+			var t19 = Math.round(Math.random() * 1000);
+			var t20 = Math.round(Math.random() * 1000);
+			var t21 = Math.round(Math.random() * 1000);
+			var t22 = Math.round(Math.random() * 1000);
+			var t23 = Math.round(Math.random() * 1000);
+			var t24 = Math.round(Math.random() * 1000);
+			var t25 = Math.round(Math.random() * 1000);
+			var data = google.visualization.arrayToDataTable([
+				['Time', 'Traffic'],
+				['8:00',  t1],
+				['8:30',  t2],
+				['9:00',  t3],
+				['9:30',  t4],
+				['10:00',  t5],
+				['10:30',  t6],
+				['11:00',  t7],
+				['11:30',  t8],
+				['12:00',  t9],
+				['12:30',  t10],
+				['1:00',  t11],
+				['1:30', t12],
+				['2:00', t13],
+				['2:30', t14],
+				['3:00', t15],
+				['3:30', t16],
+				['4:00', t17],
+				['4:30', t18],
+				['5:00', t19],
+				['5:30', t20],
+				['6:00', t21],
+				['6:30', t22],
+				['7:00', t23],
+				['7:30', t24],
+				['8:00', t25]
+			]);
+	    	var options = {
+	    		title: 'Daily Traffic - ' + name,
+	    		colors:['#E50000'],
+	      		curveType: 'function',
+	      		legend: {position: 'none'},
+	      		chartArea: {width: '85%', height: '80%'},
+	      		vAxis: {
+	      			viewWindowMode: 'explicit',
+	      			viewWindow: {
+	      				min: 0
+	      			}
+	      		}
+	    	};
+	    	var container = document.getElementById(elem);
+	    	var chart = new google.visualization.LineChart(container);
+	    	chart.draw(data, options);
+	  	}
+	</script>
 </html>
