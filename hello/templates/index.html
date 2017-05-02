@@ -66,7 +66,13 @@
 	</body>
 
 	<head>
-		<!-- define drawchart -->
+		<!-- leaflet includes -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+		
+		<!-- chart generation script -->
+	    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 		<script>
 			function drawChart(elem, name) {
 				var t1 = Math.round(Math.random() * 1000);
@@ -141,12 +147,6 @@
 		  	}
 		</script>
 
-		<!-- leaflet includes -->
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-		
-		<!-- chart generation script -->
-	    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	    <script type="text/javascript">
 	    	google.charts.load('current', {'packages':['corechart']});
 	    	google.charts.setOnLoadCallback(drawChart);
