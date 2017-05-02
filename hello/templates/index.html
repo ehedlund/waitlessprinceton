@@ -72,7 +72,7 @@
 		
 		<!-- chart generation script -->
 	    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+	    <script type="text/javascript"> google.charts.load('current', {'packages':['corechart']}); </script>
 		<script>
 			function drawChart(elem, name) {
 				var t1 = Math.round(Math.random() * 1000);
@@ -146,11 +146,7 @@
 		    	chart.draw(data, options);
 		  	}
 		</script>
-
-	    <script type="text/javascript">
-	    	google.charts.load('current', {'packages':['corechart']});
-	    	google.charts.setOnLoadCallback(drawChart);
-	    </script>
+	    <script type="text/javascript"> google.charts.setOnLoadCallback(drawChart); </script>
 
 		<!-- hover box and legend -->
 		<style media="screen" type="text/css">
