@@ -5,17 +5,12 @@ from django.http import JsonResponse
 import json
 import views
 import os
-#from pyramid.view import view_config
 
 from .models import Greeting
-
 from django.contrib.auth.decorators import login_required
-from __main__ import *
 
-# Create your views here.
 @login_required
 def index(request):
-    #occs = {}
     dillonOcc = 0
     fristOcc = 0
 
@@ -30,13 +25,10 @@ def index(request):
           dillonOcc += int(split[2])
         if split[0] == "Frist-Campus-Center":
           fristOcc += int(split[2])
-      #occs['Dillon-Gym'] = dillonOcc
-      #occs['Frist-Campus'] = fristOcc
 
     return render(
       request, 
       'index.html',
-      #context={'json_data':json_data},
       context={'dillonOcc':dillonOcc, 'fristOcc':fristOcc},
     )
 
@@ -65,13 +57,7 @@ def casCGI(request):
 def status(request):
     return render(request, 'status.html')
 
-#@view_config(route_name='home', renderer='templates/load_data.py')
-#@exception_view_config(ValidationFailure, route_name='home')
-#@view_config(renderer='json')
-#    return render(request, 'index.html', json_data)
-
 def db(request):
-
     greeting = Greeting()
     greeting.save()
 
