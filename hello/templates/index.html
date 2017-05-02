@@ -359,32 +359,6 @@
 			popupId++;
     			drawChart(chartId, prop.name);
 			}
-			
-			// SLIDER
-			var timeline = L.timeline(dataLib, {
-				style: function(data){
-					return {
-					stroke: false,
-					//color: getColor(feature.properties.density/feature.properties.max * 100),
-					fillOpacity: 1
-					}
-				},
-				onEachFeature: function(feature, layer) {
-					layer.bindTooltip(feature.properties.name);
-				},
-				waitToUpdateMap: true
-				});
-				
-			var timelineControl = L.timelineSliderControl({
-					formatOutput: function(date){
-						return moment(date).format("MM-DD HH:MM");
-					},
-					enableKeyBoardControls: true
-			});
-
-			timeline.addTo(mymap);
-			timelineControl.addTo(mymap);
-			timelineControl.addTimelines(timeline);
 		</script>
 	</body>
 	
