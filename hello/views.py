@@ -58,7 +58,7 @@ def index(request):
 			'CHEMISTRYCAFE':5, 'CONCESSIONS_12':6, 'FORBESCOLLEGE':7, 'FRISTCSTORE':8, 'FRISTGALLERY1':9, 
 			'FRISTGALLERY2':10, 'FRISTGALLERY3':11, 'FRISTGALLERY4':12, 'FRISTWITHERSPOONS':13, 'GRADUATECOLLEGE':14,
 			'LIBRARY_CART':15, 'MATHEYCOLLEGE':16, 'ROCKEFELLERCOLLEGE':17, 'STUDIO34BUTLEREMPORIUM':18, 
-			 'WHITMANCOLLEGE':19, 'WILSONCOLLEGE':20, 'WOODROWWILSONCAFE':21}
+			 'WHITMANCOLLEGE':19, 'WILSONCOLLEGE':20, 'WOODROWWILSONCAFE':21, "FIRESTONELIBRARY":22}
 	dctDay = {'MONDAY':0, 'TUESDAY':1, 'WEDNESDAY':2, 'THURSDAY':3, 'FRIDAY':4, 
 			'SATURDAY':5, 'SUNDAY':6}
 	dctTime = {	'T0000':0, 'T0030':1, 'T0100':2, 'T0130':3, 'T0200':4, 
@@ -79,7 +79,7 @@ def index(request):
 	script_dir = os.path.dirname(__file__)
 	rel_path = "static/hello/swipes.csv"
 	abs_file_path = os.path.join(script_dir, rel_path)
-	data = [[[0 for k in xrange(48)] for j in xrange(7)] for i in xrange(22)]
+	data = [[[0 for k in xrange(48)] for j in xrange(7)] for i in xrange(23)]
 
 	with open(abs_file_path) as f:
 		for line in f:
