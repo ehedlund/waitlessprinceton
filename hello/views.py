@@ -79,7 +79,7 @@ def index(request):
 	script_dir = os.path.dirname(__file__)
 	rel_path = "static/hello/swipes.csv"
 	abs_file_path = os.path.join(script_dir, rel_path)
-	data = [[[0 for k in xrange(48)] for j in xrange(7)] for i in xrange(23)]
+	swipeData = [[[0 for k in xrange(48)] for j in xrange(7)] for i in xrange(23)]
 
 	with open(abs_file_path) as f:
 		for line in f:
@@ -116,13 +116,13 @@ def index(request):
 				roundedTime = roundedStr[11:-3]
 				#print "rounded time" + roundedTime
 				formattedTime = "T" + roundedTime[:2] + roundedTime[3:]
-				data[dctBuild[building]][dctDay[day]][dctTime[formattedTime]] += 1
+				swipeData[dctBuild[building]][dctDay[day]][dctTime[formattedTime]] += 1
 			lineNum += 1
 
 	return render(
 	request, 
 	'index.html',
-	context={'swipeData':data, 'dillonOcc':dillonOcc},
+	context={'swipeData':swipeData, 'dillonOcc':dillonOcc},
 	)
 
 def about(request):
