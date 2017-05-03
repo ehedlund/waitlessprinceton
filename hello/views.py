@@ -54,17 +54,6 @@ def roundTime(dt=None, dateDelta=datetime.timedelta(minutes=1)):
 def index(request):
 	
 	dillonOcc = 0
-
-	script_dir = os.path.dirname(__file__)
-	rel_path = "static/hello/current_stats"
-	abs_file_path = os.path.join(script_dir, rel_path)
-
-	with open(abs_file_path) as f:
-	for line in f:
-		split = line.split()
-		if split[0] == "Dillon-Gym":
-		  dillonOcc += int(split[2])
-	
 	dctBuild = {'ATRIUMCAFE':0, 'BUTLERCOLLEGE':1, 'CAFEVIVIAN':2, 'CENTERFORJEWISHLIFE':3, 'CHANCELLORGREEN':4, 
 			'CHEMISTRYCAFE':5, 'CONCESSIONS_12':6, 'FORBESCOLLEGE':7, 'FRISTCSTORE':8, 'FRISTGALLERY1':9, 
 			'FRISTGALLERY2':10, 'FRISTGALLERY3':11, 'FRISTGALLERY4':12, 'FRISTWITHERSPOONS':13, 'GRADUATECOLLEGE':14,
@@ -84,9 +73,19 @@ def index(request):
 			'T2230':45, 'T2300':46, 'T2330':47}
 
 	script_dir = os.path.dirname(__file__)
+	rel_path = "static/hello/current_stats"
+	abs_file_path = os.path.join(script_dir, rel_path)
+
+	script_dir = os.path.dirname(__file__)
 	rel_path = "static/hello/swipes.csv"
 	abs_file_path = os.path.join(script_dir, rel_path)
 	data = [[[0 for k in xrange(48)] for j in xrange(7)] for i in xrange(22)]
+
+	with open(abs_file_path) as f:
+		for line in f:
+			split = line.split()
+			if split[0] == "Dillon-Gym":
+			  dillonOcc += int(split[2])
 
 	with open(abs_file_path, 'rU') as csvfile:
 		spaces = csv.reader(csvfile)
