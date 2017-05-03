@@ -89,36 +89,36 @@ def index(request):
 	data = [[[0 for k in xrange(48)] for j in xrange(7)] for i in xrange(22)]
 
 	with open(abs_file_path, 'rU') as csvfile:
-	spaces = csv.reader(csvfile)
-	lineNum = 0
-	for line in spaces:
-		if lineNum != 0:
-			strLine = ','.join(line)
-			strLine = strLine[:-3]
-			#print strLine
-			split = strLine.split(',')
-			building = ''.join(split[0].split())
-			building = building.upper()
-			if split[0] == "Frist C-Store":
-				building = building[:6] + building[7:]
-			day = split[2].upper()
-			time = split[1].split(':')
-			hourInt = int(time[0])
-			minute = time[1]
-			end = time[2].split()
-			if end[1] == "PM" and hourInt != 12:
-				hourInt += 12
-			elif hourInt == 12:
-				hourInt = 0
-			hour = str(hourInt)
-			second = end[0]
-			rounded = roundTime(datetime.datetime(2017,1,4,int(hour),int(minute),int(second)),datetime.timedelta(minutes=30))
-			roundedStr = unicode(rounded.replace(microsecond=0))
-			roundedTime = roundedStr[11:-3]
-			#print "rounded time" + roundedTime
-			formattedTime = "T" + roundedTime[:2] + roundedTime[3:]
-			data[dctBuild[building]][dctDay[day]][dctTime[formattedTime]] += 1
-		lineNum += 1
+		spaces = csv.reader(csvfile)
+		lineNum = 0
+		for line in spaces:
+			if lineNum != 0:
+				strLine = ','.join(line)
+				strLine = strLine[:-3]
+				#print strLine
+				split = strLine.split(',')
+				building = ''.join(split[0].split())
+				building = building.upper()
+				if split[0] == "Frist C-Store":
+					building = building[:6] + building[7:]
+				day = split[2].upper()
+				time = split[1].split(':')
+				hourInt = int(time[0])
+				minute = time[1]
+				end = time[2].split()
+				if end[1] == "PM" and hourInt != 12:
+					hourInt += 12
+				elif hourInt == 12:
+					hourInt = 0
+				hour = str(hourInt)
+				second = end[0]
+				rounded = roundTime(datetime.datetime(2017,1,4,int(hour),int(minute),int(second)),datetime.timedelta(minutes=30))
+				roundedStr = unicode(rounded.replace(microsecond=0))
+				roundedTime = roundedStr[11:-3]
+				#print "rounded time" + roundedTime
+				formattedTime = "T" + roundedTime[:2] + roundedTime[3:]
+				data[dctBuild[building]][dctDay[day]][dctTime[formattedTime]] += 1
+			lineNum += 1
 
 	return render(
 	request, 
