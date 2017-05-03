@@ -93,7 +93,7 @@ def index(request):
 		for line in spaces:
 			if lineNum != 0:
 				strLine = ','.join(line)
-				strLine = strLine[:-3]
+				#strLine = strLine[:-3]
 				#print strLine
 				split = strLine.split(',')
 				building = ''.join(split[0].split())
