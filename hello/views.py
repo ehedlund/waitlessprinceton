@@ -51,6 +51,11 @@ def roundTime(dt=None, dateDelta=datetime.timedelta(minutes=1)):
     rounding = (seconds+roundTo/2) // roundTo * roundTo
     return dt + datetime.timedelta(0,rounding-seconds,-dt.microsecond)
 
+register = template.Library()
+@register.filter
+def index(List, i):
+    return List[int(i)]
+
 @login_required
 def index(request):
 	
@@ -125,11 +130,6 @@ def index(request):
 	'index.html',
 	context={'swipeData':swipeData, 'dillonOcc':dillonOcc},
 	)
-
-register = template.Library()
-@register.filter
-def index(List, i):
-    return List[int(i)]
 
 def about(request):
     return render(request, 'about.html')
