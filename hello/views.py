@@ -53,7 +53,7 @@ def roundTime(dt=None, dateDelta=datetime.timedelta(minutes=1)):
 
 register = template.Library()
 @register.filter
-def index(List, i):
+def getIndex(List, i):
     return List[int(i)]
 
 @login_required
