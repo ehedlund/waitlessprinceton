@@ -126,6 +126,25 @@
 		</style>
 
 		<script>
+			// reference dictionaries
+			var dctBuild = {'ATRIUMCAFE':0, 'BUTLERCOLLEGE':1, 'CAFEVIVIAN':2, 'CENTERFORJEWISHLIFE':3, 'CHANCELLORGREEN':4, 
+			'CHEMISTRYCAFE':5, 'CONCESSIONS_12':6, 'FORBESCOLLEGE':7, 'FRISTCSTORE':8, 'FRISTGALLERY1':9, 
+			'FRISTGALLERY2':10, 'FRISTGALLERY3':11, 'FRISTGALLERY4':12, 'FRISTWITHERSPOONS':13, 'GRADUATECOLLEGE':14,
+			'LIBRARY_CART':15, 'MATHEYCOLLEGE':16, 'ROCKEFELLERCOLLEGE':17, 'STUDIO34BUTLEREMPORIUM':18, 
+			 'WHITMANCOLLEGE':19, 'WILSONCOLLEGE':20, 'WOODROWWILSONCAFE':21, "FIRESTONELIBRARY":22}
+			 var dctDay = {'SUNDAY':0, 'MONDAY':1, 'TUESDAY':2, 'WEDNESDAY':3, 'THURSDAY':4, 'FRIDAY':5, 
+			'SATURDAY':6}
+			var dctTime = {	'T0000':0, 'T0030':1, 'T0100':2, 'T0130':3, 'T0200':4, 
+			'T0230':5, 'T0300':6, 'T0330':7, 'T0400':8, 'T0430':9, 
+			'T0500':10, 'T0530':11, 'T0600':12, 'T0630':13, 'T0700':14,
+			'T0730':15, 'T0800':16, 'T0830':17, 'T0900':18, 'T0930':19, 
+			'T1000':20, 'T1030':21, 'T1100':22, 'T1130':23, 'T1200':24, 
+			'T1230':25, 'T1300':26, 'T1330':27, 'T1400':28, 'T1430':29, 
+			'T1500':30, 'T1530':31, 'T1600':32, 'T1630':33, 'T1700':34,
+			'T1730':35, 'T1800':36, 'T1830':37, 'T1900':38, 'T1930':39, 
+			'T2000':40, 'T2030':41, 'T2100':42, 'T2130':43, 'T2200':44, 
+			'T2230':45, 'T2300':46, 'T2330':47}
+
 			// popup variables
 			var popupId = 1;
 	 		var chartId = "curve_chart" + popupId;
@@ -148,15 +167,6 @@
 			//var frist = Math.round(Math.random() * 4836);
 			
 			var d = new Date();
-			var weekday = new Array(7);
-			weekday[0] =  "SUNDAY";
-			weekday[1] = "MONDAY";
-			weekday[2] = "TUESDAY";
-			weekday[3] = "WEDNESDAY";
-			weekday[4] = "THURSDAY";
-			weekday[5] = "FRIDAY";
-			weekday[6] = "SATURDAY";
-
 			var weekday = weekday[d.getDay()];
 			
 			function getNearestHalfHourTimeString() {
@@ -187,17 +197,10 @@
 				}
 			
 			var currentTimeRounded = getNearestHalfHourTimeString();
-
-			var dctBuild = {"ATRIUMCAFE":0, "BUTLERCOLLEGE":1, "CAFEVIVIAN":2, "CENTERFORJEWISHLIFE":3, "CHANCELLORGREEN":4, 
-			"CHEMISTRYCAFE":5, "CONCESSIONS_12":6, "FORBESCOLLEGE":7, "FRISTCSTORE":8, "FRISTGALLERY1":9, 
-			"FRISTGALLERY2":10, "FRISTGALLERY3":11, "FRISTGALLERY4":12, "FRISTWITHERSPOONS":13, "GRADUATECOLLEGE":14,
-			"LIBRARY_CART":15, "MATHEYCOLLEGE":16, "ROCKEFELLERCOLLEGE":17, "STUDIO34BUTLEREMPORIUM":18, 
-			 "WHITMANCOLLEGE":19, "WILSONCOLLEGE":20, "WOODROWWILSONCAFE":21, "FIRESTONELIBRARY":22}
-			var bldng = dctBuild["FRISTGALLERY1"]
 			
 			{% block content %}
 			{% load hello_extras %}
-			var fristTraffic = {{ swipeData|getIndex:9|getIndex:1|getIndex:40 }};
+			var fristTraffic = {{ swipeData|getIndex:dctBuild["FRISTGALLERY1"]|getIndex:dctDay["MONDAY"]|getIndex:dctTime["T2000"] }};
 			 
 			var dataDillon = {"type":"FeatureCollection","generator":"overpass-turbo","copyright":"The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.","timestamp":"2017-04-08T16:21:02Z","features":[{"type":"Feature","id":"way/27341417","properties":{"@id":"way/27341417","building":"yes","leisure":"sports_centre","name":"Dillon Gym","density":{{dillonOcc}},"lat":40.345611,"long":-74.658797,"max":3665},"geometry":{"type":"Polygon","coordinates":[[[-74.6588761,40.3449764],[-74.6587394,40.3450124],[-74.6588541,40.3452652],[-74.6580229,40.3454842],[-74.6580752,40.3455993],[-74.6584226,40.3455078],[-74.6584742,40.3456216],[-74.658461,40.3456371],[-74.6584666,40.3456502],[-74.658484,40.3456601],[-74.6585038,40.3457056],[-74.658497,40.3457188],[-74.6585026,40.3457326],[-74.65852,40.3457394],[-74.6585409,40.3457345],[-74.6585494,40.3457188],[-74.6586053,40.3457042],[-74.658624,40.3457113],[-74.6586493,40.3457048],[-74.6588007,40.3460395],[-74.6587692,40.3460478],[-74.6588338,40.3461905],[-74.6588491,40.3461865],[-74.6588668,40.3462257],[-74.6592581,40.3461226],[-74.6592536,40.3461126],[-74.6592406,40.3460851],[-74.6592591,40.3460801],[-74.6592474,40.3460553],[-74.6591933,40.3459367],[-74.6591602,40.3459455],[-74.6591029,40.3458198],[-74.6591684,40.3458025],[-74.6591484,40.3457586],[-74.6590861,40.345775],[-74.658972,40.3455243],[-74.6591375,40.3454806],[-74.6590742,40.3453414],[-74.6590452,40.3453491],[-74.6588761,40.3449764]]]}}]};
 
