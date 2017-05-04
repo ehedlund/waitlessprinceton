@@ -207,7 +207,10 @@
 			
 			{% block content %}
 			{% load hello_extras %}
-			var fristTraffic = {{ swipeData|getIndex:dctBuild.FRISTGALLERY1|getIndex:dctDay.weekday|getIndex:dctTime.currentTimeRounded }};
+			var frist = dctBuild["FRISTGALLERY1"];
+			var fristDay = dctDay.weekday;
+			var fristTime = dctTime.currentTimeRounded;
+			var fristTraffic = {{ swipeData|getIndex:frist|getIndex:fristDay|getIndex:fristTime }};
 			
 			var dataDillon = {"type":"FeatureCollection","generator":"overpass-turbo","copyright":"The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.","timestamp":"2017-04-08T16:21:02Z","features":[{"type":"Feature","id":"way/27341417","properties":{"@id":"way/27341417","building":"yes","leisure":"sports_centre","name":"Dillon Gym","density":{{dillonOcc}},"lat":40.345611,"long":-74.658797,"max":3665},"geometry":{"type":"Polygon","coordinates":[[[-74.6588761,40.3449764],[-74.6587394,40.3450124],[-74.6588541,40.3452652],[-74.6580229,40.3454842],[-74.6580752,40.3455993],[-74.6584226,40.3455078],[-74.6584742,40.3456216],[-74.658461,40.3456371],[-74.6584666,40.3456502],[-74.658484,40.3456601],[-74.6585038,40.3457056],[-74.658497,40.3457188],[-74.6585026,40.3457326],[-74.65852,40.3457394],[-74.6585409,40.3457345],[-74.6585494,40.3457188],[-74.6586053,40.3457042],[-74.658624,40.3457113],[-74.6586493,40.3457048],[-74.6588007,40.3460395],[-74.6587692,40.3460478],[-74.6588338,40.3461905],[-74.6588491,40.3461865],[-74.6588668,40.3462257],[-74.6592581,40.3461226],[-74.6592536,40.3461126],[-74.6592406,40.3460851],[-74.6592591,40.3460801],[-74.6592474,40.3460553],[-74.6591933,40.3459367],[-74.6591602,40.3459455],[-74.6591029,40.3458198],[-74.6591684,40.3458025],[-74.6591484,40.3457586],[-74.6590861,40.345775],[-74.658972,40.3455243],[-74.6591375,40.3454806],[-74.6590742,40.3453414],[-74.6590452,40.3453491],[-74.6588761,40.3449764]]]}}]};
 
