@@ -147,8 +147,7 @@
 			//var dillon = Math.round(Math.random() * 3665);
 			//var frist = Math.round(Math.random() * 4836);
 			
-			var d = new Date();
-			var weekday = dctDay[d.getDay()];
+			var d = (new Date()).getDay();
 			
 			function getNearestHalfHourTimeString() {
 				var now = new Date();
