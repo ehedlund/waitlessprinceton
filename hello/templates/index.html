@@ -164,21 +164,20 @@
 			// get traffic
 			{% block content %}
 			{% load hello_extras %}
-			{% with d=currentDay t=currentTimeRounded%}
-				var atrium = {{ swipeData|bldIndex:'ATRIUMCAFE'|dayIndex:d|timeIndex:t }};
-				var butler = {{ swipeData|bldIndex:'BUTLERCOLLEGE'|dayIndex:d|timeIndex:t }};
-				var cjl = {{ swipeData|bldIndex:'CENTERFORJEWISHLIFE'|dayIndex:d|timeIndex:t }};
-				var chancgreen = {{ swipeData|bldIndex:'CHANCELLORGREEN'|dayIndex:d|timeIndex:t }};
-				var chem = {{ swipeData|bldIndex:'CHEMISTRYCAFE'|dayIndex:d|timeIndex:t }};
-				var forbes = {{ swipeData|bldIndex:'FORBESCOLLEGE'|dayIndex:d|timeIndex:t }};
-				var frist = {{ swipeData|bldIndex:'FRISTGALLERY1'|dayIndex:d|timeIndex:t }} + {{ swipeData|bldIndex:'FRISTGALLERY2'|dayIndex:d|timeIndex:t }} + {{ swipeData|bldIndex:'FRISTGALLERY3'|dayIndex:d|timeIndex:t }} + {{ swipeData|bldIndex:'FRISTGALLERY4'|dayIndex:d|timeIndex:t }};
-				var grad = {{ swipeData|bldIndex:'GRADUATECOLLEGE'|dayIndex:d|timeIndex:t }};
-				var roma = {{ swipeData|bldIndex:'MATHEYCOLLEGE'|dayIndex:d|timeIndex:t }} + {{ swipeData|bldIndex:'ROCKEFELLERCOLLEGE'|dayIndex:d|timeIndex:t }};
-				var studio = {{ swipeData|bldIndex:'STUDIO34BUTLEREMPORIUM'|dayIndex:d|timeIndex:t }};
-				var whitman = {{ swipeData|bldIndex:'WHITMANCOLLEGE'|dayIndex:d|timeIndex:t }};
-				var wilson = {{ swipeData|bldIndex:'WILSONCOLLEGE'|dayIndex:d|timeIndex:t }};
-				var woodywoo = {{ swipeData|bldIndex:'WOODROWWILSONCAFE'|dayIndex:d|timeIndex:t }};
-				var firestone = {{ swipeData|bldIndex:'FIRESTONELIBRARY'|dayIndex:d|timeIndex:t }};
+				var atrium = {{ swipeData|bldIndex:'ATRIUMCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var butler = {{ swipeData|bldIndex:'BUTLERCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var cjl = {{ swipeData|bldIndex:'CENTERFORJEWISHLIFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var chancgreen = {{ swipeData|bldIndex:'CHANCELLORGREEN'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var chem = {{ swipeData|bldIndex:'CHEMISTRYCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var forbes = {{ swipeData|bldIndex:'FORBESCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var frist = {{ swipeData|bldIndex:'FRISTGALLERY1'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY2'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY3'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY4'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var grad = {{ swipeData|bldIndex:'GRADUATECOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var roma = {{ swipeData|bldIndex:'MATHEYCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'ROCKEFELLERCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var studio = {{ swipeData|bldIndex:'STUDIO34BUTLEREMPORIUM'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var whitman = {{ swipeData|bldIndex:'WHITMANCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var wilson = {{ swipeData|bldIndex:'WILSONCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var woodywoo = {{ swipeData|bldIndex:'WOODROWWILSONCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var firestone = {{ swipeData|bldIndex:'FIRESTONELIBRARY'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
 				var dillon = 0;
 			{% endwith %}
         	{% endblock %}
