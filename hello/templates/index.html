@@ -158,26 +158,26 @@
 				}
 			
 			// get current info for queries
-			var currentDay = 'THURSDAY';
+			//var 'THURSDAY' = (new Date()).getDay();
 			var currentTimeRounded = getNearestHalfHourTimeString();
 
 			// get traffic
 			{% block content %}
 			{% load hello_extras %}
-				var atrium = {{ swipeData|bldIndex:'ATRIUMCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var butler = {{ swipeData|bldIndex:'BUTLERCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var cjl = {{ swipeData|bldIndex:'CENTERFORJEWISHLIFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var chancgreen = {{ swipeData|bldIndex:'CHANCELLORGREEN'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var chem = {{ swipeData|bldIndex:'CHEMISTRYCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var forbes = {{ swipeData|bldIndex:'FORBESCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var frist = {{ swipeData|bldIndex:'FRISTGALLERY1'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY2'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY3'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY4'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var grad = {{ swipeData|bldIndex:'GRADUATECOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var roma = {{ swipeData|bldIndex:'MATHEYCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'ROCKEFELLERCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var studio = {{ swipeData|bldIndex:'STUDIO34BUTLEREMPORIUM'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var whitman = {{ swipeData|bldIndex:'WHITMANCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var wilson = {{ swipeData|bldIndex:'WILSONCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var woodywoo = {{ swipeData|bldIndex:'WOODROWWILSONCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
-				var firestone = {{ swipeData|bldIndex:'FIRESTONELIBRARY'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var atrium = {{ swipeData|bldIndex:'ATRIUMCAFE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var butler = {{ swipeData|bldIndex:'BUTLERCOLLEGE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var cjl = {{ swipeData|bldIndex:'CENTERFORJEWISHLIFE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var chancgreen = {{ swipeData|bldIndex:'CHANCELLORGREEN'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var chem = {{ swipeData|bldIndex:'CHEMISTRYCAFE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var forbes = {{ swipeData|bldIndex:'FORBESCOLLEGE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var frist = {{ swipeData|bldIndex:'FRISTGALLERY1'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY2'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY3'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY4'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var grad = {{ swipeData|bldIndex:'GRADUATECOLLEGE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var roma = {{ swipeData|bldIndex:'MATHEYCOLLEGE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'ROCKEFELLERCOLLEGE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var studio = {{ swipeData|bldIndex:'STUDIO34BUTLEREMPORIUM'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var whitman = {{ swipeData|bldIndex:'WHITMANCOLLEGE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var wilson = {{ swipeData|bldIndex:'WILSONCOLLEGE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var woodywoo = {{ swipeData|bldIndex:'WOODROWWILSONCAFE'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
+				var firestone = {{ swipeData|bldIndex:'FIRESTONELIBRARY'|dayIndex:'THURSDAY'|timeIndex:currentTimeRounded }};
 				var dillon = 0;
 			 
         	{% endblock %}
