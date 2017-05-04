@@ -189,7 +189,7 @@
 			var currentTimeRounded = getNearestHalfHourTimeString();
 			
 			{% block content %}
-			{% load index %}
+			{% load getIndex %}
 			var fg1 = {{ swipeData|getIndex:FRISTGALLERY1}};
 			var fgweekday = fg1.weekday;
 			var fgtime = fgweekday.currentTimeRounded;
