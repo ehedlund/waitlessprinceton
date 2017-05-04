@@ -190,7 +190,7 @@
 			
 			{% block content %}
 			{% load index %}
-			var fg1 = {{ swipeData|index:12}};
+			var fg1 = {{ swipeData|index:FRISTGALLERY1}};
 			var fgweekday = fg1.weekday;
 			var fgtime = fgweekday.currentTimeRounded;
 			//var fristTraffic = {{ swipeData|index:'FRISTGALLERY1'|index:weekday|index:currentTimeRounded }};
