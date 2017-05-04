@@ -189,6 +189,8 @@
 			var currentTimeRounded = getNearestHalfHourTimeString();
 			
 			{% block content %}
+			{% load index %}
+			{{ swipeData|index:x }}
 			var fristTraffic = {{ swipeData|index:FRISTGALLERY1|index:weekday|index:currentTimeRounded }}
 			//{{swipeData.FRISTGALLERY1.weekday.currentTimeRounded}};
 			
