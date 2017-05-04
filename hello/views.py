@@ -9,6 +9,7 @@ import csv
 import datetime
 from datetime import timedelta
 from django import template
+register = template.Library()
 
 from .models import Greeting
 from django.contrib.auth.decorators import login_required
@@ -51,7 +52,6 @@ def roundTime(dt=None, dateDelta=datetime.timedelta(minutes=1)):
     rounding = (seconds+roundTo/2) // roundTo * roundTo
     return dt + datetime.timedelta(0,rounding-seconds,-dt.microsecond)
 
-register = template.Library()
 @register.filter
 def getIndex(List, i):
     return List[int(i)]
