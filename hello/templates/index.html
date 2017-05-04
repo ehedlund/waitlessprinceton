@@ -158,26 +158,26 @@
 				}
 			
 			// get current info for queries
-			//var ((new Date()).getDay()) = ((new Date()).getDay());
+			var currentDay = (new Date()).getDay();
 			var currentTimeRounded = getNearestHalfHourTimeString();
 
 			// get traffic
 			{% block content %}
 			{% load hello_extras %}
-				var atrium = {{ swipeData|bldIndex:'ATRIUMCAFE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var butler = {{ swipeData|bldIndex:'BUTLERCOLLEGE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var cjl = {{ swipeData|bldIndex:'CENTERFORJEWISHLIFE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var chancgreen = {{ swipeData|bldIndex:'CHANCELLORGREEN'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var chem = {{ swipeData|bldIndex:'CHEMISTRYCAFE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var forbes = {{ swipeData|bldIndex:'FORBESCOLLEGE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var frist = {{ swipeData|bldIndex:'FRISTGALLERY1'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY2'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY3'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY4'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var grad = {{ swipeData|bldIndex:'GRADUATECOLLEGE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var roma = {{ swipeData|bldIndex:'MATHEYCOLLEGE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'ROCKEFELLERCOLLEGE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var studio = {{ swipeData|bldIndex:'STUDIO34BUTLEREMPORIUM'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var whitman = {{ swipeData|bldIndex:'WHITMANCOLLEGE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var wilson = {{ swipeData|bldIndex:'WILSONCOLLEGE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var woodywoo = {{ swipeData|bldIndex:'WOODROWWILSONCAFE'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
-				var firestone = {{ swipeData|bldIndex:'FIRESTONELIBRARY'|dayIndex:((new Date()).getDay())|timeIndex:currentTimeRounded }};
+				var atrium = {{ swipeData|bldIndex:'ATRIUMCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var butler = {{ swipeData|bldIndex:'BUTLERCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var cjl = {{ swipeData|bldIndex:'CENTERFORJEWISHLIFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var chancgreen = {{ swipeData|bldIndex:'CHANCELLORGREEN'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var chem = {{ swipeData|bldIndex:'CHEMISTRYCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var forbes = {{ swipeData|bldIndex:'FORBESCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var frist = {{ swipeData|bldIndex:'FRISTGALLERY1'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY2'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY3'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'FRISTGALLERY4'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var grad = {{ swipeData|bldIndex:'GRADUATECOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var roma = {{ swipeData|bldIndex:'MATHEYCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }} + {{ swipeData|bldIndex:'ROCKEFELLERCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var studio = {{ swipeData|bldIndex:'STUDIO34BUTLEREMPORIUM'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var whitman = {{ swipeData|bldIndex:'WHITMANCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var wilson = {{ swipeData|bldIndex:'WILSONCOLLEGE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var woodywoo = {{ swipeData|bldIndex:'WOODROWWILSONCAFE'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
+				var firestone = {{ swipeData|bldIndex:'FIRESTONELIBRARY'|dayIndex:currentDay|timeIndex:currentTimeRounded }};
 				var dillon = 0;
 			 
         	{% endblock %}
