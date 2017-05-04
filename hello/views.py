@@ -52,7 +52,7 @@ def roundTime(dt=None, dateDelta=datetime.timedelta(minutes=1)):
     rounding = (seconds+roundTo/2) // roundTo * roundTo
     return dt + datetime.timedelta(0,rounding-seconds,-dt.microsecond)
 
-@register.tag('getIndex', getIndex)
+@register.tag
 def getIndex(List, i):
     return List[int(i)]
 
