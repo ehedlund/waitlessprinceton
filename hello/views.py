@@ -8,6 +8,7 @@ import os
 import csv
 import datetime
 from datetime import timedelta
+from django import template
 
 from .models import Greeting
 from django.contrib.auth.decorators import login_required
@@ -124,6 +125,11 @@ def index(request):
 	'index.html',
 	context={'swipeData':swipeData, 'dillonOcc':dillonOcc},
 	)
+
+register = template.Library()
+@register.filter
+def index(List, i):
+    return List[int(i)]
 
 def about(request):
     return render(request, 'about.html')
