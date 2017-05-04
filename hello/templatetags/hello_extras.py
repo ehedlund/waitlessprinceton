@@ -13,7 +13,7 @@ def dayIndex(List, strIndex):
 	#dctDay = {'SUNDAY':0, 'MONDAY':1, 'TUESDAY':2, 'WEDNESDAY':3, 'THURSDAY':4, 'FRIDAY':5, 'SATURDAY':6}
 	#i = int(dctDay.get(strIndex))
 	#return List[i]
-	return List[int(strIndex)]
+	return List[strIndex]
 
 @register.filter
 def timeIndex(List, strIndex):
