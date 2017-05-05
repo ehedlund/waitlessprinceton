@@ -163,7 +163,7 @@
 				try {
 					var t = jsTraffic[b][currentDay][currentTimeRounded];
 				}
-				catch (err) {
+				catch (e if e instanceof TypeError) {
 					var t = 0;
 				}
 				traffics[i] = t;
