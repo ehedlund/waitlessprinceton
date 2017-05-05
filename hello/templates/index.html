@@ -160,9 +160,11 @@
 
 			for (i = 0; i < 18; i++) {
 				var b = buildings[i];
-				var t = jsTraffic[b][currentDay][currentTimeRounded];
-				if (t == "undefined") {
-					t = 0;
+				try {
+					var t = jsTraffic[b][currentDay][currentTimeRounded];
+				}
+				catch (err) {
+					var t = 0;
 				}
 				traffics[i] = t;
 			}
