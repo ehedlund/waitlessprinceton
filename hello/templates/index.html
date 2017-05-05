@@ -155,9 +155,10 @@
 
 			// get traffic
 			{% block content %}
-				var jsTraffic = {{ jsonTraffic }};
+				var data = {{ jsonTraffic }};
 			{% endblock %}
 
+			jsTraffic = JSON.parse(data.replace(/&quot;/g,'"'));
 
 			var atrium = jsTraffic.AtriumCafe.currentDay.currentTimeRounded;
 			var butler = jsTraffic.ButlerCollege.currentDay.currentTimeRounded;
