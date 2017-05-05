@@ -69,6 +69,7 @@ def index(request):
 			lineNum += 1
 
 	jsonTraffic = json.dumps(traffic)
+	jsonTraffic = re.sub('"', '', jsonTraffic);
 
 	return render(
 		request, 

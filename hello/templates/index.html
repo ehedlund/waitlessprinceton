@@ -158,7 +158,7 @@
 				var data = {{ jsonTraffic }};
 			{% endblock %}
 
-			jsTraffic = JSON.parse(data.replace(/&quot;/g,'"'));
+			jsTraffic = JSON.parse(data);
 
 			var atrium = jsTraffic.AtriumCafe.currentDay.currentTimeRounded;
 			var butler = jsTraffic.ButlerCollege.currentDay.currentTimeRounded;
