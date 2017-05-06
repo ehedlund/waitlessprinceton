@@ -159,10 +159,20 @@
 			var traffics = [];
 
 			for (i = 0; i < 18; i++) {
+				// get building
 				var b = buildings[i];
-				var t = jsTraffic[b][currentDay][currentTimeRounded];
-				if (typeof(t) == 'undefined') {
+				// get day
+				var d = jsTraffic[b][currentDay];
+				var t;
+				if (typeof(d) == 'undefined') {
 					t = 0;
+				}
+				else {
+					// get time
+					t = jsTraffic[b][currentDay][currentTimeRounded];
+					if (typeof(t) == 'undefined') {
+						t = 0;
+					}
 				}
 				traffics[i] = t;
 			}
