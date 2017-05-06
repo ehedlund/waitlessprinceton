@@ -226,7 +226,16 @@
 				return this._div;
 			};
 			info.update = function(props) {
-				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + props.density + ' people' : 'Hover over a building');
+				var num = props.density;
+				var d;
+				if (num == -1) {
+					d = "Closed";
+				}
+				else {
+					d =  num + " people"
+				}
+
+				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + d : 'Hover over a building');
 			};
 			info.addTo(mymap);
 			
@@ -292,7 +301,6 @@
 				grades = [0, 5, 10, 15, 20, 25],
 				labels = [];
 				for (var i = 0; i < grades.length - 1; i++) {
-					// div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + '&ndash;' + grades[i + 1] + '% <br>';
 					div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
 				}
 				return div;
@@ -307,7 +315,7 @@
 					opacity: 1,
 					color: 'white',
 					dashArray: '3',
-					fillOpacity: 0.7
+					fillOpacity: 1
 				};
 			}
 			// assign color based on density
