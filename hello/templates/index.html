@@ -226,13 +226,15 @@
 				return this._div;
 			};
 			info.update = function(props) {
-				var num = props.density;
-				var d;
-				if (num == -1) {
-					d = "Closed";
-				}
-				else {
-					d =  num + " people"
+				if (props) {
+					var num = props.density;
+					var d;
+					if (num == -1) {
+						d = "Closed";
+					}
+					else {
+						d = num + "people";
+					}
 				}
 
 				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + d : 'Hover over a building');
