@@ -303,7 +303,7 @@
 				grades = [0, 5, 10, 15, 20],
 				labels = [];
 				for (var i = 0; i < grades.length; i++) {
-					div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '%<br>' : '+');
+					div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '%<br>' : '%+');
 				}
 				return div;
 			};
@@ -317,7 +317,7 @@
 					opacity: 1,
 					color: 'white',
 					dashArray: '3',
-					fillOpacity: 0.7
+					fillOpacity: 1
 				};
 			}
 			// assign color based on density
@@ -355,7 +355,7 @@
 			// unhighlight
 			function resetHighlight(e) {
 				gjCurrent.resetStyle(e.target);
-				gj0000.resetStyle(e.target);
+				/* gj0000.resetStyle(e.target);
 				gj0030.resetStyle(e.target);
 				gj0100.resetStyle(e.target);
 				gj0130.resetStyle(e.target);
@@ -402,7 +402,7 @@
 				gj2200.resetStyle(e.target);
 				gj2230.resetStyle(e.target);
 				gj2300.resetStyle(e.target);
-				gj2330.resetStyle(e.target);
+				gj2330.resetStyle(e.target); */
 				info.update();
 			}
 			// draw chart
