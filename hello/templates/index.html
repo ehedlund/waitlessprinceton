@@ -214,8 +214,10 @@
             });
 
             // create geojson variable for current traffic
-            var currentData = getTrafficAtTime(getNearestHalfHourTimeString());
-            var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature});
+            var currentTime = getNearestHalfHourTimeString();
+            var currentData = getTrafficAtTime(currentTime);
+            var timeString = "2017-05-02 " + currentTime[1:3] + ":" + currentTime[3:5] + ":00+01";
+            var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature, time: timeString});
             gjCurrent.addTo(mymap);
             
 			// load hover box
@@ -355,7 +357,7 @@
 			// unhighlight
 			function resetHighlight(e) {
 				gjCurrent.resetStyle(e.target);
-				/* gj0000.resetStyle(e.target);
+				gj0000.resetStyle(e.target);
 				gj0030.resetStyle(e.target);
 				gj0100.resetStyle(e.target);
 				gj0130.resetStyle(e.target);
@@ -402,7 +404,7 @@
 				gj2200.resetStyle(e.target);
 				gj2230.resetStyle(e.target);
 				gj2300.resetStyle(e.target);
-				gj2330.resetStyle(e.target); */
+				gj2330.resetStyle(e.target);
 				info.update();
 			}
 			// draw chart
