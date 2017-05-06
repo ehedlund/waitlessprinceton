@@ -339,7 +339,7 @@
 			var legend = L.control({position: 'bottomright'});
 			legend.onAdd = function(map) {
 				var div = L.DomUtil.create('div', 'info legend'),
-				grades = [0, 1, 2, 3, 4, 5],
+				grades = [0, .25, .5, .75, 1, 1.25],
 				labels = [];
 				for (var i = 0; i < grades.length - 1; i++) {
 					div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + '&ndash;' + grades[i + 1] + '% <br>';
@@ -363,10 +363,10 @@
 
 			// assign color based on density
 			function getColor(percentFull) {
-				return percentFull > 4 ? '#E50000' :
-				percentFull > 3 ? '#DB6300' :
-				percentFull > 2 ? '#F9FB19' :
-				percentFull > 1 ? '#80C800' :
+				return percentFull > 1 ? '#E50000' :
+				percentFull > .75 ? '#DB6300' :
+				percentFull > .5 ? '#F9FB19' :
+				percentFull > .25 ? '#80C800' :
 				'#24BF00';
 			}
 
