@@ -80,9 +80,6 @@ def index(request):
 def about(request):
     return render(request, 'about.html')
 
-def status(request):
-    return render(request, 'status.html')
-
 def db(request):
     greeting = Greeting()
     greeting.save()
