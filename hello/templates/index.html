@@ -168,13 +168,13 @@
 					var d = jsTraffic[b][currentDay];
 					var t;
 					if (typeof(d) == 'undefined') {
-						t = 0;
+						t = -1;
 					}
 					else {
 						// get time
 						t = jsTraffic[b][currentDay][givenTime];
 						if (typeof(t) == 'undefined') {
-							t = 0;
+							t = -1;
 						}
 					}
 					traffics[i] = t;
@@ -289,7 +289,7 @@
 			var legend = L.control({position: 'bottomright'});
 			legend.onAdd = function(map) {
 				var div = L.DomUtil.create('div', 'info legend'),
-				grades = [0, .5, 1, 1.5, 2, 2.5],
+				grades = [0, 5, 10, 15, 20, 25],
 				labels = [];
 				for (var i = 0; i < grades.length - 1; i++) {
 					div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + '&ndash;' + grades[i + 1] + '% <br>';
@@ -311,11 +311,12 @@
 			}
 			// assign color based on density
 			function getColor(percentFull) {
-				return percentFull > 2 ? '#E50000' :
-				percentFull > 1.5 ? '#DB6300' :
-				percentFull > 1 ? '#F9FB19' :
-				percentFull > .5 ? '#80C800' :
-				'#24BF00';
+				return percentFull > 2 ? '#E60005' :
+				percentFull > 1.5 ? '#E56900' :
+				percentFull > 1 ? '#E5D800' :
+				percentFull > .5 ? '#83E500' :
+				percentFull > 0 ? '#14E500' :
+				'#A0A0A0';
 			}
 			// add listeners
 			function onEachFeature(feature, layer) {
