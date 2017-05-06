@@ -292,7 +292,8 @@
 				grades = [0, 5, 10, 15, 20, 25],
 				labels = [];
 				for (var i = 0; i < grades.length - 1; i++) {
-					div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + '&ndash;' + grades[i + 1] + '% <br>';
+					// div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + '&ndash;' + grades[i + 1] + '% <br>';
+					div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
 				}
 				return div;
 			};
@@ -311,13 +312,14 @@
 			}
 			// assign color based on density
 			function getColor(percentFull) {
-				return percentFull > 2 ? '#E60005' :
-				percentFull > 1.5 ? '#E56900' :
-				percentFull > 1 ? '#E5D800' :
-				percentFull > .5 ? '#83E500' :
-				percentFull > 0 ? '#14E500' :
-				'#A0A0A0';
+				return percentFull > 20 ? '#E50001' :
+				percentFull > 15  ? '#DB6500' :
+				percentFull > 10  ? '#D2C400' :
+				percentFull > 5  ? '#76C800' :
+				percentFull > 0   ? '#16BF00' :
+				'#707070';
 			}
+
 			// add listeners
 			function onEachFeature(feature, layer) {
 				layer.on({
