@@ -350,11 +350,12 @@
 				return div;
 			};
 			legend.addTo(mymap);
-			// fill depends on density
+			 
+			 	// fill depends on density (unfiltered style)
 			function style(feature) {
 				var percentFull = feature.properties.density/feature.properties.max * 100;
 				return {
-					fillColor: getColor(percentFull),
+					fillColor: getColor(feature, percentFull),
 					weight: 2,
 					opacity: 1,
 					color: 'white',
@@ -362,14 +363,58 @@
 					fillOpacity: 0.7
 				};
 			}
+
 			// assign color based on density
-			function getColor(percentFull) {
+			function getColor(feature, percentFull) {
+				var isClosed = true;
+				var d = new Date(); 
+				var curDay = d.getDay();
+				var h = d.getHours();
+				var m = d.getMinutes();
+				if (h < 10) {h = "0" + h;}
+				if (m < 10) {m = "0" + m;}
+				var curTime = h + ":" + m;
+				var openTimes = feature.properties.hours[curDay];
+				if (openTimes == "CLOSED") {
+				  return '#A0A0A0';
+				}
+				var res = openTimes.split(", ");
+				for (i in res) {
+				  var start = res[i].substring(0,5);
+				  var end = res[i].substring(6);
+				  if (end <= start) {end = (parseInt(end.substring(0,3)) + 24) + ":" + end.substring(3);} 
+				  if (start <= curTime && curTime <= end) {isClosed = false;}
+				}
+				if (isClosed) {return '#A0A0A0';}
 				return percentFull > 2 ? '#E50000' :
 				percentFull > 1.5 ? '#DB6300' :
 				percentFull > 1 ? '#F9FB19' :
 				percentFull > .5 ? '#80C800' :
 				'#24BF00';
 			}
+			
+			// color function for legend
+			function color(percentFull) {
+			return percentFull > 2 ? '#E50000' :
+				percentFull > 1.5 ? '#DB6300' :
+				percentFull > 1 ? '#F9FB19' :
+				percentFull > .5 ? '#80C800' :
+				'#24BF00';
+			}
+			
+			// refresh the page on the half hour
+			setInterval(refresh, 60000);
+			function refresh() {
+				var d = new Date(); 
+				var m = d.getMinutes();
+				if (m == 0 || m == 30) {
+					location.reload(true);
+					//layer.setStyle({
+					//  fillColor: getColor(feature, percentFull),
+					//});
+				}
+			}
+			 
 			// add listeners
 			function onEachFeature(feature, layer) {
 				layer.on({
