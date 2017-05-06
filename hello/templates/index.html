@@ -233,7 +233,7 @@
 						d = "Closed";
 					}
 					else {
-						d = num + " people!";
+						d = num + " people";
 					}
 				}
 
@@ -302,7 +302,7 @@
 				var div = L.DomUtil.create('div', 'info legend'),
 				grades = [0, 5, 10, 15, 20],
 				labels = [];
-				for (var i = 0; i < grades.length - 1; i++) {
+				for (var i = 0; i < grades.length; i++) {
 					div.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '%<br>' : '+');
 				}
 				return div;
@@ -317,7 +317,7 @@
 					opacity: 1,
 					color: 'white',
 					dashArray: '3',
-					fillOpacity: 1
+					fillOpacity: 0.7
 				};
 			}
 			// assign color based on density
@@ -355,6 +355,54 @@
 			// unhighlight
 			function resetHighlight(e) {
 				gjCurrent.resetStyle(e.target);
+				gj0000.resetStyle(e.target);
+				gj0030.resetStyle(e.target);
+				gj0100.resetStyle(e.target);
+				gj0130.resetStyle(e.target);
+				gj0200.resetStyle(e.target);
+				gj0230.resetStyle(e.target);
+				gj0300.resetStyle(e.target);
+				gj0330.resetStyle(e.target);
+				gj0400.resetStyle(e.target);
+				gj0430.resetStyle(e.target);
+				gj0500.resetStyle(e.target);
+				gj0530.resetStyle(e.target);
+				gj0600.resetStyle(e.target);
+				gj0630.resetStyle(e.target);
+				gj0700.resetStyle(e.target);
+				gj0730.resetStyle(e.target);
+				gj0800.resetStyle(e.target);
+				gj0830.resetStyle(e.target);
+				gj0900.resetStyle(e.target);
+				gj0930.resetStyle(e.target);
+				gj1000.resetStyle(e.target);
+				gj1030.resetStyle(e.target);
+				gj1100.resetStyle(e.target);
+				gj1130.resetStyle(e.target);
+				gj1200.resetStyle(e.target);
+				gj1230.resetStyle(e.target);
+				gj1300.resetStyle(e.target);
+				gj1330.resetStyle(e.target);
+				gj1400.resetStyle(e.target);
+				gj1430.resetStyle(e.target);
+				gj1500.resetStyle(e.target);
+				gj1530.resetStyle(e.target);
+				gj1600.resetStyle(e.target);
+				gj1630.resetStyle(e.target);
+				gj1700.resetStyle(e.target);
+				gj1730.resetStyle(e.target);
+				gj1800.resetStyle(e.target);
+				gj1830.resetStyle(e.target);
+				gj1900.resetStyle(e.target);
+				gj1930.resetStyle(e.target);
+				gj2000.resetStyle(e.target);
+				gj2030.resetStyle(e.target);
+				gj2100.resetStyle(e.target);
+				gj2130.resetStyle(e.target);
+				gj2200.resetStyle(e.target);
+				gj2230.resetStyle(e.target);
+				gj2300.resetStyle(e.target);
+				gj2330.resetStyle(e.target);
 				info.update();
 			}
 			// draw chart
