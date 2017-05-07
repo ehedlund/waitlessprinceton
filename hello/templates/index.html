@@ -410,7 +410,6 @@
 				info.update();
 			}
 			// draw chart
-			/*
 			function drawChart(elem, name) {
 				var t1 = L.geoJson(getTrafficAtTime("T0800"));
 				var t2 = L.geoJson(getTrafficAtTime("T0830"));
@@ -437,7 +436,7 @@
 				var t23 = L.geoJson(getTrafficAtTime("T1900"));
 				var t24 = L.geoJson(getTrafficAtTime("T1930"));
 				var t25 = L.geoJson(getTrafficAtTime("T2000"));
-				*/
+				
 				/*
 				var t1 = Math.round(Math.random() * 1000);
 				var t2 = Math.round(Math.random() * 1000);
@@ -466,24 +465,21 @@
 				var t25 = Math.round(Math.random() * 1000);
 				*/
 				
-				function drawChart() {
-      					var jsonData = L.geoJson(getTrafficAtTime("T0800"));
-				var data = new google.visualization.DataTable(jsonData);
 				}
-				/*
+				
 				var data = google.visualization.arrayToDataTable([
 					['Time', 'Traffic'],
-					['8:00',  t1],
-					['8:30',  t2],
-					['9:00',  t3],
-					['9:30',  t4],
-					['10:00',  t5],
-					['10:30',  t6],
-					['11:00',  t7],
-					['11:30',  t8],
-					['12:00',  t9],
-					['12:30',  t10],
-					['1:00',  t11],
+					['8:00', t1],
+					['8:30', t2],
+					['9:00', t3],
+					['9:30', t4],
+					['10:00', t5],
+					['10:30', t6],
+					['11:00', t7],
+					['11:30', t8],
+					['12:00', t9],
+					['12:30', t10],
+					['1:00', t11],
 					['1:30', t12],
 					['2:00', t13],
 					['2:30', t14],
@@ -499,7 +495,6 @@
 					['7:30', t24],
 					['8:00', t25]
 				]);
-				*/
 				
 		    	var options = {
 		    		title: 'Daily Traffic - ' + name,
