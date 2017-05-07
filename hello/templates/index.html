@@ -168,13 +168,13 @@
 					var d = jsTraffic[b][currentDay];
 					var t;
 					if (typeof(d) == 'undefined') {
-						t = -1;
+						t = 0;
 					}
 					else {
 						// get time
 						t = jsTraffic[b][currentDay][givenTime];
 						if (typeof(t) == 'undefined') {
-							t = -1;
+							t = 0;
 						}
 					}
 					traffics[i] = t;
@@ -229,18 +229,18 @@
 				return this._div;
 			};
 			info.update = function(props) {
-				if (props) {
-					var num = props.density;
-					var d;
-					if (num == -1) {
-						d = "Closed";
-					}
-					else {
-						d = num + " people";
-					}
-				}
-
-				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + d : 'Hover over a building');
+				//if (props) {
+					//var num = props.density;
+					//var d;
+					//if (num == -1) {
+					//	d = "Closed";
+					//}
+					//else {
+					//	d = num + " people";
+					//}
+				//}
+				//this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + d : 'Hover over a building');
+				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + props.density : 'Hover over a building');
 			};
 			info.addTo(mymap);
 			
@@ -329,8 +329,9 @@
 				percentFull > 15  ? '#DB6500' :
 				percentFull > 10  ? '#D2C400' :
 				percentFull > 5  ? '#76C800' :
-				percentFull > 0   ? '#16BF00' :
-				'#707070';
+				'#16BF00';
+				//percentFull > 0   ? '#16BF00' :
+				//'#707070';
 			}
 
 			// add listeners
