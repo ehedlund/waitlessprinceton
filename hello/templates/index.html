@@ -297,7 +297,7 @@
 			layerGroup = L.layerGroup([gj0000, gj0030, gj0100, gj0130, gj0200, gj0230, gj0300, gj0330, gj0400, gj0430, gj0500, gj0530, gj0600, gj0630, gj0700, gj0730, gj0800, gj0830, gj0900, gj0930, gj1000, gj1030, gj1100, gj1130, gj1200, gj1230, gj1300, gj1330, gj1400, gj1430, gj1500, gj1530, gj1600, gj1630, gj1700, gj1730, gj1800, gj1830, gj1900, gj1930, gj2000, gj2030, gj2100, gj2130, gj2200, gj2230, gj2300, gj2330]);
 			var sliderControl = L.control.sliderControl({position: "topright", layer:layerGroup, follow: 1});
 			mymap.addControl(sliderControl);
-			sliderControl.startSlider(currentTime);
+			sliderControl.startSlider();
 			 
 			// load legend
 			var legend = L.control({position: 'bottomright'});
