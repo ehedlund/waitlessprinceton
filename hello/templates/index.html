@@ -410,6 +410,7 @@
 				info.update();
 			}
 			// draw chart
+			/*
 			function drawChart(elem, name) {
 				var t1 = L.geoJson(getTrafficAtTime("T0800"));
 				var t2 = L.geoJson(getTrafficAtTime("T0830"));
@@ -436,6 +437,7 @@
 				var t23 = L.geoJson(getTrafficAtTime("T1900"));
 				var t24 = L.geoJson(getTrafficAtTime("T1930"));
 				var t25 = L.geoJson(getTrafficAtTime("T2000"));
+				*/
 				/*
 				var t1 = Math.round(Math.random() * 1000);
 				var t2 = Math.round(Math.random() * 1000);
@@ -463,6 +465,16 @@
 				var t24 = Math.round(Math.random() * 1000);
 				var t25 = Math.round(Math.random() * 1000);
 				*/
+				
+				function drawChart() {
+      					var jsonData = $.ajax({
+          					url: "getData.php",
+          					dataType: "json",
+          					async: false
+          					}).responseText;
+				var data = new google.visualization.DataTable(jsonData);
+				}
+				/*
 				var data = google.visualization.arrayToDataTable([
 					['Time', 'Traffic'],
 					['8:00',  t1],
@@ -491,6 +503,8 @@
 					['7:30', t24],
 					['8:00', t25]
 				]);
+				*/
+				
 		    	var options = {
 		    		title: 'Daily Traffic - ' + name,
 		    		colors:['#E50000'],
