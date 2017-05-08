@@ -6,7 +6,7 @@ L.Control.SliderControl = L.Control.extend({
         isEpoch: false,     // whether the time attribute is seconds elapsed from epoch
         startTimeIdx: 0,    // where to start looking for a timestring
         timeStrLength: 19,  // the size of  yyyy-mm-dd hh:mm:ss - if millis are present this will be larger
-        value: 0,
+//         value: 0,
         maxValue: -1,
         minValue: 0,
         showAllOnStart: false,
@@ -97,13 +97,14 @@ L.Control.SliderControl = L.Control.extend({
         if(_options.showAllOnStart){
             index_start = _options.maxValue;
             if(_options.range) _options.values = [_options.minValue,_options.maxValue];
-            else _options.value = _options.maxValue;
+//             else _options.value = _options.maxValue;
+            else _options.value = startPosition;
         }
         $("#leaflet-slider").slider({
 //             this.options.value = startPosition;
             range: _options.range,
-//          value: _options.value,
-            value: startPosition,
+            value: _options.value,
+//          value: startPosition,
             values: _options.values,
             min: _options.minValue,
             max: _options.maxValue,
