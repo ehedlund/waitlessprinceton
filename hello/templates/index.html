@@ -374,12 +374,21 @@
 			}
 			// assign color based on density
 			function getColor(feature, percentFull) {
-				var isClosed = true;
+				var closed = isClosed(feature);
+				if (closed) {return '#A0A0A0';}
+				return percentFull > 20 ? '#E50001' :
+				percentFull > 15  ? '#DB6500' :
+				percentFull > 10  ? '#D2C400' :
+				percentFull > 5  ? '#76C800' :
+				'#16BF00';
+			}
+			 
+			 function isClosed(feature) {
 				var d = new Date(); 
 				var curDay = d.getDay();
 				var openTimes = feature.properties.hours[curDay];
 				if (openTimes == "CLOSED") {
-				  return '#A0A0A0';
+				  return true;
 				}
 				var curTime = feature.properties.time;
 				var res = openTimes.split(", ");
@@ -387,15 +396,9 @@
 				  var start = res[i].substring(0,5);
 				  var end = res[i].substring(6);
 				  if (end <= start) {end = (parseInt(end.substring(0,3)) + 24) + ":" + end.substring(3);} 
-				  if (start <= curTime && curTime <= end) {isClosed = false;}
+				  if (start <= curTime && curTime <= end) {return false;}
 				}
-				if (isClosed) {return '#A0A0A0';}
-				return percentFull > 20 ? '#E50001' :
-				percentFull > 15  ? '#DB6500' :
-				percentFull > 10  ? '#D2C400' :
-				percentFull > 5  ? '#76C800' :
-				'#16BF00';
-			}
+			 }
 			
 			// color function for legend
 			function color(percentFull) {
