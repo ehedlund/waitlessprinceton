@@ -182,7 +182,7 @@ L.Control.SliderControl = L.Control.extend({
                             }
                         }
                     }
-                };
+                }
                 if(_options.rezoom) {
                     map.fitBounds(fg.getBounds(), {
                         maxZoom: _options.rezoom
