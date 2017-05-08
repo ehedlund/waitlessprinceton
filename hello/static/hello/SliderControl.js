@@ -100,7 +100,7 @@ L.Control.SliderControl = L.Control.extend({
             else _options.value = _options.maxValue;
         }
         $("#leaflet-slider").slider({
-            this.options.value = startPosition;
+//             this.options.value = startPosition;
             range: _options.range,
 //          value: _options.value,
             value: startPosition,
