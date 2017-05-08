@@ -243,7 +243,7 @@
             var currentData = getTrafficAtTime(currentTime);
             var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature});
 	    //var graphData = getTrafficForBld(features.properties.name);
-	    var graphData = getTrafficForBld(givenBuilding);
+	    //var graphData = getTrafficForBld(givenBuilding);
             // var timeString = '2017-05-02 ' + currentTime[1:3] + ':' + currentTime[3:5] + ':00+01';
             // var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature, time: timeString});
             gjCurrent.addTo(mymap);
@@ -267,7 +267,7 @@
 					//}
 				//}
 				//this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + d : 'Hover over a building');
-				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + props.density + ' people': 'Hover for swipes from last 30 min');
+				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + props.density + ' people': 'Hover over a building');
 			};
 			info.addTo(mymap);
 			
