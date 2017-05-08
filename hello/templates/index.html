@@ -335,7 +335,8 @@
 			var sliderControl = L.control.sliderControl({position: "topright", layer:layerGroup, follow: 1});
 // 			$("#sliderControl").slider('value',dctTime[currentTime]);
 			mymap.addControl(sliderControl);
-			sliderControl.startSlider(dctTime[currentTime]);
+// 			sliderControl.startSlider(dctTime[currentTime]);
+			sliderControl.startSlider();
 			 
 			// load legend
 			var legend = L.control({position: 'bottomright'});
