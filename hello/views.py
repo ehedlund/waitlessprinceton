@@ -62,7 +62,7 @@ def index(request):
 				rounded = roundTime(datetime.datetime(2017,1,4,hourInt,int(minute),int(second)),datetime.timedelta(minutes=30))
 				roundedStr = unicode(rounded.replace(microsecond=0))
 # 				roundedTime = roundedStr[11:-3]
-				formattedTime = "T" + roundedTime[11:-6] + roundedTime[14:-3]
+				formattedTime = "T" + roundedStr[11:-6] + roundedStr[14:-3]
 
 # 				prevTraffic = traffic[building][day][formattedTime]
 				traffic[building][day][formattedTime] += 1
