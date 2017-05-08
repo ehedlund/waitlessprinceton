@@ -9,7 +9,7 @@ L.Control.SliderControl = L.Control.extend({
         value: 0,
         maxValue: -1,
         minValue: 0,
-        showAllOnStart: true,
+        showAllOnStart: false,
         markers: null,
         range: false,
         follow: false,
