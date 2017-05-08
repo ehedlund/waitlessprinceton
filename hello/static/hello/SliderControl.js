@@ -101,9 +101,9 @@ L.Control.SliderControl = L.Control.extend({
             else _options.value = startPosition;
         }
         $("#leaflet-slider").slider({
-//             this.options.value = startPosition;
+            this.options.value = startPosition;
             range: _options.range,
-            value: _options.value,
+//             value: _options.value,
 //          value: startPosition,
             values: _options.values,
             min: _options.minValue,
