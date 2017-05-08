@@ -391,6 +391,7 @@
 				  if (end <= start) {end = (parseInt(end.substring(0,3)) + 24) + ":" + end.substring(3);} 
 				  if (start <= curTime && curTime <= end) {return false;}
 				}
+				return true;
 			 }
 			
 			// color function for legend
