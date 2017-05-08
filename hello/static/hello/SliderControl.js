@@ -6,7 +6,7 @@ L.Control.SliderControl = L.Control.extend({
         isEpoch: false,     // whether the time attribute is seconds elapsed from epoch
         startTimeIdx: 0,    // where to start looking for a timestring
         timeStrLength: 19,  // the size of  yyyy-mm-dd hh:mm:ss - if millis are present this will be larger
-//         value: 0,
+        value: 0,
         maxValue: -1,
         minValue: 0,
         showAllOnStart: false,
