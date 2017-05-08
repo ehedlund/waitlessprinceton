@@ -251,9 +251,9 @@
 				return this._div;
 			};
 			info.update = function(props) {
-				if (isClosed(props)) {
-					this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + 'Closed': 'Hover over a building');
-				}
+				//if (isClosed(props)) {
+				//	this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + 'Closed': 'Hover over a building');
+				//}
 				//else {
 				//if (props) {
 					//var num = props.density;
@@ -261,13 +261,13 @@
 					//if (num == -1) {
 					//	d = "Closed";
 					//}
-					else {
+				//	else {
 					//	d = num + " people";
 					//}
 				//}
 				//this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + d : 'Hover over a building');
 				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (props ? '<b>' + props.name + '</b><br />' + props.density + ' people': 'Hover over a building');
-				}
+				//}
 			};
 			info.addTo(mymap);
 			
