@@ -199,28 +199,30 @@
 			function getTrafficForBld(givenBuilding) {
 				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 				var currentDay = days[(new Date()).getDay()];
-				var buildings = ["AtriumCafe", "ButlerCollege", "CenterforJewishLife", "ChancellorGreen", "ChemistryCafe", "ForbesCollege", "FristGallery1", "FristGallery2", "FristGallery3", "FristGallery4", "GraduateCollege", "RockefellerCollege", "MatheyCollege", "Studio34ButlerEmporium", "WhitmanCollege", "WilsonCollege", "WoodrowWilsonCafe", "FirestoneLibrary"];
+				//var buildings = ["AtriumCafe", "ButlerCollege", "CenterforJewishLife", "ChancellorGreen", "ChemistryCafe", "ForbesCollege", "FristGallery1", "FristGallery2", "FristGallery3", "FristGallery4", "GraduateCollege", "RockefellerCollege", "MatheyCollege", "Studio34ButlerEmporium", "WhitmanCollege", "WilsonCollege", "WoodrowWilsonCafe", "FirestoneLibrary"];
 				var times = ["T0000", "T0030", "T0100", "T0130", "T0200", "T0230", "T0300", "T0330", "T0400", "T0430", "T0500", "T0530", "T0600", "T0630", "T0700", "T0730", "T0800", "T0830", "T0900", "T0930", "T1000", "T1030", "T1100", "T1130", "T1200", "T1230", "T1300", "T1330", "T1400", "T1430", "T1500", "T1530", "T1600", "T1630", "T1700", "T1730", "T1800", "T1830", "T1900", "T1930", "T2000", "T2030", "T2100", "T2130", "T2200", "T2230", "T2300", "T2330"]
 				var currentTime = times[(new Time()).getTime()];
 				var traffics = [];
 
-				for (i = 0; i < 47; i++) {
-					// get times
-					var b = times[i];
-					// get day
-					var d = jsTraffic[b][currentTime];
-					var t;
-					if (typeof(d) == 'undefined') {
-						t = 0;
-					}
-					else {
-						// get time
-						t = jsTraffic[b][currentTime][givenBuilding];
-						if (typeof(t) == 'undefined') {
+				for (i = 0; i < 7; i++) {
+					for (j = 0; j < 48; j++) {
+						// get times
+						var b = times[i];
+						// get day
+						var d = jsTraffic[b][currentTime];
+						var t;
+						if (typeof(d) == 'undefined') {
 							t = 0;
 						}
+						else {
+							// get time
+							t = jsTraffic[b][currentTime][givenBuilding];
+							if (typeof(t) == 'undefined') {
+								t = 0;
+							}
+						}
+						bldTraffic[i] = t;
 					}
-					bldTraffic[i] = t;
 				}
 
 	        	return bldTraffic[i];
