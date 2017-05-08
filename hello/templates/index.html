@@ -156,7 +156,7 @@
 				var buildings = ["AtriumCafe", "ButlerWilsonCollege", "CenterforJewishLife", "ChancellorGreen", "ChemistryCafe", "ForbesCollege", "FristGallery", "GraduateCollege", "RockefellerMatheyCollege", "Studio34ButlerEmporium", "WhitmanCollege", "WoodrowWilsonCafe", "FirestoneLibrary"];
 				var traffics = [];
 
-				for (i = 0; i < 18; i++) {
+				for (i = 0; i < 13; i++) {
 					// get building
 					var b = buildings[i];
 					// get day
@@ -176,18 +176,18 @@
 				}
 
 				var atrium = traffics[0];
-				var butwil = traffics[1] + traffics[15];
+				var butwil = traffics[1];
 				var cjl = traffics[2];
 				var chancgreen = traffics[3];
 				var chem = traffics[4];
 				var forbes = traffics[5];
-				var frist = traffics[6] + traffics[7] + traffics[8] + traffics[9];
-				var grad = traffics[10];
-				var roma = traffics[11] + traffics[12];
-				var studio = traffics[13];
-				var whitman = traffics[14];
-				var woodywoo = traffics[16];
-				var firestone = traffics[17];
+				var frist = traffics[6];
+				var grad = traffics[7];
+				var roma = traffics[8];
+				var studio = traffics[9];
+				var whitman = traffics[10];
+				var woodywoo = traffics[11];
+				var firestone = traffics[12];
 
 	        	// put traffic into json file
 			var time = givenTime.substring(1, 3) + ":" + givenTime.substring(3);
