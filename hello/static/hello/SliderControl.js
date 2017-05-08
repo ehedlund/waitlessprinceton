@@ -6,7 +6,7 @@ L.Control.SliderControl = L.Control.extend({
         isEpoch: false,     // whether the time attribute is seconds elapsed from epoch
         startTimeIdx: 0,    // where to start looking for a timestring
         timeStrLength: 19,  // the size of  yyyy-mm-dd hh:mm:ss - if millis are present this will be larger
-        value: 35,
+        value: 0,
         maxValue: -1,
         minValue: 0,
         showAllOnStart: false,
@@ -90,7 +90,7 @@ L.Control.SliderControl = L.Control.extend({
         $('#leaflet-slider').remove();
     },
 
-    startSlider: function (startPosition) {
+    startSlider: function () {
         _options = this.options;
         _extractTimestamp = this.extractTimestamp
         var index_start = _options.minValue;
@@ -101,9 +101,9 @@ L.Control.SliderControl = L.Control.extend({
             else _options.value = startPosition;
         }
         $("#leaflet-slider").slider({
-            this.options.value = startPosition;
+//             this.options.value = startPosition;
             range: _options.range,
-//             value: _options.value,
+            value: _options.value,
 //          value: startPosition,
             values: _options.values,
             min: _options.minValue,
