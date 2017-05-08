@@ -242,6 +242,41 @@
             	layers: [campusMap]
             });
 
+            // filtering
+			var dhallIcon = L.icon({iconUrl:'../static/hello/food.png',iconSize:[30,30],iconAnchor:[15,30]});
+			var cafeIcon = L.icon({iconUrl:'../static/hello/coffee.png',iconSize:[30,30],iconAnchor:[15,30]});
+			var gymIcon = L.icon({iconUrl:'../static/hello/heart.png',iconSize:[30,30],iconAnchor:[15,30]});
+			var libIcon = L.icon({iconUrl:'../static/hello/book.png',iconSize:[30,30],iconAnchor:[15,30]});
+
+            var firestoneMarker = L.marker([40.349450, -74.657430], {icon:libIcon});
+            var atriumMarker = L.marker([40.349218, -74.654943], {icon:cafeIcon});
+            var chancGreenMarker = L.marker([40.349052, -74.658600], {icon:cafeIcon});
+            var chemMarker = L.marker([40.344027, -74.650709], {icon:cafeIcon});
+            var fristMarker = L.marker([40.346740, -74.655142], {icon:cafeIcon});
+            var studioMarker = L.marker([40.344002, -74.655660], {icon:cafeIcon});
+            var woodyWooMarker = L.marker([40.348393, -74.654712], {icon:cafeIcon});
+            var wucoxMarker = L.marker([40.344782, -74.656096], {icon:dhallIcon});
+            var cjlMarker = L.marker([40.346706, -74.653625], {icon:dhallIcon});
+            var forbesMarker = L.marker([40.341876, -74.660979], {icon:dhallIcon});
+            var gradMarker = L.marker([40.340744, -74.665116], {icon:dhallIcon});
+            var romaMarker = L.marker([40.348595, -74.662204], {icon:dhallIcon});
+            var whitmanMarker = L.marker([40.344184, -74.657646], {icon:dhallIcon});
+            var dillonMarker = L.marker([40.345610, -74.658795], {icon:gymIcon});
+
+			var libraries = L.layerGroup([firestoneMarker]);
+			var cafes = L.layerGroup([atriumMarker, chancGreenMarker, chemMarker, fristMarker, studioMarker, woodyWooMarker]);
+			var dhalls = L.layerGroup([wucoxMarker, cjlMarker, forbesMarker, gradMarker, romaMarker, whitmanMarker]);
+			var gyms = L.layerGroup([dillonMarker]);
+
+            var overlayMaps = {
+            	"Dining Halls": dhalls,
+            	"Cafes": cafes,
+                "Firestone": libraries,
+                "Dillon": gyms
+            };
+
+            L.control.layers(null, overlayMaps, {position:'bottomleft'}).addTo(mymap);
+
             // create geojson variable for current traffic
             var currentTime = getNearestHalfHourTimeString();
             var currentData = getTrafficAtTime(currentTime);
