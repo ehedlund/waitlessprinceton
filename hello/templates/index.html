@@ -208,7 +208,7 @@
             var currentTime = getNearestHalfHourTimeString();
             var currentData = getTrafficAtTime(currentTime);
             var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature});
-	    var tGraph = L.geoJson(currentData);
+	    var tGraph = R.geoJson(currentData);
 	    tGraph.addTo(mymap);
             // var timeString = '2017-05-02 ' + currentTime[1:3] + ':' + currentTime[3:5] + ':00+01';
             // var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature, time: timeString});
@@ -447,31 +447,31 @@
 			}
 			// draw chart
 			function drawChart(elem, name) {
-				var t1 = L.geoJson(getTrafficAtTime("T0800"));
-				var t2 = L.geoJson(getTrafficAtTime("T0830"));
-				var t3 = L.geoJson(getTrafficAtTime("T0900"));
-				var t4 = L.geoJson(getTrafficAtTime("T0930"));
-				var t5 = L.geoJson(getTrafficAtTime("T1000"));
-				var t6 = L.geoJson(getTrafficAtTime("T1030"));
-				var t7 = L.geoJson(getTrafficAtTime("T1100"));
-				var t8 = L.geoJson(getTrafficAtTime("T1130"));
-				var t9 = L.geoJson(getTrafficAtTime("T1200"));
-				var t10 = L.geoJson(getTrafficAtTime("T1230"));
-				var t11 = L.geoJson(getTrafficAtTime("T1300"));
-				var t12 = L.geoJson(getTrafficAtTime("T1330"));
-				var t13 = L.geoJson(getTrafficAtTime("T1400"));
-				var t14 = L.geoJson(getTrafficAtTime("T1430"));
-				var t15 = L.geoJson(getTrafficAtTime("T1500"));
-				var t16 = L.geoJson(getTrafficAtTime("T1530"));
-				var t17 = L.geoJson(getTrafficAtTime("T1600"));
-				var t18 = L.geoJson(getTrafficAtTime("T1630"));
-				var t19 = L.geoJson(getTrafficAtTime("T1700"));
-				var t20 = L.geoJson(getTrafficAtTime("T1730"));
-				var t21 = L.geoJson(getTrafficAtTime("T1800"));
-				var t22 = L.geoJson(getTrafficAtTime("T1830"));
-				var t23 = L.geoJson(getTrafficAtTime("T1900"));
-				var t24 = L.geoJson(getTrafficAtTime("T1930"));
-				var t25 = L.geoJson(getTrafficAtTime("T2000"));
+				var t1 = R.geoJson(getTrafficAtTime("T0800"));
+				var t2 = R.geoJson(getTrafficAtTime("T0830"));
+				var t3 = R.geoJson(getTrafficAtTime("T0900"));
+				var t4 = R.geoJson(getTrafficAtTime("T0930"));
+				var t5 = R.geoJson(getTrafficAtTime("T1000"));
+				var t6 = R.geoJson(getTrafficAtTime("T1030"));
+				var t7 = R.geoJson(getTrafficAtTime("T1100"));
+				var t8 = R.geoJson(getTrafficAtTime("T1130"));
+				var t9 = R.geoJson(getTrafficAtTime("T1200"));
+				var t10 = R.geoJson(getTrafficAtTime("T1230"));
+				var t11 = R.geoJson(getTrafficAtTime("T1300"));
+				var t12 = R.geoJson(getTrafficAtTime("T1330"));
+				var t13 = R.geoJson(getTrafficAtTime("T1400"));
+				var t14 = R.geoJson(getTrafficAtTime("T1430"));
+				var t15 = R.geoJson(getTrafficAtTime("T1500"));
+				var t16 = R.geoJson(getTrafficAtTime("T1530"));
+				var t17 = R.geoJson(getTrafficAtTime("T1600"));
+				var t18 = R.geoJson(getTrafficAtTime("T1630"));
+				var t19 = R.geoJson(getTrafficAtTime("T1700"));
+				var t20 = R.geoJson(getTrafficAtTime("T1730"));
+				var t21 = R.geoJson(getTrafficAtTime("T1800"));
+				var t22 = R.geoJson(getTrafficAtTime("T1830"));
+				var t23 = R.geoJson(getTrafficAtTime("T1900"));
+				var t24 = R.geoJson(getTrafficAtTime("T1930"));
+				var t25 = R.geoJson(getTrafficAtTime("T2000"));
 				
 				/*
 				var t1 = Math.round(Math.random() * 1000);
