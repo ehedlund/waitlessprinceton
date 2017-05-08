@@ -204,10 +204,10 @@
 				
 				for (i = 0; i < 7; i++) {
 					for (j = 0; j < 48; j++) {
-						// get day
-						var d = jsTraffic[givenBuilding][i];
+						// get traffic for building
+						var b = jsTraffic[givenBuilding][i];
 						var t;
-						if (typeof(d) == 'undefined') {
+						if (typeof(b) == 'undefined') {
 							t = 0;
 						}
 						else {
@@ -239,8 +239,6 @@
             var currentTime = getNearestHalfHourTimeString();
             var currentData = getTrafficAtTime(currentTime);
             var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature});
-	    //var graphData = getTrafficForBld(features.properties.name);
-	    //var graphData = getTrafficForBld(givenBuilding);
             // var timeString = '2017-05-02 ' + currentTime[1:3] + ':' + currentTime[3:5] + ':00+01';
             // var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature, time: timeString});
             gjCurrent.addTo(mymap);
