@@ -206,21 +206,21 @@
 
 				for (i = 0; i < 47; i++) {
 					// get times
-					var t = times[i];
+					var b = times[i];
 					// get day
-					var d = jsTraffic[t][currentDay];
-					var p;
+					var d = jsTraffic[b][currentTime];
+					var t;
 					if (typeof(d) == 'undefined') {
-						p = 0;
+						t = 0;
 					}
 					else {
 						// get time
-						p = jsTraffic[t][currentDay][givenTime];
-						if (typeof(p) == 'undefined') {
-							p = 0;
+						t = jsTraffic[b][currentTime][givenBuilding];
+						if (typeof(t) == 'undefined') {
+							t = 0;
 						}
 					}
-					bldTraffic[i] = p;
+					bldTraffic[i] = t;
 				}
 
 	        	return bldTraffic[i];
