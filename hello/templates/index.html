@@ -219,7 +219,7 @@
             var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature});
             // var timeString = '2017-05-02 ' + currentTime[1:3] + ':' + currentTime[3:5] + ':00+01';
             // var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature, time: timeString});
-            // gjCurrent.addTo(mymap);
+            gjCurrent.addTo(mymap);
             
 			// load hover box
 			var info = L.control({position: 'topright'});
