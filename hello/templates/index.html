@@ -370,7 +370,7 @@
 			}
 			// assign color based on density
 			function getColor(feature, percentFull) {
-				var closed = isClosed(feature);
+				var closed = isClosed(feature.properties);
 				if (closed) {return '#A0A0A0';}
 				return percentFull > 20 ? '#E50001' :
 				percentFull > 15  ? '#DB6500' :
@@ -379,14 +379,14 @@
 				'#16BF00';
 			}
 			 
-			 function isClosed(feature) {
+			 function isClosed(props) {
 				var d = new Date(); 
 				var curDay = d.getDay();
-				var openTimes = feature.properties.hours[curDay];
+				var openTimes = props.hours[curDay];
 				if (openTimes == "CLOSED") {
 				  return true;
 				}
-				var curTime = feature.properties.time;
+				var curTime = props.time;
 				var res = openTimes.split(", ");
 				for (i in res) {
 				  var start = res[i].substring(0,5);
