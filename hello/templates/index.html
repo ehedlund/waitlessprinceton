@@ -413,6 +413,8 @@
 			// assign color based on density
 			function getColor(feature, percentFull) {
 				var isClosed = true;
+				var d = new Date(); 
+				var curDay = d.getDay();
 				var openTimes = feature.properties.hours[curDay];
 				if (openTimes == "CLOSED") {
 				  return '#A0A0A0';
