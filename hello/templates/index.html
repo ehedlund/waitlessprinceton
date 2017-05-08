@@ -208,7 +208,8 @@
             var currentTime = getNearestHalfHourTimeString();
             var currentData = getTrafficAtTime(currentTime);
             var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature});
-	    var t = L.geoJson(currentData);
+	    var tGraph = L.geoJson(currentData);
+	    tGraph.addTo(mymap);
             // var timeString = '2017-05-02 ' + currentTime[1:3] + ':' + currentTime[3:5] + ':00+01';
             // var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature, time: timeString});
             gjCurrent.addTo(mymap);
