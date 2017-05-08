@@ -55,17 +55,17 @@ def index(request):
 				end = time[2].split()
 				if end[1] == "PM" and hourInt != 12:
 					hourInt += 12
-				elif hourInt == 12:
+				elif end[1] == "AM" and hourInt == 12:
 					hourInt = 0
-				hour = str(hourInt)
+# 				hour = str(hourInt)
 				second = end[0]
-				rounded = roundTime(datetime.datetime(2017,1,4,int(hour),int(minute),int(second)),datetime.timedelta(minutes=30))
+				rounded = roundTime(datetime.datetime(2017,1,4,hourInt,int(minute),int(second)),datetime.timedelta(minutes=30))
 				roundedStr = unicode(rounded.replace(microsecond=0))
-				roundedTime = roundedStr[11:-3]
-				formattedTime = "T" + roundedTime[:2] + roundedTime[3:]
+# 				roundedTime = roundedStr[11:-3]
+				formattedTime = "T" + roundedStr[11:-6] + roundedStr[14:-3]
 
-				prevTraffic = traffic[building][day][formattedTime]
-				traffic[building][day][formattedTime] = prevTraffic + 1
+# 				prevTraffic = traffic[building][day][formattedTime]
+				traffic[building][day][formattedTime] += 1
 			lineNum += 1
 
 	jsonTraffic = json.dumps(traffic)
