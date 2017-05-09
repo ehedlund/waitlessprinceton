@@ -550,13 +550,13 @@
 			// generate popup with chart
 			function showHistory(e) {
 				var options = {
-					maxWidth: 500
+					maxWidth: 600
 				};
 				var prop = e.target.feature.properties;
 				var chartId = "curve_chart" + popupId;
 				var popup = L.popup(options)
 					.setLatLng([prop.lat,prop.long])
-					.setContent('<div id="' + chartId + '" style="width: 500px; height: 300px"></div>')
+					.setContent('<div id="' + chartId + '" style="width: 600px; height: 400px"></div>')
 					.openOn(mymap);
 				popupId++;
 				drawChart(chartId, prop.name, prop.queryname);
