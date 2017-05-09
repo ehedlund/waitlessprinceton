@@ -553,7 +553,6 @@
 					maxWidth: 500
 				};
 				var prop = e.target.feature.properties;
-				info.update(e);
 				var chartId = "curve_chart" + popupId;
 				var popup = L.popup(options)
 					.setLatLng([prop.lat,prop.long])
@@ -561,6 +560,7 @@
 					.openOn(mymap);
 				popupId++;
 				drawChart(chartId, prop.name, prop.queryname);
+				info.update(prop);
 			}
 		</script>
 	</body>
