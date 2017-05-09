@@ -604,6 +604,8 @@
 					maxWidth: 550
 				};
 				var prop = e.target.feature.properties;
+				var layer = e.target;
+				info.update(layer.feature.properties);
 				var chartId = "curve_chart" + popupId;
 				var popup = L.popup(options)
 					.setLatLng([prop.lat,prop.long])
