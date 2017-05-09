@@ -548,8 +548,8 @@
 				var data = google.visualization.arrayToDataTable(trafficPairings);
 				
 		    	var options = {
-		    		title: 'Daily Traffic - ' + name,
-		    		colors:['#E50000'],
+		    		title: 'Three Day Traffic - ' + name,
+		    		colors:['#DB6500'],
 		      		curveType: 'function',
 		      		legend: {position: 'none'},
 		      		chartArea: {width: '85%', height: '80%'},
@@ -560,8 +560,7 @@
 		      			}
 		      		},
 		      		hAxis: {
-		      			// textPosition: 'none'
-		      			ticks: [{v: d1 + ' 6:00 AM', f: '6 AM'}]
+		      			textPosition: 'none'
 		      		}
 		    	};
 		    	var container = document.getElementById(elem);
