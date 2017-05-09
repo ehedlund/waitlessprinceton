@@ -611,8 +611,16 @@
 					.openOn(mymap);
 				popupId++;
 				drawChart(chartId, prop.name, prop.queryname);
-				var layer = e.target;
-				info.update(layer.feature.properties);
+				var d;
+				if (prop) {
+					if (isClosed(prop)) {
+						d = "Closed";
+					}
+					else {
+						d = prop.density + " swipes";
+					}
+				}
+				this._div.innerHTML = '<h4>Campus Building Traffic</h4>' + (prop ? '<b>' + prop.name + '</b><br />' + d: 'Hover over a building');
 			}
 		</script>
 	</body>
