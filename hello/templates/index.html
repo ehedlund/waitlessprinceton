@@ -553,13 +553,6 @@
 					maxWidth: 500
 				};
 				var prop = e.target.feature.properties;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				info.update(e);
->>>>>>> 5b4f806bd2d88529f5ef1c1e6eb7860f223d593f
-=======
->>>>>>> 7f0d8b6ea44c11317a0b21dc633c3b2f0d48e4e2
 				var chartId = "curve_chart" + popupId;
 				var popup = L.popup(options)
 					.setLatLng([prop.lat,prop.long])
@@ -567,7 +560,7 @@
 					.openOn(mymap);
 				popupId++;
 				drawChart(chartId, prop.name, prop.queryname);
-				info.update(prop);
+				info._div.innerHTML = '<h4>Campus Building Traffic</h4> <b>' + props.name + '</b><br />' + props.density + " swipes";
 			}
 		</script>
 	</body>
