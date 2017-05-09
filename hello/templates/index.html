@@ -207,15 +207,14 @@
 				
 				for (d = 0; d < 7; d++) {
 					for (t = 0; t < 48; t++) {
-						var bldng = jsTraffic[givenBuilding];
-						var day = bldng[d];
+						var day = jsTraffic[givenBuilding][d];
 						var tr;
-						if (typeof(d) == 'undefined') {
+						if (typeof(day) == 'undefined') {
 							tr = 0;
 						}
 						else {
 							var currentTime = times[t];
-							tr = day[currentTime];
+							tr = jsTraffic[givenBuilding][d][currentTime];
 							if (typeof(tr) == 'undefined') {
 								tr = 0;
 							}
