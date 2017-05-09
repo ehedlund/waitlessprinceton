@@ -545,11 +545,11 @@
 					else if (i < 96) {var d = secondDay;}
 					else {var d = thirdDay;}
 					if ((i % 2) == 0) {
-						var h = i - 1;
+						var h = i % 12;
 						var m = 0;
 					}
 					else {
-						var h = i;
+						var h = i % 12 - 1;
 						var m = 30;
 					}
 					times.push(new Date(2017, 1, d, h, m));
