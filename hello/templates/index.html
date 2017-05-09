@@ -546,13 +546,28 @@
 				}
 			
 				var data = google.visualization.arrayToDataTable(trafficPairings);
+
+				var now = new Date();
+				var hour = now.getHours();
+				var minutes = now.getMinutes();
+				var ampm = "AM";
+				if (minutes < 15) {
+					minutes = "00";
+				} else if (minutes < 45){
+					minutes = "30";
+				} else {
+					minutes = "00";
+					++hour;
+				}
+
+				data.addRow([d1 + " " + hour + ":" + minutes, 'Foo', 'Foo annotation', d1 + " " + hour + ":" + minutes, 1, 0.5]);
 				
 		    	var options = {
 		    		title: 'Three Day Traffic - ' + name,
 		    		colors:['#DB6500'],
 		      		curveType: 'function',
 		      		legend: {position: 'none'},
-		      		chartArea: {width: '90%', height: '90%'},
+		      		chartArea: {width: '90%', height: '80%'},
 		      		vAxis: {
 		      			viewWindowMode: 'explicit',
 		      			viewWindow: {
