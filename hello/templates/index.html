@@ -207,7 +207,8 @@
 				
 				for (d = 0; d < 7; d++) {
 					for (t = 0; t < 48; t++) {
-						var day = jsTraffic[givenBuilding][d];
+						var weekday = days[d];
+						var day = jsTraffic[givenBuilding][weekday];
 						var tr;
 						if (typeof(day) == 'undefined') {
 							tr = 0;
