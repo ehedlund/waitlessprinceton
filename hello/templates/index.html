@@ -544,7 +544,7 @@
 					if (i < 48) {var d = currentDay;}
 					else if (i < 96) {var d = secondDay;}
 					else {var d = thirdDay;}
-					var h = -1;
+					if (i % 48 == 0) var h = -1;
 					if ((i % 2) == 0) {
 						h++;
 						var m = 0;
