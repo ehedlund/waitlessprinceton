@@ -567,7 +567,7 @@
 				for (i = 1; i < 144; i++) {
 					var traf = traffic[i];
 					var time = times[i];
-					var ttip = ttips[i];
+					var ttip = ttips[i] + "\n" + traffic[i] + "swipes";
 					var pair = [time, traf, ttip];
 					trafficPairings[i] = pair;
 				}
