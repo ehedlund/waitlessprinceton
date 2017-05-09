@@ -544,12 +544,12 @@
 					if (i < 48) {var d = currentDay;}
 					else if (i < 96) {var d = secondDay;}
 					else {var d = thirdDay;}
+					var h = -1;
 					if ((i % 2) == 0) {
-						var h = i % 24;
+						h++;
 						var m = 0;
 					}
 					else {
-						var h = i % 24 - 1;
 						var m = 30;
 					}
 					times.push(new Date(2017, 1, d, h, m));
