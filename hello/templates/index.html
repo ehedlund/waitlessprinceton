@@ -550,6 +550,12 @@
 				}
 			
 				var data = google.visualization.arrayToDataTable(trafficPairings);
+				// add every fifth
+				
+			var tickMarks = [];
+			for (var i = 24; i < data.getNumberOfRows(); i = i + 48) {
+			    tickMarks.push(data.getValue(i, 0));
+			}
 				
 		    	var options = {
 		    		title: 'Three Day Traffic - ' + name,
@@ -566,7 +572,7 @@
 		      		hAxis: {
 		      			textPosition: 'out',
 					//showTextEvery: 48
-					ticks: [{v:1, f:'Today noon'}, {v:2, f:'Tomorrow noon'}] 
+					ticks: tickMarks 
 		      		}
 		    	};
 		    	var container = document.getElementById(elem);
