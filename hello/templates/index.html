@@ -45,10 +45,10 @@
     <nav class="navbar navbar-default navbar-static-top navbar-inverse">
       <div class="container">
         <ul class="nav navbar-nav">
-            <li>
+            <li class="active">
                 <a href="/"><span class="glyphicon glyphicon-home"></span> waitLess </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="https://waitlessprinceton.herokuapp.com/about"><span class="glyphicon glyphicon-info-sign"></span> About </a>
             </li>
         </ul>  
@@ -561,7 +561,7 @@
 		      		},
 		      		hAxis: {
 		      			// textPosition: 'none'
-		      			ticks: ['6 AM','12 PM','6 PM','12 AM','6 AM','12 PM','6 PM','12 AM','6 AM','12 PM','6 PM', '12 AM']
+		      			ticks: [{v: d1 + ' 6:00 AM', f: '6 AM'}]
 		      		}
 		    	};
 		    	var container = document.getElementById(elem);
