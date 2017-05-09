@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-{% block content1 %}
-<html>
-	<head>
+{% block head1 %}
+
 		<!-- leaflet includes -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css">
@@ -44,10 +43,12 @@
 				opacity: 0.7;
 			}
 		</style>
-	</head>
+
+{ % endblock % }
+
+{% block content1 %}
 	
 	<!-- map -->
-	<body>
 		<div id="mapid"></div>
 		<style>
 		#mapid {
@@ -491,6 +492,4 @@
 				drawChart(chartId, prop.name, prop.queryname);
 			}
 		</script>
-	</body>	
-</html>
 {% endblock %}
