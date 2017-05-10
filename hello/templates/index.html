@@ -571,8 +571,8 @@
 				for (i = 1; i < 144; i++) {
 					var traf = traffic[i];
 					var time = times[i];
-					var ttip = ttips[i] + '<br><b><center>' + traffic[i] + '</b>' + " swipes" + '</center>';
-					var pair = [time, traf, ttip];
+					var ttip = ttips[i];
+					var pair = [time, traf, ttip + '<br><b><center>' + traffic[i] + '</b>' + " swipes" + '</center>'];
 					trafficPairings[i] = pair;
 				}
 			
