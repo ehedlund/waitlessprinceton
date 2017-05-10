@@ -527,7 +527,8 @@
 			function drawChart(elem, name, queryname) {
 				var traffic = getTrafficForBld(queryname);
 				
-				var currentDay = (new Date()).getDay();
+				var ddate = new Date();
+				var currentDay = ddate.getDay();
 				var firstDay = currentDay;
 				var secondDay = (currentDay + 1) % 7;
 				var thirdDay = (currentDay + 2) % 7;
@@ -537,14 +538,17 @@
 				var d1 = days[firstDay];
 				var d2 = days[secondDay];
 				var d3 = days[thirdDay];
+				var DAYS = 3;
+				var PTS_PER_DAY = 48;
+				var POINTS = DAYS * PTS_PER_DAY;
 
 				var ttips = [d1 + ' 12:00 AM', d1 + ' 12:30 AM', d1 + ' 1:00 AM', d1 + ' 1:30 AM', d1 + ' 2:00 AM', d1 + ' 2:30 AM', d1 + ' 3:00 AM', d1 + ' 3:30 AM', d1 + ' 4:00 AM', d1 + ' 4:30 AM', d1 + ' 5:00 AM', d1 + ' 5:30 AM', d1 + ' 6:00 AM', d1 + ' 6:30 AM', d1 + ' 7:00 AM', d1 + ' 7:30 AM', d1 + ' 8:00 AM', d1 + ' 8:30 AM', d1 + ' 9:00 AM', d1 + ' 9:30 AM', d1 + ' 10:00 AM', d1 + ' 10:30 AM', d1 + ' 11:00 AM', d1 + ' 11:30 AM', d1 + ' 12:00 PM', d1 + ' 12:30 PM', d1 + ' 1:00 PM', d1 + ' 1:30 PM', d1 + ' 2:00 PM', d1 + ' 2:30 PM', d1 + ' 3:00 PM', d1 + ' 3:30 PM', d1 + ' 4:00 PM', d1 + ' 4:30 PM', d1 + ' 5:00 PM', d1 + ' 5:30 PM', d1 + ' 6:00 PM', d1 + ' 6:30 PM', d1 + ' 7:00 PM', d1 + ' 7:30 PM', d1 + ' 8:00 PM', d1 + ' 8:30 PM', d1 + ' 9:00 PM', d1 + ' 9:30 PM', d1 + ' 10:00 PM', d1 + ' 10:30 PM', d1 + ' 11:00 PM', d1 + ' 11:30 PM', d2 + ' 12:00 AM', d2 + ' 12:30 AM', d2 + ' 1:00 AM', d2 + ' 1:30 AM', d2 + ' 2:00 AM', d2 + ' 2:30 AM', d2 + ' 3:00 AM', d2 + ' 3:30 AM', d2 + ' 4:00 AM', d2 + ' 4:30 AM', d2 + ' 5:00 AM', d2 + ' 5:30 AM', d2 + ' 6:00 AM', d2 + ' 6:30 AM', d2 + ' 7:00 AM', d2 + ' 7:30 AM', d2 + ' 8:00 AM', d2 + ' 8:30 AM', d2 + ' 9:00 AM', d2 + ' 9:30 AM', d2 + ' 10:00 AM', d2 + ' 10:30 AM', d2 + ' 11:00 AM', d2 + ' 11:30 AM', d2 + ' 12:00 PM', d2 + ' 12:30 PM', d2 + ' 1:00 PM', d2 + ' 1:30 PM', d2 + ' 2:00 PM', d2 + ' 2:30 PM', d2 + ' 3:00 PM', d2 + ' 3:30 PM', d2 + ' 4:00 PM', d2 + ' 4:30 PM', d2 + ' 5:00 PM', d2 + ' 5:30 PM', d2 + ' 6:00 PM', d2 + ' 6:30 PM', d2 + ' 7:00 PM', d2 + ' 7:30 PM', d2 + ' 8:00 PM', d2 + ' 8:30 PM', d2 + ' 9:00 PM', d2 + ' 9:30 PM', d2 + ' 10:00 PM', d2 + ' 10:30 PM', d2 + ' 11:00 PM', d2 + ' 11:30 PM', d3 + ' 12:00 AM', d3 + ' 12:30 AM', d3 + ' 1:00 AM', d3 + ' 1:30 AM', d3 + ' 2:00 AM', d3 + ' 2:30 AM', d3 + ' 3:00 AM', d3 + ' 3:30 AM', d3 + ' 4:00 AM', d3 + ' 4:30 AM', d3 + ' 5:00 AM', d3 + ' 5:30 AM', d3 + ' 6:00 AM', d3 + ' 6:30 AM', d3 + ' 7:00 AM', d3 + ' 7:30 AM', d3 + ' 8:00 AM', d3 + ' 8:30 AM', d3 + ' 9:00 AM', d3 + ' 9:30 AM', d3 + ' 10:00 AM', d3 + ' 10:30 AM', d3 + ' 11:00 AM', d3 + ' 11:30 AM', d3 + ' 12:00 PM', d3 + ' 12:30 PM', d3 + ' 1:00 PM', d3 + ' 1:30 PM', d3 + ' 2:00 PM', d3 + ' 2:30 PM', d3 + ' 3:00 PM', d3 + ' 3:30 PM', d3 + ' 4:00 PM', d3 + ' 4:30 PM', d3 + ' 5:00 PM', d3 + ' 5:30 PM', d3 + ' 6:00 PM', d3 + ' 6:30 PM', d3 + ' 7:00 PM', d3 + ' 7:30 PM', d3 + ' 8:00 PM', d3 + ' 8:30 PM', d3 + ' 9:00 PM', d3 + ' 9:30 PM', d3 + ' 10:00 PM', d3 + ' 10:30 PM', d3 + ' 11:00 PM', d3 + ' 11:30 PM'];
 				var times = [];
-				for (i = 0; i < 144; i++) {
-					if (i < 48) {var d = currentDay;}
-					else if (i < 96) {var d = secondDay;}
+				for (i = 0; i < POINTS; i++) {
+					if (i < PTS_PER_DAY) {var d = currentDay;}
+					else if (i < PTS_PER_DAY * 2) {var d = secondDay;}
 					else {var d = thirdDay;}
-					if (i % 48 == 0) var h = -1;
+					if (i % POINTS_PER_DAY == 0) var h = -1;
 					if ((i % 2) == 0) {
 						h++;
 						var m = 0;
@@ -552,6 +556,7 @@
 					else {
 						var m = 30;
 					}
+					// arbitrary year and month
 					var date = new Date(2017, 4, d, h, m);
 					times.push(date);
 				}
@@ -563,12 +568,33 @@
 				//var times4 = times1.concat(times2);
 				//var times = times4.concat(times3);
 				var trafficPairings = [];
-				trafficPairings[0] = [{label: 'Time', type: 'date'}, {label: 'Traffic', type: 'number'}, {type: 'string', role: 'tooltip', 'p': {'html': true}}];
-				for (i = 1; i < 144; i++) {
+				trafficPairings[0] = [{label: 'Time', type: 'date'}, {label: 'Traffic', type: 'number'}, {type: 'string', role: 'tooltip'}, {'type': 'string', 'role': 'style'}];
+				
+				// get current point to highlight
+				var curHr = ddate.getHours();
+				if (curHr >= 12) {var sign = "AM";}
+				else {var sign = "PM";}
+				curHr = curHr % 12;
+				if (curHr == 0) {curHr = 12;}
+				var curMin = ddate.getMinutes()
+				if (curMin < 15) {
+					curMin = "00";
+				} else if (curMin < 45){
+					curMin = "30";
+				} else {
+					curMin = "00";
+					++curHour;
+				}
+				var curTime = curHr + ":" + curMin + " " + sign;
+				
+				for (i = 1; i < POINTS; i++) {
 					var traf = traffic[i];
 					var time = times[i];
 					var ttip = ttips[i] + ": " + traffic[i] + " swipes";
-					var pair = [time, traf, ttip];
+					if (ttips[i] == d1 + ' curTime') {
+						var sty = 'point { size: 12; shape-type: star; fill-color: #DB6500; }';
+					else {var sty = null;}
+					var pair = [time, traf, ttip, sty];
 					//var pair = [time, traf, ttip + '<br><b><center>' + traffic[i] + '</b>' + " swipes" + '</center>'];
 					trafficPairings[i] = pair;
 				}
