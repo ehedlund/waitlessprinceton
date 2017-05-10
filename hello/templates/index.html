@@ -586,7 +586,7 @@
 					++curHr;
 				}
 				var curTime = " " + curHr + ":" + curMin + " " + sign;
-				
+				var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 				for (i = 1; i < POINTS; i++) {
 					var traf = traffic[i];
 					var time = times[i];
@@ -622,7 +622,7 @@
 		      		},
 		      		hAxis: {
 		      			textPosition: 'out',
-					ticks: [{v: ticks[0], f: 'Today'}, {v: ticks[1], f: 'Tomorrow'}, {v: ticks[2], f: d3}],
+					ticks: [{v: ticks[0], f: 'Today'}, {v: ticks[1], f: 'Tomorrow'}, {v: ticks[2], f: week[thirdDay]}],
 		      		},
 		    	};
 		    	var container = document.getElementById(elem);
