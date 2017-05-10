@@ -290,6 +290,7 @@
             
             // create geojson variable for current traffic
             var currentTime = getNearestHalfHourTimeString();
+            console.log(currentTime);
             var currentData = getTrafficAtTime(currentTime);
             var gjCurrent = L.geoJson(currentData, {style: style, onEachFeature: onEachFeature});
             
