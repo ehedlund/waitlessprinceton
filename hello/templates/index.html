@@ -593,7 +593,9 @@
 					var ttip = ttips[i] + ": " + traffic[i] + " swipes";
 					//console.log(ttips[i] + " vs. " + d1 + curTime);
 					if (ttips[i] == d1 + curTime) {
-						var sty = 'point { size: 12; shape-type: star; fill-color: #DB6500; visible: true;}'; }
+						var sty = 'point { size: 11; shape-type: star; fill-color: #DB6500; visible: true;}'; 
+						ttip = "You are here! " + ttips[i] + ": " + traffic[i] + " swipes";
+					}
 					else {var sty = null;}
 					var pair = [time, traf, ttip, sty];
 					//var pair = [time, traf, ttip + '<br><b><center>' + traffic[i] + '</b>' + " swipes" + '</center>'];
@@ -602,7 +604,7 @@
 			
 				var data = google.visualization.arrayToDataTable(trafficPairings);
 				var ticks = [];
-					for (var i = 24; i < 144; i = i+48) {
+					for (var i = PTS_PER_DAY/2; i < POINTS; i = i+PTS_PER_DAY) {
 					    ticks.push(data.getValue(i, 0));
 					  }
 				
