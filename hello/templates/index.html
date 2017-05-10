@@ -572,7 +572,7 @@
 				
 				// get current point to highlight
 				var curHr = ddate.getHours();
-				if (curHr >= 12) {var sign = "AM";}
+				if (curHr < 12) {var sign = "AM";}
 				else {var sign = "PM";}
 				curHr = curHr % 12;
 				if (curHr == 0) {curHr = 12;}
@@ -591,9 +591,9 @@
 					var traf = traffic[i];
 					var time = times[i];
 					var ttip = ttips[i] + ": " + traffic[i] + " swipes";
-					console.log(ttips[i] + " vs. " + d1 + curTime);
+					//console.log(ttips[i] + " vs. " + d1 + curTime);
 					if (ttips[i] == d1 + curTime) {
-						var sty = 'point { size: 12; shape-type: star; fill-color: #DB6500; }'; }
+						var sty = 'point { size: 12; shape-type: star; fill-color: #DB6500; visible: true;}'; }
 					else {var sty = null;}
 					var pair = [time, traf, ttip, sty];
 					//var pair = [time, traf, ttip + '<br><b><center>' + traffic[i] + '</b>' + " swipes" + '</center>'];
