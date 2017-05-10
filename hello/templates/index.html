@@ -159,6 +159,9 @@
 			function getNearestHalfHourTimeString() {
 				var now = new Date();
 				var hour = now.getHours();
+				if (hour < 10) {
+					hour = "0" + hour;
+				}
 				var minutes = now.getMinutes();
 				var ampm = "AM";
 				if (minutes < 15) {
