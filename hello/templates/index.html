@@ -229,7 +229,7 @@
 				
 				for (d = firstDay; d <= firstDay + 2; d++) {
 					for (t = 0; t < 48; t++) {
-						var weekday = days[d];
+						var weekday = days[d % 7];
 						var day = jsTraffic[givenBuilding][weekday];
 						var tr;
 						if (typeof(day) == 'undefined') {
