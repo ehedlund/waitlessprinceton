@@ -600,13 +600,13 @@
 						ttip = "You are here! " + ttips[i] + ": " + traffic[i] + " swipes";
 					}
 					else {var sty = null;}
+					console.log(time + ", " + traf + ", " + ttip + ", " + sty);
 					var pair = [time, traf, ttip, sty];
 					//var pair = [time, traf, ttip + '<br><b><center>' + traffic[i] + '</b>' + " swipes" + '</center>'];
 					trafficPairings[i] = pair;
 				}
 			
 				var data = google.visualization.arrayToDataTable(trafficPairings);
-				console.log(trafficPairings);
 				var ticks = [];
 					for (var i = PTS_PER_DAY/2; i < POINTS; i = i+PTS_PER_DAY) {
 					    ticks.push(data.getValue(i, 0));
