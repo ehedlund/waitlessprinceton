@@ -606,7 +606,7 @@
 				}
 			
 				var data = google.visualization.arrayToDataTable(trafficPairings);
-				console.log(data);
+				console.log(trafficPairings);
 				var ticks = [];
 					for (var i = PTS_PER_DAY/2; i < POINTS; i = i+PTS_PER_DAY) {
 					    ticks.push(data.getValue(i, 0));
