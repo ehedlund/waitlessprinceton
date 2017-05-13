@@ -586,11 +586,12 @@
 				trafficPairings[0] = [{label: 'Time', type: 'date'}, {label: 'Traffic', type: 'number'}, {type: 'string', role: 'tooltip'}, {'type': 'string', 'role': 'style'}];
 				
 				// get current point to highlight
+				var HRS_AM = 12;
 				var curHr = ddate.getHours();
-				if (curHr < 12) {var sign = "AM";}
+				if (curHr < HRS_AM) {var sign = "AM";}
 				else {var sign = "PM";}
-				curHr = curHr % 12;
-				if (curHr == 0) {curHr = 12;}
+				curHr = curHr % HRS_AM;
+				if (curHr == 0) {curHr = HRS_AM;}
 				var curMin = ddate.getMinutes()
 				if (curMin < 15) {
 					curMin = "00";
@@ -599,6 +600,7 @@
 				} else {
 					curMin = "00";
 					++curHr;
+					if (curHr > HRS_AM) {curHr = curHr % HRS_AM;}
 				}
 				var curTime = " " + curHr + ":" + curMin + " " + sign;
 				var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
