@@ -369,9 +369,8 @@
 			var gj2330 = L.geoJson(getTrafficAtTime("T2330"), {style: style, onEachFeature: onEachFeature, time: currentDayName + " 11:30 PM"});
 			
 			var dctTime = {	'T0000':0, 'T0030':1, 'T0100':2, 'T0130':3, 'T0200':4, 'T0230':5, 'T0300':6, 'T0330':7, 'T0400':8, 'T0430':9, 'T0500':10, 'T0530':11, 'T0600':12, 'T0630':13, 'T0700':14, 'T0730':15, 'T0800':16, 'T0830':17, 'T0900':18, 'T0930':19, 'T1000':20, 'T1030':21, 'T1100':22, 'T1130':23, 'T1200':24, 'T1230':25, 'T1300':26, 'T1330':27, 'T1400':28, 'T1430':29, 'T1500':30, 'T1530':31, 'T1600':32, 'T1630':33, 'T1700':34, 'T1730':35, 'T1800':36, 'T1830':37, 'T1900':38, 'T1930':39,'T2000':40, 'T2030':41, 'T2100':42, 'T2130':43, 'T2200':44, 'T2230':45, 'T2300':46, 'T2330':47}
-			var allLayers = [gj0000, gj0030, gj0100, gj0130, gj0200, gj0230, gj0300, gj0330, gj0400, gj0430, gj0500, gj0530, gj0600, gj0630, gj0700, gj0730, gj0800, gj0830, gj0900, gj0930, gj1000, gj1030, gj1100, gj1130, gj1200, gj1230, gj1300, gj1330, gj1400, gj1430, gj1500, gj1530, gj1600, gj1630, gj1700, gj1730, gj1800, gj1830, gj1900, gj1930, gj2000, gj2030, gj2100, gj2130, gj2200, gj2230, gj2300, gj2330];
 
-			var timeLayers = L.layerGroup(allLayers);
+			var timeLayers = L.layerGroup([gj0000, gj0030, gj0100, gj0130, gj0200, gj0230, gj0300, gj0330, gj0400, gj0430, gj0500, gj0530, gj0600, gj0630, gj0700, gj0730, gj0800, gj0830, gj0900, gj0930, gj1000, gj1030, gj1100, gj1130, gj1200, gj1230, gj1300, gj1330, gj1400, gj1430, gj1500, gj1530, gj1600, gj1630, gj1700, gj1730, gj1800, gj1830, gj1900, gj1930, gj2000, gj2030, gj2100, gj2130, gj2200, gj2230, gj2300, gj2330]);
 			var sliderControl = L.control.sliderControl({position: "topright", layer:timeLayers, value:dctTime[currentTime], follow: 1});
 			mymap.addControl(sliderControl);
 			sliderControl.startSlider();
@@ -402,7 +401,7 @@
 					fillOpacity: 1
 				};
 			}
-			
+
 			// assign building color based on density
 			function getColor(feature, percentFull) {
 				var closed = isClosed(feature.properties);
@@ -477,9 +476,54 @@
 			// unhighlight
 			function resetHighlight(e) {
 				gjCurrent.resetStyle(e.target);
-				for (i = 0; i < allLayers.length; i++) {
-					(allLayers[i]).resetStyle(e.target);
-				}
+				gj0000.resetStyle(e.target);
+				gj0030.resetStyle(e.target);
+				gj0100.resetStyle(e.target);
+				gj0130.resetStyle(e.target);
+				gj0200.resetStyle(e.target);
+				gj0230.resetStyle(e.target);
+				gj0300.resetStyle(e.target);
+				gj0330.resetStyle(e.target);
+				gj0400.resetStyle(e.target);
+				gj0430.resetStyle(e.target);
+				gj0500.resetStyle(e.target);
+				gj0530.resetStyle(e.target);
+				gj0600.resetStyle(e.target);
+				gj0630.resetStyle(e.target);
+				gj0700.resetStyle(e.target);
+				gj0730.resetStyle(e.target);
+				gj0800.resetStyle(e.target);
+				gj0830.resetStyle(e.target);
+				gj0900.resetStyle(e.target);
+				gj0930.resetStyle(e.target);
+				gj1000.resetStyle(e.target);
+				gj1030.resetStyle(e.target);
+				gj1100.resetStyle(e.target);
+				gj1130.resetStyle(e.target);
+				gj1200.resetStyle(e.target);
+				gj1230.resetStyle(e.target);
+				gj1300.resetStyle(e.target);
+				gj1330.resetStyle(e.target);
+				gj1400.resetStyle(e.target);
+				gj1430.resetStyle(e.target);
+				gj1500.resetStyle(e.target);
+				gj1530.resetStyle(e.target);
+				gj1600.resetStyle(e.target);
+				gj1630.resetStyle(e.target);
+				gj1700.resetStyle(e.target);
+				gj1730.resetStyle(e.target);
+				gj1800.resetStyle(e.target);
+				gj1830.resetStyle(e.target);
+				gj1900.resetStyle(e.target);
+				gj1930.resetStyle(e.target);
+				gj2000.resetStyle(e.target);
+				gj2030.resetStyle(e.target);
+				gj2100.resetStyle(e.target);
+				gj2130.resetStyle(e.target);
+				gj2200.resetStyle(e.target);
+				gj2230.resetStyle(e.target);
+				gj2300.resetStyle(e.target);
+				gj2330.resetStyle(e.target);
 				info.update();
 			}
 
