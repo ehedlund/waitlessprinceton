@@ -10,7 +10,6 @@ urlpatterns = [
     url(r'accounts/login/$', django_cas_ng.views.login),
     url(r'accounts/logout/$', django_cas_ng.views.logout),
     url(r'^$', hello.views.index, name='index'),
-    url(r'^db$', hello.views.db, name='db'),
     url(r'^about$', hello.views.about,name='about'),
     url(r'^admin/$', include(admin.site.urls)),
 ]

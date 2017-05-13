@@ -79,11 +79,3 @@ def index(request):
 
 def about(request):
     return render(request, 'about.html')
-
-def db(request):
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, 'db.html', {'greetings': greetings})
