@@ -1,3 +1,5 @@
 Time is a Princeton student's most precious resource. We have classes, practices, rehearsals, office hours, group project meetups, study breaks, advising appointments, and obligatory naps. Often, we try to squeeze as much as we can into the few moments of free time we have in our schedules. The worst feeling is having a mere ten minutes to grab some lunch and spending eight of those minutes waiting in line for the salad bar, or thinking we have time for a quick workout between classes only to find out that there are no treadmills available. We've all been caught in these situations, so wouldn’t it be nice to know how busy these spots are before we show up?
 
 waitLess utilizes prox swipe data to monitor Princeton's dining halls, cafes, Firestone Library, and Dillon Gym, and provides information about both current and future traffic, giving Princeton students the ability to truly maximize their free time.
+
+waitLess can be accessed with a Princeton netID at https://waitlessprinceton.herokuapp.com/
